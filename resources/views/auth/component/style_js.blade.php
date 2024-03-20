@@ -1,17 +1,27 @@
-<!-- page-wrapper end-->
-<!-- latest jquery-->
-<script src="{{ url('/assets') }}/js/jquery-3.5.1.min.js"></script>
-<!-- Bootstrap js-->
-<script src="{{ url('/assets') }}/js/bootstrap/bootstrap.bundle.min.js"></script>
-<!-- feather icon js-->
-<script src="{{ url('/assets') }}/js/icons/feather-icon/feather.min.js"></script>
-<script src="{{ url('/assets') }}/js/icons/feather-icon/feather-icon.js"></script>
-<!-- scrollbar js-->
-<!-- Sidebar jquery-->
-<script src="{{ url('/assets') }}/js/config.js"></script>
-<!-- Plugins JS start-->
-<!-- Plugins JS Ends-->
-<!-- Theme js-->
-<script src="{{ url('/assets') }}/js/script.js"></script>
-<!-- login js-->
-<!-- Plugin used-->
+<!-- JQUERY JS -->
+<script src="{{ url('/assets') }}/js/jquery.min.js"></script>
+
+<!-- BOOTSTRAP JS -->
+<script src="{{ url('/assets') }}/plugins/bootstrap/js/popper.min.js"></script>
+<script src="{{ url('/assets') }}/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- SPARKLINE JS -->
+<script src="{{ url('/assets') }}/js/jquery.sparkline.min.js"></script>
+
+<!-- CHART-CIRCLE JS -->
+<script src="{{ url('/assets') }}/js/circle-progress.min.js"></script>
+
+<!-- Perfect SCROLLBAR JS-->
+<script src="{{ url('/assets') }}/plugins/p-scroll/perfect-scrollbar.js"></script>
+
+<!-- INPUT MASK JS -->
+<script src="{{ url('/assets') }}/plugins/input-mask/jquery.mask.min.js"></script>
+
+<!-- Color Theme js -->
+<script src="{{ url('/assets') }}/js/themeColors.js"></script>
+
+<!-- swither styles js -->
+<script src="{{ url('/assets') }}/js/swither-styles.js"></script>
+
+<!-- CUSTOM JS -->
+<script src="{{ url('/assets') }}/js/custom.js"></script>

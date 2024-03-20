@@ -1,123 +1,238 @@
-/*! -----------------------------------------------------------------------------------
+/*------------------------------------------------------------------
+[Master Stylesheet]
 
-    Template Name: Zeta Admin
-    Template URI: http://admin.pixelstrap.com/zeta/theme
-    Description: This is Admin theme
-    Author: Pixelstrap
-    Author URI: https://themeforest.net/user/pixelstrap
+Project        :   Zanex – Bootstrap  Admin & Dashboard Template
+Version        :   V.6
+Create Date    :   24-Mar-2022
+Copyright      :   Spruko Technologies Private Limited 
+Author         :   Spruko
+Author URL     :   https://themeforest.net/user/spruko
+Support	       :   support@spruko.com
+License        :   Licensed under ThemeForest License
 
------------------------------------------------------------------------------------
- */
-// *** utils ***
-@import "utils/variables";
+-------------------------------------------------------------------*/
+@import "variables";
 
-:root {
-  --theme-deafult: #6362e7;
-  --theme-secondary: #ffc500;
-}
 
-// *** base ***
-@import "base/reset";
-@import "base/typography";
+/*
+--- bootstrap-styles
+--- accordion
+--- alert
+--- avatars
+--- badges
+--- blackquote
+--- breadcrumb
+--- button
+--- buttons
+--- cards
+--- carousel
+--- dropdown
+--- forms
+--- grid
+--- input-group
+--- modal
+--- navigation
+--- pagination
+--- panel
+--- popover
+--- progress
+--- tables
+--- tags
+--- thumbnail
+--- tooltip
+--- components-col
+--- count-down
+--- custom-forms
+--- custom-styles
+--- file-manager
+--- font
+--- gallery
+--- highlight
+--- labels
+--- list-group
+--- media
+--- navbar
+--- pricing
+--- rating
+--- tabs-menu
+--- timeline
+--- footer
+--- header
+--- horizontal-menu
+--- icons-list
+--- item-styles
+--- loaders
+--- rtl
+--- sidemenu
+--- datepicker
+--- jvector
+--- select2
+--- select-group
+--- selectize
+--- accordion
+--- bootstrap-datepicker
+--- buttons.bootstrap5.min
+--- c3-chart
+--- clndr
+--- dataTables.bootstrap5
+--- date-picker
+--- daterangepicker
+--- demo
+--- fancy_fileupload
+--- fileupload
+--- flipclock
+--- fullcalendar
+--- gallery
+--- intlTelInput
+--- ion.rangeSlider
+--- ion.rangeSlider.skinFlat
+--- query-jvectormap-2.0.2
+--- jquery.countdown
+--- jquery.growl
+--- jquery.steps
+--- jquery.timepicker
+--- jquery.transfer
+--- jquerysctipttop
+--- jquerytransfer-icon_font
+--- leaflet
+--- main
+--- morris
+--- multi.min
+--- multiple-select
+--- notifIt
+--- nv.d3
+--- owl.carousel
+--- perfect-scrollbar
+--- quill.bubble
+--- quill.snow
+--- responsive.bootstrap5
+--- richtext
+--- select2.min
+--- sidebar
+--- smart_wizard_theme_arrows
+--- smart_wizard_theme_circles
+--- smart_wizard_theme_dots
+--- smart_wizard
+--- spectrum
+--- star-rating-svg
+--- sumoselect
+--- sweetalert
+--- tabs
+--- timeline.min
+--- treeview
+--- calender
+--- chart
+--- chat
+--- error-pages
+--- range
+--- ribbon
+--- form-wizard
+--- weather-cards
+--- widgets
+--- alignments
+--- background
+--- border
+--- display
+--- float-elements
+--- height
+--- margin
+--- padding
+--- position
+--- typography
+--- width
+*/
 
-//  *** components ***
-@import "components/according.scss";
-@import "components/alert.scss";
-@import "components/avatars.scss";
-@import "components/badge.scss";
-@import "components/bookmark.scss";
-@import "components/breadcrumb.scss";
-@import "components/builders.scss";
+/* ######## FONT ######## */
 
-@import "components/buttons.scss";
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900");
 
-@import "components/card.scss";
-@import "components/color.scss";
-@import "components/datatable.scss";
-@import "components/datepicker.scss";
-@import "components/dropdown.scss";
-@import "components/form-builder.scss";
-@import "components/form-input.scss";
-@import "components/form-wizard";
-@import "components/forms.scss";
-@import "components/form_builder-2.scss";
-@import "components/icons.scss";
-@import "components/list.scss";
-@import "components/loader.scss";
-@import "components/popover.scss";
-@import "components/print.scss";
-@import "components/radio.scss";
-@import "components/ribbon.scss";
-@import "components/switch.scss";
-@import "components/tab.scss";
-@import "components/table.scss";
-@import "components/touchspin.scss";
-@import "components/tour.scss";
-@import "components/tree.scss";
-@import "components/typeahead-search.scss";
-@import "components/scrollbar";
 
-//	*** pages ***
+/* ######## BOOTSTRAP ######## */ 
+@import "variables";
+@import "bootstrap/bootstrap-styles";
+@import "bootstrap/accordion";
+@import "bootstrap/alert";
+@import "bootstrap/avatars";
+@import "bootstrap/badges";
+@import "bootstrap/blackquote";
+@import "bootstrap/breadcrumb";
+@import "bootstrap/button";
+@import "bootstrap/buttons";
+@import "bootstrap/cards";
+@import "bootstrap/carousel";
+@import "bootstrap/dropdown";
+@import "bootstrap/forms";
+@import "bootstrap/grid";
+@import "bootstrap/input-group";
+@import "bootstrap/modal";
+@import "bootstrap/navigation";
+@import "bootstrap/pagination";
+@import "bootstrap/panel";
+@import "bootstrap/popover";
+@import "bootstrap/progress";
+@import "bootstrap/tables";
+@import "bootstrap/tags";
+@import "bootstrap/thumbnail";
+@import "bootstrap/tooltip";
 
-@import "pages/blog.scss";
-@import "pages/bookmark-app.scss";
-@import "pages/cart.scss";
-@import "pages/chart.scss";
-@import "pages/chat.scss";
-@import "pages/checkout.scss";
-@import "pages/comingsoon.scss";
-@import "pages/contacts.scss";
-@import "pages/dashboard_2.scss";
-@import "pages/dashboard_default.scss";
-@import "pages/_crypto-dashboard";
-@import "pages/ecommerce.scss";
-@import "pages/email-application.scss";
-@import "pages/errorpage.scss";
-@import "pages/faq.scss";
-@import "pages/file.scss";
-@import "pages/gallery.scss";
-@import "pages/internationalization.scss";
-@import "pages/job-search.scss";
-@import "pages/jsgrid.scss";
-@import "pages/kanban.scss";
-@import "pages/knowledgebase.scss";
-@import "pages/landing.scss";
-@import "pages/landing-responsive.scss";
-@import "pages/language.scss";
-@import "pages/learning.scss";
-@import "pages/login.scss";
-@import "pages/megaoption.scss";
-@import "pages/order-history.scss";
-@import "pages/page.scss";
-@import "pages/pricing.scss";
-@import "pages/progress.scss";
-@import "pages/projectlist.scss";
-@import "pages/social-app.scss";
-@import "pages/task.scss";
-@import "pages/invoice";
-@import "pages/timeline-v.scss";
-@import "pages/timeliny.scss";
-@import "pages/user-profile.scss";
-@import "pages/wishlist.scss";
-@import "pages/toast.scss";
-// @import "pages/calender-basic";
-@import "pages/steps";
+/*  ######## CUSTOM-STYLES ######## */ 
+@import "custom/components-col";
+@import "custom/count-down";
+@import "custom/custom-forms";
+@import "custom/custom-styles";
+@import "custom/file-manager";
+@import "custom/font";
+@import "custom/gallery";
+@import "custom/highlight";
+@import "custom/labels";
+@import "custom/list-group";
+@import "custom/media";
+@import "custom/navbar";
+@import "custom/pricing";
+@import "custom/rating";
+@import "custom/tabs-menu";
+@import "custom/timeline";
 
-/* ---------------------
-	*** themes ***
------------------------*/
-@import "themes/dark.scss";
-@import "themes/dark-sidebar.scss";
-@import "themes/theme-customizer.scss";
-@import "themes/update.scss";
-// *** layout ***
+/* ######## LAYOUT-STYLES ######## */
+@import "layouts/colors";
+@import "layouts/dark-style";
+@import "layouts/footer";
+@import "layouts/header";
+@import "layouts/horizontal-menu";
+@import "layouts/icons-list";
+@import "layouts/item-styles";
+@import "layouts/loaders";
+@import "layouts/rtl";
+@import "layouts/sidemenu";
+@import "layouts/skin-modes";
 
-@import "layout/footer.scss";
-@import "layout/grid.scss";
-@import "layout/header.scss";
-@import "layout/navs.scss";
-@import "layout/search.scss";
-@import "layout/select2.scss";
-@import "layout/sidebar.scss";
-@import "layout/rtl.scss";
-@import "layout/box-layout.scss";
+/* ######## LIBRARY-STYLES ######## */
+@import "lib/datepicker";
+@import "lib/jvector";
+@import "lib/select2";
+@import "lib/select-group";
+@import "lib/selectize";
+
+/* ######## TEMPLATE-STYLES ######## */
+@import "template/calender";
+@import "template/chart";
+@import "template/chat";
+@import "template/error-pages";
+@import "template/range";
+@import "template/ribbon";
+@import "template/form-wizard";
+@import "template/weather-cards";
+@import "template/widgets";
+
+/* ######## UTILITIES-STYLES ######## */
+@import "utilities/alignments";
+@import "utilities/background";
+@import "utilities/border";
+@import "utilities/display";
+@import "utilities/float-elements";
+@import "utilities/height";
+@import "utilities/margin";
+@import "utilities/padding";
+@import "utilities/position";
+@import "utilities/typography";
+@import "utilities/width";

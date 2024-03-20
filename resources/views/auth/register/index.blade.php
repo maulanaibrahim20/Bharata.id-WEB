@@ -1,76 +1,80 @@
 @extends('auth.index_login')
 @section('content')
-    <section>
-        <div class="container-fluid p-0">
-            <div class="row m-0">
-                <div class="col-xl-5"><img class="bg-img-cover bg-center" src="../assets/images/login/3.jpg" alt="looginpage">
+    <div class="page login-page">
+        <div>
+            <!-- CONTAINER OPEN -->
+            <div class="col col-login mx-auto mt-7">
+                <div class="text-center">
+                    <img src="{{ url('/assets') }}/images/brand/logo.png" class="header-brand-img" alt="">
                 </div>
-                <div class="col-xl-7 p-0">
-                    <div class="login-card">
-                        <form action="{{ route('register.process') }}" method="POST" class="theme-form login-form">
+            </div>
+            <div class="container-login100">
+                <div class="wrap-login100 p-0">
+                    <div class="card-body">
+                        <form action="{{ route('register.process') }}" method="POST" class="login100-form validate-form">
                             @csrf
-                            <h4>Create your account</h4>
-                            <h6>Enter your personal details to create account</h6>
-                            <div class="form-group">
-                                <label>Your Name</label>
-                                <div class="small-group">
-                                    <div class="input-group"><span class="input-group-text"><i class="icon-user"></i></span>
-                                        <input class="form-control" type="text" name="name" required=""
-                                            placeholder="Name">
-                                    </div>
-                                </div>
+                            <span class="login100-form-title">
+                                Registration
+                            </span>
+                            <div class="wrap-input100 validate-input"
+                                data-bs-validate = "Valid email is required: ex@abc.xyz">
+                                <input class="input100" type="text" name="name" placeholder="Your Name">
+                                <span class="focus-input100"></span>
+                                <span class="symbol-input100">
+                                    <i class="mdi mdi-account" aria-hidden="true"></i>
+                                </span>
                             </div>
-                            <div class="form-group">
-                                <label>Email Address</label>
-                                <div class="input-group"><span class="input-group-text"><i class="icon-email"></i></span>
-                                    <input class="form-control" name="email" id="email" type="email" required=""
-                                        placeholder="Test@gmail.com">
-                                </div>
+                            <div class="wrap-input100 validate-input"
+                                data-bs-validate = "Valid email is required: ex@abc.xyz">
+                                <input class="input100" type="email" name="email" placeholder="Email">
+                                <span class="focus-input100"></span>
+                                <span class="symbol-input100">
+                                    <i class="zmdi zmdi-email" aria-hidden="true"></i>
+                                </span>
                             </div>
-                            <div class="form-group">
-                                <label>Password</label>
-                                <div class="input-group"><span class="input-group-text"><i class="icon-lock"></i></span>
-                                    <input class="form-control" type="password" name="password" id="password"
-                                        required="" placeholder="*********">
-                                    <div class="show-hide"><span class="show"> </span></div>
-                                </div>
+                            <div class="wrap-input100 validate-input" data-bs-validate = "Password is required">
+                                <input class="input100" type="password" name="password" id="confirm_password"
+                                    placeholder="Password">
+                                <span class="focus-input100"></span>
+                                <span class="symbol-input100">
+                                    <i class="zmdi zmdi-lock" aria-hidden="true"></i>
+                                </span>
                             </div>
-                            <div class="form-group">
-                                <label>Confirm Password</label>
-                                <div class="input-group"><span class="input-group-text"><i class="icon-lock"></i></span>
-                                    <input class="form-control" type="password" id="confirm_password"
-                                        name="confirm_password" required="" placeholder="*********">
-                                    <div class="show-hide"><span class="show"> </span></div>
-                                </div>
+                            <div class="wrap-input100 validate-input" data-bs-validate = "Password is required">
+                                <input class="input100" type="password" name="confirm_password" id="confirm_password"
+                                    placeholder="Confirm Password">
+                                <span class="focus-input100"></span>
+                                <span class="symbol-input100">
+                                    <i class="zmdi zmdi-lock" aria-hidden="true"></i>
+                                </span>
                             </div>
-                            <div class="form-group">
-                                <button class="btn btn-primary btn-block" type="submit">Create Account</button>
+                            <div class="container-login100-form-btn">
+                                <button type="submit" class="login100-form-btn btn-primary">
+                                    Register
+                                </button>
                             </div>
-                            @if (session('error'))
-                                <div class="alert alert-danger">
-                                    {{ session('error') }}
-                                </div>
-                            @endif
-                            <div class="login-social-title">
-                                <h5>Sign in with</h5>
+                            <div class="text-center pt-3">
+                                <p class="text-dark mb-0">Already have account?<a href="{{ route('login.index') }}"
+                                        class="text-primary ms-1">Sign In</a></p>
                             </div>
-                            <div class="form-group">
-                                <ul class="login-social">
-                                    <li><a href="https://www.linkedin.com/login" target="_blank"><i
-                                                data-feather="linkedin"></i></a></li>
-                                    <li><a href="https://twitter.com" target="_blank"><i data-feather="twitter"></i></a>
-                                    </li>
-                                    <li><a href="https://www.facebook.com" target="_blank"><i
-                                                data-feather="facebook"></i></a></li>
-                                    <li><a href="https://www.instagram.com/login" target="_blank"><i
-                                                data-feather="instagram"> </i></a></li>
-                                </ul>
-                            </div>
-                            <p>Already have an account?<a class="ms-2" href="{{ route('login.index') }}">Sign in</a></p>
                         </form>
+                    </div>
+                    <div class="card-footer">
+                        <div class="d-flex justify-content-center my-3">
+                            <a href="" class="social-login  text-center me-4">
+                                <i class="fa fa-google"></i>
+                            </a>
+                            <a href="" class="social-login  text-center me-4">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                            <a href="" class="social-login  text-center">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
+            <!-- CONTAINER CLOSED -->
         </div>
-    </section>
+    </div>
 @endsection

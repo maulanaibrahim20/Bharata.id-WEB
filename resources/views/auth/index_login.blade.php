@@ -1,38 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" dir="ltr">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <!-- META DATA -->
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Zeta admin is super flexible, powerful, clean &amp; modern responsive bootstrap 5 admin template with unlimited possibilities.">
+    <meta name="description" content="Zanex – Bootstrap  Admin & Dashboard Template">
+    <meta name="author" content="Spruko Technologies Private Limited">
     <meta name="keywords"
-        content="admin template, Zeta admin template, dashboard template, flat admin template, responsive admin template, web app">
-    <meta name="author" content="pixelstrap">
-    <link rel="icon" href="{{ url('/assets') }}/images/logo/favicon-icon.png" type="image/x-icon">
-    <link rel="shortcut icon" href="{{ url('/assets') }}/images/logo/favicon-icon.png" type="image/x-icon">
-    <title>Zeta admin dashboard </title>
+        content="admin, dashboard, dashboard ui, admin dashboard template, admin panel dashboard, admin panel html, admin panel html template, admin panel template, admin ui templates, administrative templates, best admin dashboard, best admin templates, bootstrap 4 admin template, bootstrap admin dashboard, bootstrap admin panel, html css admin templates, html5 admin template, premium bootstrap templates, responsive admin template, template admin bootstrap 4, themeforest html">
+
+    <!-- FAVICON -->
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url('/assets') }}/images/brand/favicon.ico" />
+
+    <!-- TITLE -->
+    <title>Zanex – Bootstrap Admin & Dashboard Template</title>
     @include('auth.component.style_css')
+
 </head>
 
-<body>
-    <!-- Loader starts-->
-    <div class="loader-wrapper">
-        <div class="loader">
-            <div class="loader-bar"></div>
-            <div class="loader-bar"></div>
-            <div class="loader-bar"></div>
-            <div class="loader-bar"></div>
-            <div class="loader-bar"></div>
-            <div class="loader-ball"></div>
+<body class="login-img">
+
+    <!-- BACKGROUND-IMAGE -->
+    <div>
+
+        <!-- GLOABAL LOADER -->
+        <div id="global-loader">
+            <img src="{{ url('/assets') }}/images/loader.svg" class="loader-img" alt="Loader">
         </div>
+        <!-- /GLOABAL LOADER -->
+
+        <!-- PAGE -->
+        @yield('content')
+        <!-- End PAGE -->
+
     </div>
-    <!-- Loader ends-->
-    <!-- page-wrapper Start-->
-    @yield('content')
+    <!-- BACKGROUND-IMAGE CLOSED -->
     @include('auth.component.style_js')
     @include('sweetalert::alert')
+
 </body>
 
 </html>

@@ -1,82 +1,68 @@
 @extends('auth.index_login')
 @section('content')
-    <section>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-xl-7"><img class="bg-img-cover bg-center" src="{{ url('/assets') }}/images/login/2.jpg"
-                        alt="looginpage"></div>
-                <div class="col-xl-5 p-0">
-                    <div class="login-card">
-                        <form action="{{ route('login.process') }}" method="post" enctype="multipart/form-data"
-                            class="theme-form login-form">
-                            @if (session('error'))
-                                <div class="alert alert-danger">
-                                    {{ session('error') }}
-                                </div>
-                            @endif
-                            @if (session('warning'))
-                                <div class="alert alert-warning">
-                                    {{ session('warning') }}
-                                </div>
-                            @endif
-                            @if (session('danger'))
-                                <div class="alert alert-danger">
-                                    {{ session('danger') }}
-                                </div>
-                            @endif
-                            @if (session('success'))
-                                <div class="alert alert-success">
-                                    {{ session('success') }}
-                                </div>
-                            @endif
+    <div class="page login-page">
+        <div>
+            <!-- CONTAINER OPEN -->
+            <div class="col col-login mx-auto mt-7">
+                <div class="text-center">
+                    <img src="{{ url('/assets') }}/images/brand/logo.png" class="header-brand-img" alt="">
+                </div>
+            </div>
+            <div class="container-login100">
+                <div class="wrap-login100 p-0">
+                    <div class="card-body">
+                        <form action="{{ route('login.process') }}" method="POST" class="login100-form validate-form">
                             @csrf
-                            <h4>Login</h4>
-                            <h6>Welcome back! Log in to your account.</h6>
-                            <div class="form-group">
-                                <label>Email Address</label>
-                                <div class="input-group"><span class="input-group-text"><i class="icon-email"></i></span>
-                                    <input class="form-control" type="email" name="email" required=""
-                                        placeholder="Test@gmail.com">
-                                </div>
+                            <span class="login100-form-title">
+                                Login
+                            </span>
+                            <div class="wrap-input100 validate-input"
+                                data-bs-validate = "Valid email is required: ex@abc.xyz">
+                                <input class="input100" type="text" name="email" placeholder="Email">
+                                <span class="focus-input100"></span>
+                                <span class="symbol-input100">
+                                    <i class="zmdi zmdi-email" aria-hidden="true"></i>
+                                </span>
                             </div>
-                            <div class="form-group">
-                                <label>Password</label>
-                                <div class="input-group"><span class="input-group-text"><i class="icon-lock"></i></span>
-                                    <input class="form-control" type="password" name="password" required=""
-                                        placeholder="*********">
-                                    <div class="show-hide"><span class="show"> </span></div>
-                                </div>
+                            <div class="wrap-input100 validate-input" data-bs-validate = "Password is required">
+                                <input class="input100" type="password" name="password" placeholder="Password">
+                                <span class="focus-input100"></span>
+                                <span class="symbol-input100">
+                                    <i class="zmdi zmdi-lock" aria-hidden="true"></i>
+                                </span>
                             </div>
-                            <div class="form-group">
-                                <div class="checkbox">
-                                    <input id="checkbox1" type="checkbox">
-                                    <label class="text-muted" for="checkbox1">Remember password</label>
-                                </div><a class="link" href="{{ route('reset-password.index') }}">Forgot password?</a>
+                            <div class="text-end pt-1">
+                                <p class="mb-0"><a href="{{ route('reset-password.index') }}"
+                                        class="text-primary ms-1">Forgot
+                                        Password?</a></p>
                             </div>
-                            <div class="form-group">
-                                <button class="btn btn-primary btn-block" type="submit">Sign in</button>
+                            <div class="container-login100-form-btn">
+                                <button type="submit" class="login100-form-btn btn-primary">
+                                    Login
+                                </button>
                             </div>
-                            <div class="login-social-title">
-                                <h5>Sign in with</h5>
+                            <div class="text-center pt-3">
+                                <p class="text-dark mb-0">Not a member?<a href="{{ route('register.index') }}"
+                                        class="text-primary ms-1">Create an Account</a></p>
                             </div>
-                            <div class="form-group">
-                                <ul class="login-social">
-                                    <li><a href="https://www.linkedin.com" target="_blank"><i
-                                                data-feather="linkedin"></i></a></li>
-                                    <li><a href="https://twitter.com" target="_blank"><i data-feather="twitter"></i></a>
-                                    </li>
-                                    <li><a href="https://www.facebook.com" target="_blank"><i
-                                                data-feather="facebook"></i></a></li>
-                                    <li><a href="https://www.instagram.com" target="_blank"><i data-feather="instagram">
-                                            </i></a></li>
-                                </ul>
-                            </div>
-                            <p>Don't have account?<a class="ms-2" href="{{ route('register.index') }}">Create Account</a>
-                            </p>
                         </form>
+                    </div>
+                    <div class="card-footer">
+                        <div class="d-flex justify-content-center my-3">
+                            <a href="" class="social-login  text-center me-4">
+                                <i class="fa fa-google"></i>
+                            </a>
+                            <a href="" class="social-login  text-center me-4">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                            <a href="" class="social-login  text-center">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
+            <!-- CONTAINER CLOSED -->
         </div>
-    </section>
+    </div>
 @endsection
