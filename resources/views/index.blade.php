@@ -434,6 +434,10 @@
         <!-- FOOTER END -->
     </div>
     @include('template.component.style_js')
+    @yield('script')
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    @include('sweetalert::alert')
+
 
 </body>
 

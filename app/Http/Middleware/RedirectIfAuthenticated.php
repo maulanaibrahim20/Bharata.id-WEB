@@ -19,10 +19,8 @@ class RedirectIfAuthenticated
     {
         if (Auth::guard($guards)->check()) {
             if (Auth::user()->role_id == 1) {
-                return redirect("/super_admin/dashboard");
-            } else if (Auth::user()->role_id == 2) {
                 return redirect("/admin/dashboard");
-            } else if (Auth::user()->role_id == 3) {
+            } else if (Auth::user()->role_id == 2) {
                 return redirect("/member/dashboard");
             }
         }

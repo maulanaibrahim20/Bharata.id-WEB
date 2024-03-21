@@ -61,3 +61,26 @@
 
 <!-- CUSTOM JS -->
 <script src="{{ url('/assets') }}/js/custom.js"></script>
+
+<!-- DATA TABLE JS-->
+<script src="{{ url('/assets') }}/plugins/datatable/js/jquery.dataTables.min.js"></script>
+<script src="{{ url('/assets') }}/plugins/datatable/js/dataTables.bootstrap5.js"></script>
+<script src="{{ url('/assets') }}/plugins/datatable/js/dataTables.buttons.min.js"></script>
+<script src="{{ url('/assets') }}/plugins/datatable/js/buttons.bootstrap5.min.js"></script>
+<script src="{{ url('/assets') }}/plugins/datatable/js/jszip.min.js"></script>
+<script src="{{ url('/assets') }}/plugins/datatable/pdfmake/pdfmake.min.js"></script>
+<script src="{{ url('/assets') }}/plugins/datatable/pdfmake/vfs_fonts.js"></script>
+<script src="{{ url('/assets') }}/plugins/datatable/js/buttons.html5.min.js"></script>
+<script src="{{ url('/assets') }}/plugins/datatable/js/buttons.print.min.js"></script>
+<script src="{{ url('/assets') }}/plugins/datatable/js/buttons.colVis.min.js"></script>
+<script src="{{ url('/assets') }}/plugins/datatable/dataTables.responsive.min.js"></script>
+<script src="{{ url('/assets') }}/plugins/datatable/responsive.bootstrap5.min.js"></script>
+<script src="{{ url('/assets') }}/js/table-data.js"></script>
+
+<!-- WYSIWYG Editor JS -->
+<script src="{{ url('/assets') }}/plugins/wysiwyag/jquery.richtext.js"></script>
+<script src="{{ url('/assets') }}/plugins/wysiwyag/wysiwyag.js"></script>
+
+<!-- FORMEDITOR JS -->
+<script src="{{ url('/assets') }}/plugins/quill/quill.min.js"></script>
+<script src="{{ url('/assets') }}/js/form-editor2.js"></script>
