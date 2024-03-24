@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\WEB\Admin\CategoryController;
 use App\Http\Controllers\WEB\Auth\LoginController;
 use App\Http\Controllers\WEB\Auth\LogoutController;
 use App\Http\Controllers\WEB\Auth\RegisterController;
@@ -69,6 +70,7 @@ Route::middleware(['autentikasi'])->group(function () {
         Route::prefix('admin')->group(function () {
             Route::prefix('kelola')->group(function () {
                 Route::resource('produk', ProductController::class);
+                Route::resource('kategori', CategoryController::class);
             });
             Route::get('/dashboard', [DashboardController::class, 'admin']);
         });

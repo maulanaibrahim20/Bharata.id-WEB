@@ -32,20 +32,25 @@
                 <i class="side-menu__icon fe fe-home"></i><span class="side-menu__label">Dashboard</span></a>
                 @can('admin')
                     <li class="sub-category">
-                        <h3>Kelola Data</h3>
+                        <h3>Master Data</h3>
                     </li>
                     <li class="slide">
-                        <a class="side-menu__item {{ Request::segment(3) == 'produk' ? 'active' : '' }}"
+                        <a class="side-menu__item {{ Request::segment(3) == 'produk' || Request::segment(3) == 'kategori' ? 'active' : '' }}"
                             data-bs-toggle="slide" href="javascript:void(0);">
-                            <i class="side-menu__icon ti ti-user"></i><span class="side-menu__label">Kelola Data</span><i
-                                class="angle fa fa-angle-right"></i>
+                            <i class="side-menu__icon fa fa-database"></i><span class="side-menu__label">Master
+                                Data</span><i class="angle fa fa-angle-right"></i>
                         </a>
                         <ul class="slide-menu"
-                            style="{{ Request::segment(3) == 'produk' ? 'display: block;' : 'display: none;' }}">
+                            style="{{ Request::segment(3) == 'produk' || Request::segment(3) == 'kategori' ? 'display: block;' : 'display: none;' }}">
                             <li class="side-menu-label1"><a href="javascript:void(0)">Kelola Data</a></li>
                             <li><a href="{{ url('/admin/kelola/produk') }}"
                                     class="slide-item {{ Request::segment(3) == 'produk' ? 'active' : '' }}"> Kelola
-                                    Produk</a></li>
+                                    Produk</a>
+                            </li>
+                            <li><a href="{{ url('/admin/kelola/kategori') }}"
+                                    class="slide-item {{ Request::segment(3) == 'kategori' ? 'active' : '' }}"> Kelola
+                                    Kategori</a>
+                            </li>
                         </ul>
                     </li>
                 @endcan
