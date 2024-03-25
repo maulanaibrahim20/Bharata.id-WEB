@@ -8,6 +8,7 @@ use App\Http\Controllers\WEB\Auth\ResetPasswordController;
 use App\Http\Controllers\WEB\Auth\NewPasswordController;
 use App\Http\Controllers\WEB\DashboardController;
 use App\Http\Controllers\WEB\Admin\ProductController;
+use App\Http\Controllers\WEB\Admin\User\UserMemberController;
 use App\Http\Controllers\WEB\Auth\VerificationController;
 use Illuminate\Support\Facades\Route;
 
@@ -68,6 +69,9 @@ Route::middleware(['auth'])->name('web.')->group(function () {
 Route::middleware(['autentikasi'])->group(function () {
     Route::group(['middleware' => ['can:admin']], function () {
         Route::prefix('admin')->group(function () {
+            Route::prefix('pengguna')->group(function () {
+                Route::resource('member', UserMemberController::class);
+            });
             Route::prefix('kelola')->group(function () {
                 Route::resource('produk', ProductController::class);
                 Route::resource('kategori', CategoryController::class);

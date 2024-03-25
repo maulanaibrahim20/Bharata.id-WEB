@@ -32,6 +32,23 @@
                 <i class="side-menu__icon fe fe-home"></i><span class="side-menu__label">Dashboard</span></a>
                 @can('admin')
                     <li class="sub-category">
+                        <h3>Pengguna</h3>
+                    </li>
+                    <li class="slide">
+                        <a class="side-menu__item {{ Request::segment(3) == 'member' ? 'active' : '' }}"
+                            data-bs-toggle="slide" href="javascript:void(0);">
+                            <i class="side-menu__icon fa fa-user"></i><span class="side-menu__label">Pengguna</span><i
+                                class="angle fa fa-angle-right"></i>
+                        </a>
+                        <ul class="slide-menu"
+                            style="{{ Request::segment(3) == 'member' ? 'display: block;' : 'display: none;' }}">
+                            <li class="side-menu-label1"><a href="javascript:void(0)">Member</a></li>
+                            <li><a href="{{ url('/admin/pengguna/member') }}"
+                                    class="slide-item {{ Request::segment(3) == 'member' ? 'active' : '' }}">Member</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sub-category">
                         <h3>Master Data</h3>
                     </li>
                     <li class="slide">
