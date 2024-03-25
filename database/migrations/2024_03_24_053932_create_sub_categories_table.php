@@ -15,12 +15,9 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('categoryId');
             $table->string('slug')->unique();
-            $table->string('nameEng');
-            $table->string('nameInd');
+            $table->string('name');
             $table->string('thumbnailUrl')->nullable();
-            $table->string('nameEngDesc')->nullable();
-            $table->string('nameIndDesc')->nullable();
-            $table->string('nameIndContent')->nullable();
+            $table->string('description')->nullable();
             $table->timestamps();
 
             $table->foreign('categoryId')->references('id')->on('categories')->onDelete('cascade');

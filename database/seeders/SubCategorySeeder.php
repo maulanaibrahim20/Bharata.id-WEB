@@ -18,12 +18,9 @@ class SubCategorySeeder extends Seeder
             [
                 'categoryId' => 1,
                 'slug' => 'lighting-stage',
-                'nameEng' => 'Stage Lighting',
-                'nameInd' => 'Lighting Stage',
+                'name' => 'Lighting Stage',
                 'thumbnailUrl' => null,
-                'nameEngDesc' => null,
-                'nameIndDesc' => null,
-                'nameIndContent' => null,
+                'description' => null,
             ]
         ];
 
@@ -31,12 +28,9 @@ class SubCategorySeeder extends Seeder
             SubCategory::create([
                 'categoryId' => $data['categoryId'],
                 'slug' => $data['slug'],
-                'nameEng' => $data['nameEng'],
-                'nameInd' => $data['nameInd'],
+                'name' => $data['name'],
+                'description' => $data['description'],
                 'thumbnailUrl' => $data['thumbnailUrl'],
-                'nameEngDesc' => $data['nameEngDesc'],
-                'nameIndDesc' => $data['nameIndDesc'],
-                'nameIndContent' => $data['nameIndContent']
             ]);
         }
     }

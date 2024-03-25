@@ -13,16 +13,12 @@ return new class extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->string('nameEng');
-            $table->string('nameInd');
-            $table->string('groupEng');
-            $table->string('groupInd');
+            $table->string('name');
             $table->string('nameSlug')->unique();
+            $table->string('group');
             $table->string('groupSlug');
-            $table->text('descriptionEng')->nullable();
-            $table->text('descriptionInd')->nullable();
-            $table->string('homeThumbnailUrl')->nullable();
-            $table->string('nameThumbnailUrl')->nullable();
+            $table->text('description')->nullable();
+            $table->string('imageHomeThumbnailUrl')->nullable();
             $table->string('groupThumbnailUrl')->nullable();
             $table->timestamps();
         });

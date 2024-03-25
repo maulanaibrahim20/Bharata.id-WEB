@@ -9,10 +9,10 @@
             </ol>
         </div>
         <div class="ms-auto pageheader-btn">
-            <a href="{{ url('/admin/kelola/produk/create') }}" class="btn btn-success btn-icon text-white">
+            <a href="{{ url('/admin/kelola/kategori/create') }}" class="btn btn-success btn-icon text-white">
                 <span>
                     <i class="fe fe-plus"></i>
-                </span> Tambah Data Produk
+                </span> {{ $button_create }}
             </a>
         </div>
     </div>
@@ -26,6 +26,11 @@
                     <h3 class="card-title">{{ $title }}</h3>
                 </div>
                 <div class="card-body">
+                    @if (session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
                     <div class="table-responsive">
                         <table class="table table-bordered text-nowrap border-bottom" id="basic-datatable">
                             <thead>
@@ -34,28 +39,27 @@
                                     <th class="wd-15p border-bottom-0">Nama Kategori</th>
                                     <th class="wd-15p border-bottom-0">description</th>
                                     <th class="wd-15p border-bottom-0">image thumbnail</th>
-                                    <th class="wd-25p border-bottom-0">Action</th>
+                                    <th class="wd-25p border-bottom-0 text-center">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($kategori as $data)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $data->nameInd }}</td>
+                                        <td>{{ $data->name }}</td>
                                         <td>
-                                            @if ($data->descriptionInd)
-                                                {{ $data->descriptionInd }}
+                                            @if ($data->description)
+                                                {{ $data->description }}
                                             @else
                                                 <span class="badge bg-danger">Null</span>
                                             @endif
                                         </td>
-                                        <td><img src="{{ asset('category_thumbnail/thumbnail_1.jpg') }}"
+                                        <td><img src="{{ asset($data->imageHomeThumbnailUrl) }}"
                                                 style="width:60px;height:60">
                                         </td>
-                                        <td>
-                                            <a class="btn btn-icon btn-warning" data-bs-toggle="modal"
-                                                data-bs-target="#EditModal{{ $data->id }}"><i
-                                                    class="fe fe-edit"></i></a>
+                                        <td class="text-center">
+                                            <a href="{{ url('admin/kelola/kategori/' . $data->id . '/edit') }}"
+                                                class="btn btn-icon btn-warning"><i class="fe fe-edit"></i></a>
                                             <a class="btn btn-icon btn-primary" data-bs-toggle="modal"
                                                 data-bs-target="#SubCategoryModal{{ $data->id }}"><i
                                                     class="fe fe-eye"></i></a>
@@ -78,9 +82,8 @@
         </div>
     </div>
 
-
+    {{-- start view modal --}}
     @foreach ($kategori as $data)
-        <!-- Modal untuk menampilkan detail subkategori -->
         <div class="modal fade" id="SubCategoryModal{{ $data->id }}" tabindex="-1" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog">
@@ -100,7 +103,7 @@
                             <tbody>
                                 @foreach ($data->subcategories as $subcategory)
                                     <tr>
-                                        <td>{{ $subcategory->nameInd }}</td>
+                                        <td>{{ $subcategory->name }}</td>
                                         <td>{{ $subcategory->slug }}</td>
                                     </tr>
                                 @endforeach
@@ -114,4 +117,29 @@
             </div>
         </div>
     @endforeach
+    {{-- end view modal --}}
+@endsection
+
+@section('script')
+    <script>
+        $('.deleteBtn').on('click', function(e) {
+            e.preventDefault();
+            var id = $(this).data('id');
+            var deleteForm = $('#deleteForm' + id);
+            Swal.fire({
+                title: 'Anda yakin?',
+                text: "Data akan dihapus secara permanen!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Ya, hapus!',
+                cancelButtonText: 'Batal'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    deleteForm.submit();
+                }
+            });
+        });
+    </script>
 @endsection

@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Models\Kategori;
+namespace App\Models\Produk;
 
+use App\Models\Kategori\SubCategory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -9,8 +10,7 @@ class Category extends Model
 {
     use HasFactory;
 
-    protected $guarded  = [''];
-
+    protected $guarded = [''];
 
     public function subcategories()
     {

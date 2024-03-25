@@ -84,3 +84,14 @@
 <!-- FORMEDITOR JS -->
 <script src="{{ url('/assets') }}/plugins/quill/quill.min.js"></script>
 <script src="{{ url('/assets') }}/js/form-editor2.js"></script>
+
+<!-- FILE UPLOADES JS -->
+<script src="{{ url('/assets') }}/plugins/fileuploads/js/fileupload.js"></script>
+<script src="{{ url('/assets') }}/plugins/fileuploads/js/file-upload.js"></script>
+
+<!-- INTERNAL File-Uploads Js-->
+<script src="{{ url('/assets') }}/plugins/fancyuploder/jquery.ui.widget.js"></script>
+<script src="{{ url('/assets') }}/plugins/fancyuploder/jquery.fileupload.js"></script>
+<script src="{{ url('/assets') }}/plugins/fancyuploder/jquery.iframe-transport.js"></script>
+<script src="{{ url('/assets') }}/plugins/fancyuploder/jquery.fancy-fileupload.js"></script>
+<script src="{{ url('/assets') }}/plugins/fancyuploder/fancy-uploader.js"></script>
