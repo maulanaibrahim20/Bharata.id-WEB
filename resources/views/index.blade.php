@@ -19,6 +19,7 @@
     <title>Zanex – Bootstrap Admin & Dashboard Template </title>
 
     @include('template.component.style_css')
+    @yield('css')
 
 </head>
 

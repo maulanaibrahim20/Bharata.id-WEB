@@ -1,4 +1,4 @@
-$(function() {
+$(function () {
 
 	/*LIne-Chart */
 	var ctx = document.getElementById("chartLine").getContext('2d');
@@ -36,7 +36,7 @@ $(function() {
 				x: {
 					ticks: {
 						color: "#77778e",
-					 },
+					},
 					display: true,
 					grid: {
 						color: 'rgba(119, 119, 142, 0.2)'
@@ -45,7 +45,7 @@ $(function() {
 				y: {
 					ticks: {
 						color: "#77778e",
-					 },
+					},
 					display: true,
 					grid: {
 						color: 'rgba(119, 119, 142, 0.2)'
@@ -149,7 +149,7 @@ $(function() {
 				x: {
 					ticks: {
 						color: "#77778e",
-					 },
+					},
 					grid: {
 						color: 'rgba(119, 119, 142, 0.2)'
 					}
@@ -214,7 +214,7 @@ $(function() {
 				x: {
 					ticks: {
 						color: "#77778e",
-					 },
+					},
 					grid: {
 						color: 'rgba(119, 119, 142, 0.2)'
 					}
@@ -302,7 +302,7 @@ $(function() {
 				borderWidth: "1",
 				backgroundColor: "rgba(235, 111, 51,0.4)"
 			}]
-		}, 
+		},
 		options: {
 			responsive: true,
 			maintainAspectRatio: false,
@@ -321,7 +321,7 @@ $(function() {
 						beginAtZero: true,
 					},
 					pointLabels: {
-						color:'#77778e',
+						color: '#77778e',
 					},
 				}
 			},
@@ -338,7 +338,7 @@ $(function() {
 				data: [18, 15, 9, 6, 19],
 				backgroundColor: ['#6259ca', '#9959CA', '#ec546c', '#0774f8', '#CA59C0'],
 				hoverBackgroundColor: ['#6259ca', '#9959CA', '#09ad95', '#0774f8', '#CA59C0'],
-				borderColor:'transparent',
+				borderColor: 'transparent',
 			}],
 			labels: ["Data1", "Data2", "Data3", "Data4"]
 		},
@@ -346,7 +346,7 @@ $(function() {
 			scales: {
 				r: {
 					grid: {
-							color: 'rgba(119, 119, 142, 0.2)'
+						color: 'rgba(119, 119, 142, 0.2)'
 					}
 				}
 			},

@@ -1,4 +1,4 @@
-$(function(e) {
+$(function (e) {
 
 	//______Data-Table
 	$('#data-table').DataTable({
@@ -7,16 +7,16 @@ $(function(e) {
 			sSearch: '',
 		}
 	});
-	
+
 	//______Select2 
 	$('.select2').select2({
 		minimumResultsForSearch: Infinity
 	});
-	
- });
 
- function chartArea(){
-	 
+});
+
+function chartArea() {
+
 	/*-----echart1-----*/
 	var options = {
 		chart: {
@@ -33,7 +33,7 @@ $(function(e) {
 					zoomout: true,
 					pan: false,
 					reset: true | '<img src="/static/icons/reset.png" width="20">'
-				  },
+				},
 			},
 			dropShadow: {
 				enabled: true,
@@ -67,8 +67,8 @@ $(function(e) {
 			name: "Total Orders",
 			type: 'line',
 			data: [0, 45, 30, 75, 15, 94, 40, 115, 30, 105, 65, 110]
-			
-		},{
+
+		}, {
 			name: "Total Sales",
 			type: 'line',
 			data: [0, 60, 20, 130, 75, 130, 75, 140, 64, 130, 85, 120]
@@ -105,98 +105,97 @@ $(function(e) {
 		},
 		fill: {
 			gradient: {
-			  inverseColors: false,
-			  shade: 'light',
-			  type: "vertical",
-			  opacityFrom: 0.85,
-			  opacityTo: 0.55,
-			  stops: [0, 100, 100, 100]
+				inverseColors: false,
+				shade: 'light',
+				type: "vertical",
+				opacityFrom: 0.85,
+				opacityTo: 0.55,
+				stops: [0, 100, 100, 100]
 			}
-		  },
+		},
 		tooltip: {
-			show:false
+			show: false
 		},
 		legend: {
 			position: "top",
-			show:true
+			show: true
 		}
 	}
 	document.querySelector("#chartArea").innerHTML = "";
 	var chart = new ApexCharts(document.querySelector("#chartArea"), options);
 	chart.render();
- }
+}
 
- function recentOrders(){
+function recentOrders() {
 	var options = {
 		chart: {
-		height: 305,
-		type: 'radialBar',
-		responsive:'true',
-		offsetX: 0,
-		offsetY: 10,
-	},
-	plotOptions: {
-	    radialBar: {
-		startAngle: -135,
-		endAngle: 135,
-		size: 120,
-		imageWidth: 50,
-        imageHeight: 50,
-		track: {	
-			strokeWidth: "80%",	
+			height: 305,
+			type: 'radialBar',
+			responsive: 'true',
+			offsetX: 0,
+			offsetY: 10,
 		},
-		dropShadow: {
-			enabled: false,
-			top: 0,
-			left: 0,
-			bottom: 0,
-			blur: 3,
-			opacity: 0.5
-		},
-		dataLabels: {
-		  name: {
-			fontSize: '16px',
-			color: undefined,
-			offsetY: 30,
-		  },
-		  hollow: {	
-			 size: "60%"	
-			},
-		  value: {
-			offsetY: -10,
-			fontSize: '22px',
-			color: undefined,
-			formatter: function (val) {
-			  return val + "%";
+		plotOptions: {
+			radialBar: {
+				startAngle: -135,
+				endAngle: 135,
+				size: 120,
+				imageWidth: 50,
+				imageHeight: 50,
+				track: {
+					strokeWidth: "80%",
+				},
+				dropShadow: {
+					enabled: false,
+					top: 0,
+					left: 0,
+					bottom: 0,
+					blur: 3,
+					opacity: 0.5
+				},
+				dataLabels: {
+					name: {
+						fontSize: '16px',
+						color: undefined,
+						offsetY: 30,
+					},
+					hollow: {
+						size: "60%"
+					},
+					value: {
+						offsetY: -10,
+						fontSize: '22px',
+						color: undefined,
+						formatter: function (val) {
+							return val + "%";
+						}
+					}
+				}
 			}
-		  }
-		}
-	  }
-	},
-	colors: ['#ff5d9e'],
-	fill: {
-		type: "gradient",
-		gradient: {
-			shade: "gradient",
-			type: "horizontal",
-			shadeIntensity: .5,
-			gradientToColors: [myVarVal],
-			inverseColors: !0,
-			opacityFrom: 1,
-			opacityTo: 1,
-			stops: [0, 100]
-		}
-	},
-	stroke: {
-		dashArray: 4
-	},
-	series: [83],	
+		},
+		colors: ['#ff5d9e'],
+		fill: {
+			type: "gradient",
+			gradient: {
+				shade: "gradient",
+				type: "horizontal",
+				shadeIntensity: .5,
+				gradientToColors: [myVarVal],
+				inverseColors: !0,
+				opacityFrom: 1,
+				opacityTo: 1,
+				stops: [0, 100]
+			}
+		},
+		stroke: {
+			dashArray: 4
+		},
+		series: [83],
 		labels: [""]
 	};
-	
+
 	document.querySelector("#recentorders").innerHTML = "";
 	var chart = new ApexCharts(document.querySelector("#recentorders"), options);
 	chart.render();
- }
- 
- 
+}
+

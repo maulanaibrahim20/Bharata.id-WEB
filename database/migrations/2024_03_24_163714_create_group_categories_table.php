@@ -13,8 +13,7 @@ return new class extends Migration
     {
         Schema::create('group_categories', function (Blueprint $table) {
             $table->id();
-            $table->string('name_groupInd');
-            $table->string('name_groupEng');
+            $table->string('name');
             $table->timestamps();
         });
     }

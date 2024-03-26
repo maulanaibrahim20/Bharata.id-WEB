@@ -14,8 +14,7 @@ class GroupCategorySeeder extends Seeder
     public function run(): void
     {
         GroupCategory::create([
-            'name_groupInd' => 'Event Supplies',
-            'name_groupEng' => 'Lighting Stage',
+            'name' => 'Event Supplies',
         ]);
     }
 }

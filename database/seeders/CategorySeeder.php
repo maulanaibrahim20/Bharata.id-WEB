@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Kategori\Category;
+use App\Models\Produk\Category;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 

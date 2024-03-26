@@ -54,9 +54,9 @@
                                 <select name="group_kategori" id="group_kategori" class="form-control form-select select2">
                                     <option value="">-- pilih --</option>
                                     @foreach ($groupKategori as $data)
-                                        <option value="{{ $data->name_groupInd }}"
-                                            {{ $data->name_groupInd == $category->group ? 'selected' : '' }}>
-                                            {{ $data->name_groupInd }}
+                                        <option value="{{ $data->name }}"
+                                            {{ $data->name == $category->group ? 'selected' : '' }}>
+                                            {{ $data->name }}
                                         </option>
                                     @endforeach
                                 </select>
