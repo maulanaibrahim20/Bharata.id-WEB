@@ -9,7 +9,7 @@
             </ol>
         </div>
         <div class="ms-auto pageheader-btn">
-            <a href="{{ url('/admin/kelola/kategori/create') }}" class="btn btn-success btn-icon text-white">
+            <a href="{{ url('/admin/pengguna/member/create') }}" class="btn btn-success btn-icon text-white">
                 <span>
                     <i class="fe fe-plus"></i>
                 </span> {{ $button_create }}
@@ -34,26 +34,45 @@
                                 <tr>
                                     <th class="wd-15p border-bottom-0">No</th>
                                     <th class="wd-15p border-bottom-0">Nama Pengguna</th>
-                                    <th class="wd-15p border-bottom-0">Email</th>
+                                    <th class="wd-15p border-bottom-0 text-center">Jenis Kelamin</th>
                                     <th class="wd-15p border-bottom-0">Role</th>
                                     <th class="wd-25p border-bottom-0 text-center">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($user as $data)
-                                    <tr>
-                                        <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $data->name }}</td>
-                                        <td>{{ $data->email }}</td>
-                                        <td>{{ $data->getAkses->name }}</td>
+                                @foreach ($member as $data)
+                                    <tr class="border-bottom">
+                                        <td class="text-muted fs-15 fw-semibold text-center">{{ $loop->iteration }}</td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <span class="avatar avatar-md brround mt-1"
+                                                    style="background-image:  url('{{ asset('' . $data->image) }}')"></span>
+                                                <div class="ms-2 mt-0 mt-sm-2 d-block">
+                                                    <h6 class="mb-0 fs-14 fw-semibold">{{ $data->user->name }}</h6>
+                                                    <span class="fs-12 text-muted">{{ $data->user->email }}</span>
+                                                </div>
+                                            </div>
+                                        </td>
                                         <td class="text-center">
-                                            <a href="{{ url('admin/kelola/kategori/' . $data->id . '/edit') }}"
+                                            @if ($data->jenis_kelamin == 'pria')
+                                                <span
+                                                    class="badge bg-primary me-1 mb-1 mt-1">{{ $data->jenis_kelamin }}</span>
+                                            @elseif ($data->jenis_kelamin == 'wanita')
+                                                <span
+                                                    class="badge bg-success me-1 mb-1 mt-1">{{ $data->jenis_kelamin }}</span>
+                                            @endif
+                                        </td>
+
+                                        <td class="text-success fs-15 fw-semibold">{{ $data->user->getAkses->name }}
+                                        </td>
+                                        <td class="text-center">
+                                            <a href="{{ url('admin/pengguna/member/' . $data->id . '/edit') }}"
                                                 class="btn btn-icon btn-warning"><i class="fe fe-edit"></i></a>
                                             <a class="btn btn-icon btn-primary" data-bs-toggle="modal"
                                                 data-bs-target="#SubCategoryModal{{ $data->id }}"><i
                                                     class="fe fe-eye"></i></a>
                                             <form id="deleteForm{{ $data->id }}"
-                                                action="{{ url('/admin/kelola/kategori/' . $data->id) }}"
+                                                action="{{ url('/admin/pengguna/member/' . $data->id) }}"
                                                 style="display: inline;" method="POST">
                                                 @method('DELETE')
                                                 @csrf
