@@ -14,6 +14,6 @@ class DashboardController extends Controller
 
     public function member()
     {
-        return view('member.pages.dashboard.index');
+        return view('home.index');
     }
 }
