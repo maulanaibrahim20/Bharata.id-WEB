@@ -25,7 +25,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(['guest'])->group(function () {
     Route::get('/', function () {
-        return view('welcome');
+        return view('/home/index');
     });
     Route::prefix('login')->name('login.')->group(function () {
         Route::get('/', [LoginController::class, 'index'])
@@ -74,6 +74,6 @@ Route::middleware(['autentikasi'])->group(function () {
         });
     });
     Route::group(['middleware' => ['can:member']], function () {
-        Route::get('/member/dashboard', [DashboardController::class, 'member']);
+        Route::get('/home', [DashboardController::class, 'member']);
     });
 });

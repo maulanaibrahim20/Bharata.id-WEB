@@ -11,4 +11,5 @@ class Role extends Model
 
     const ADMIN = 1;
     const MEMBER = 2;
+    const MITRA = 3;
 }
