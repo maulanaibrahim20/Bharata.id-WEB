@@ -1,6 +1,5 @@
 @extends('index')
 @section('content')
-{{-- cekk request --}}
     <div class="page-header">
         <div>
             <h1 class="page-title">{{ $title }}</h1>
