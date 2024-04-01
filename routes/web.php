@@ -70,6 +70,9 @@ Route::middleware(['auth'])->name('web.')->group(function () {
 Route::middleware(['autentikasi'])->group(function () {
     Route::group(['middleware' => ['can:admin']], function () {
         Route::prefix('admin')->group(function () {
+            Route::get('/home', function () {
+                return view('home.index');
+            });
             Route::prefix('wilayah')->group(function () {
                 Route::get('/getKota', [WilayahController::class, 'getKota']);
                 Route::get('/getKecamatan', [WilayahController::class, 'getKecamatan']);
