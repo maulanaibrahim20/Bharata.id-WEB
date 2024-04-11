@@ -5,6 +5,7 @@ use App\Http\Controllers\WEB\Auth\LogoutController;
 use App\Http\Controllers\WEB\Auth\RegisterController;
 use App\Http\Controllers\WEB\Auth\ResetPasswordController;
 use App\Http\Controllers\WEB\Auth\NewPasswordController;
+use App\Http\Controllers\WEB\HomeController;
 use App\Http\Controllers\WEB\DashboardController;
 use App\Http\Controllers\WEB\Admin\ProductController;
 use App\Http\Controllers\WEB\Auth\VerificationController;
@@ -65,6 +66,26 @@ Route::middleware(['auth'])->name('web.')->group(function () {
 });
 
 Route::middleware(['autentikasi'])->group(function () {
+    Route::get('/home/profil', function () {
+        return view('home.profil.index');
+    });
+
+    Route::get('/registration-mitra', function () {
+        return view('registration-mitra.index');
+    });
+
+    Route::get('/admin/dashboard/users', function () {
+        return view('admin.pages.users.index');
+    });
+
+    Route::get('/admin/dashboard/users/add', function () {
+        return view('admin.pages.users.add');
+    });
+
+    Route::get('/admin/dashboard/profil', function () {
+        return view('admin.pages.profil.index');
+    });
+
     Route::group(['middleware' => ['can:admin']], function () {
         Route::prefix('admin')->group(function () {
             Route::prefix('kelola')->group(function () {

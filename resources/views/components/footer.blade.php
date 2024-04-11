@@ -1,4 +1,4 @@
-<footer class="bg-gray-200 p-4">
+<footer class="bg-gray-200 p-5">
     <div class="container p-3 grid grid-cols-1 md:grid-cols-3 gap-4">
         <!-- Bagian 1 -->
         <div class="md:col-span-2">

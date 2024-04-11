@@ -1,444 +1,115 @@
-<!doctype html>
-<html lang="en" dir="ltr">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-
-    <!-- META DATA -->
     <meta charset="UTF-8">
-    <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Zanex – Bootstrap  Admin & Dashboard Template">
-    <meta name="author" content="Spruko Technologies Private Limited">
-    <meta name="keywords"
-        content="admin, dashboard, dashboard ui, admin dashboard template, admin panel dashboard, admin panel html, admin panel html template, admin panel template, admin ui templates, administrative templates, best admin dashboard, best admin templates, bootstrap 4 admin template, bootstrap admin dashboard, bootstrap admin panel, html css admin templates, html5 admin template, premium bootstrap templates, responsive admin template, template admin bootstrap 4, themeforest html">
-
-    <!-- FAVICON -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{ url('/assets') }}/images/brand/favicon.ico" />
-
-    <!-- TITLE -->
-    <title>Zanex – Bootstrap Admin & Dashboard Template </title>
-
-    @include('template.component.style_css')
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Bharata.id</title>
 </head>
 
-<body class="app sidebar-mini ltr light-mode">
-
-    <!-- GLOBAL-LOADER -->
-    <div id="global-loader">
-        <img src="{{ url('/assets') }}/images/loader.svg" class="loader-img" alt="Loader">
-    </div>
-    <!-- /GLOBAL-LOADER -->
-
-    <!-- PAGE -->
-    <div class="page">
-        <div class="page-main">
-
-            <!-- app-Header -->
-            @include('template.header')
-            <!-- /app-Header -->
-
-            <!--APP-SIDEBAR-->
-            @include('template.sidebar')
-            <!--/APP-SIDEBAR-->
-
-            <!--app-content open-->
-            <div class="main-content app-content mt-0">
-                <div class="side-app">
-
-                    <!-- CONTAINER -->
-                    <div class="main-container container-fluid">
-
-                        <!-- PAGE-HEADER -->
-                        {{-- <div class="page-header">
-                            <div>
-                                <h1 class="page-title">Dashboard 01</h1>
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="javascript:void(0);">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Dashboard 01</li>
-                                </ol>
-                            </div>
-                            <div class="ms-auto pageheader-btn">
-                                <a href="javascript:void(0);" class="btn btn-primary btn-icon text-white me-2">
-                                    <span>
-                                        <i class="fe fe-plus"></i>
-                                    </span> Add Account
-                                </a>
-                                <a href="javascript:void(0);" class="btn btn-success btn-icon text-white">
-                                    <span>
-                                        <i class="fe fe-log-in"></i>
-                                    </span> Export
-                                </a>
-                            </div>
-                        </div> --}}
-                        <!-- PAGE-HEADER END -->
-                        @yield('content')
-                    </div>
-                    <!-- CONTAINER END -->
+<body>
+    <nav class="fixed top-0 z-50 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+        <div class="px-3 py-3 lg:px-5 lg:pl-3">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center justify-start rtl:justify-end">
+                    <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar"
+                        aria-controls="logo-sidebar" type="button"
+                        class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+                        <span class="sr-only">Open sidebar</span>
+                        <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path clip-rule="evenodd" fill-rule="evenodd"
+                                d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z">
+                            </path>
+                        </svg>
+                    </button>
+                    <a href="{{ url('admin/dashboard') }}" class="flex ms-2 md:me-24">
+                        {{-- <img src="" class="h-8 me-3" alt="Extroverse" /> --}}
+                        <span
+                            class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">Bharata.id</span>
+                    </a>
                 </div>
-            </div>
-            <!--app-content end-->
-        </div>
-
-        <!-- Sidebar-right -->
-        <div class="sidebar sidebar-right sidebar-animate">
-            <div class="panel panel-primary card mb-0 shadow-none border-0">
-                <div class="tab-menu-heading border-0 d-flex p-3">
-                    <div class="card-title mb-0">Notifications</div>
-                    <div class="card-options ms-auto">
-                        <a href="javascript:void(0);" class="sidebar-icon text-end float-end me-1"
-                            data-bs-toggle="sidebar-right" data-target=".sidebar-right"><i
-                                class="fe fe-x text-white"></i></a>
-                    </div>
-                </div>
-                <div class="panel-body tabs-menu-body latest-tasks p-0 border-0">
-                    <div class="tabs-menu border-bottom">
-                        <!-- Tabs -->
-                        <ul class="nav panel-tabs">
-                            <li class=""><a href="#side1" class="active" data-bs-toggle="tab"><i
-                                        class="fe fe-user me-1"></i> Profile</a></li>
-                            <li><a href="#side2" data-bs-toggle="tab"><i class="fe fe-users me-1"></i>
-                                    Contacts</a></li>
-                            <li><a href="#side3" data-bs-toggle="tab"><i class="fe fe-settings me-1"></i>
-                                    Settings</a></li>
-                        </ul>
-                    </div>
-                    <div class="tab-content">
-                        <div class="tab-pane active" id="side1">
-                            <div class="card-body text-center">
-                                <div class="dropdown user-pro-body">
-                                    <div class="">
-                                        <img alt="user-img" class="avatar avatar-xl brround mx-auto text-center"
-                                            src="{{ url('/assets') }}/images/faces/6.jpg"><span
-                                            class="avatar-status profile-status bg-green"></span>
-                                    </div>
-                                    <div class="user-info mg-t-20">
-                                        <h6 class="fw-semibold  mt-2 mb-0">Mintrona Pechon</h6>
-                                        <span class="mb-0 text-muted fs-12">Premium Member</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <a class="dropdown-item d-flex border-bottom border-top" href="profile.html">
-                                <div class="d-flex"><i class="fe fe-user me-3 tx-20 text-muted"></i>
-                                    <div class="pt-1">
-                                        <h6 class="mb-0">My Profile</h6>
-                                        <p class="tx-12 mb-0 text-muted">Profile Personal information</p>
-                                    </div>
-                                </div>
-                            </a>
-                            <a class="dropdown-item d-flex border-bottom" href="chat.html">
-                                <div class="d-flex"><i class="fe fe-message-square me-3 tx-20 text-muted"></i>
-                                    <div class="pt-1">
-                                        <h6 class="mb-0">My Messages</h6>
-                                        <p class="tx-12 mb-0 text-muted">Person message information</p>
-                                    </div>
-                                </div>
-                            </a>
-                            <a class="dropdown-item d-flex border-bottom" href="emailservices.html">
-                                <div class="d-flex"><i class="fe fe-mail me-3 tx-20 text-muted"></i>
-                                    <div class="pt-1">
-                                        <h6 class="mb-0">My Mails</h6>
-                                        <p class="tx-12 mb-0 text-muted">Persons mail information</p>
-                                    </div>
-                                </div>
-                            </a>
-                            <a class="dropdown-item d-flex border-bottom" href="editprofile.html">
-                                <div class="d-flex"><i class="fe fe-settings me-3 tx-20 text-muted"></i>
-                                    <div class="pt-1">
-                                        <h6 class="mb-0">Account Settings</h6>
-                                        <p class="tx-12 mb-0 text-muted">Settings Information</p>
-                                    </div>
-                                </div>
-                            </a>
-                            <a class="dropdown-item d-flex border-bottom" href="login.html">
-                                <div class="d-flex"><i class="fe fe-power me-3 tx-20 text-muted"></i>
-                                    <div class="pt-1">
-                                        <h6 class="mb-0">Sign Out</h6>
-                                        <p class="tx-12 mb-0 text-muted">Account Signout</p>
-                                    </div>
-                                </div>
-                            </a>
+                <div class="flex items-center">
+                    <div class="flex items-center ms-3">
+                        <div>
+                            <button type="button"
+                                class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+                                aria-expanded="false" data-dropdown-toggle="dropdown-user">
+                                <span class="sr-only">Open user menu</span>
+                                <img src="{{ asset('storage/photo-user/' . auth()->user()->image) }}" alt="foto user"
+                                    class="w-8 h-8 rounded-full" />
+                            </button>
                         </div>
-                        <div class="tab-pane" id="side2">
-                            <div class="list-group list-group-flush ">
-                                <div class="list-group-item d-flex  align-items-center">
-                                    <div class="me-2">
-                                        <span class="avatar avatar-md brround cover-image"
-                                            data-bs-image-src="{{ url('/assets') }}/images/faces/9.jpg"><span
-                                                class="avatar-status bg-success"></span></span>
-                                    </div>
-                                    <div class="">
-                                        <div class="fw-semibold" data-bs-toggle="modal" data-target="#chatmodel">
-                                            Mozelle Belt</div>
-                                        <p class="mb-0 tx-12 text-muted">mozellebelt@gmail.com</p>
-                                    </div>
-                                </div>
-                                <div class="list-group-item d-flex  align-items-center">
-                                    <div class="me-2">
-                                        <span class="avatar avatar-md brround cover-image"
-                                            data-bs-image-src="{{ url('/assets') }}/images/faces/11.jpg"></span>
-                                    </div>
-                                    <div class="">
-                                        <div class="fw-semibold" data-bs-toggle="modal" data-target="#chatmodel">
-                                            Florinda Carasco</div>
-                                        <p class="mb-0 tx-12 text-muted">florindacarasco@gmail.com</p>
-                                    </div>
-                                </div>
-                                <div class="list-group-item d-flex  align-items-center">
-                                    <div class="me-2">
-                                        <span class="avatar avatar-md brround cover-image"
-                                            data-bs-image-src="{{ url('/assets') }}/images/faces/10.jpg"><span
-                                                class="avatar-status bg-success"></span></span>
-                                    </div>
-                                    <div class="">
-                                        <div class="fw-semibold" data-bs-toggle="modal" data-target="#chatmodel">
-                                            Alina Bernier</div>
-                                        <p class="mb-0 tx-12 text-muted">alinaaernier@gmail.com</p>
-                                    </div>
-                                </div>
-                                <div class="list-group-item d-flex  align-items-center">
-                                    <div class="me-2">
-                                        <span class="avatar avatar-md brround cover-image"
-                                            data-bs-image-src="{{ url('/assets') }}/images/faces/2.jpg"><span
-                                                class="avatar-status bg-success"></span></span>
-                                    </div>
-                                    <div class="">
-                                        <div class="fw-semibold" data-bs-toggle="modal" data-target="#chatmodel">
-                                            Zula Mclaughin</div>
-                                        <p class="mb-0 tx-12 text-muted">zulamclaughin@gmail.com</p>
-                                    </div>
-                                </div>
-                                <div class="list-group-item d-flex  align-items-center">
-                                    <div class="me-2">
-                                        <span class="avatar avatar-md brround cover-image"
-                                            data-bs-image-src="{{ url('/assets') }}/images/faces/13.jpg"></span>
-                                    </div>
-                                    <div class="">
-                                        <div class="fw-semibold" data-bs-toggle="modal" data-target="#chatmodel">
-                                            Isidro Heide</div>
-                                        <p class="mb-0 tx-12 text-muted">isidroheide@gmail.com</p>
-                                    </div>
-                                </div>
-                                <div class="list-group-item d-flex  align-items-center">
-                                    <div class="me-2">
-                                        <span class="avatar avatar-md brround cover-image"
-                                            data-bs-image-src="{{ url('/assets') }}/images/faces/12.jpg"><span
-                                                class="avatar-status bg-success"></span></span>
-                                    </div>
-                                    <div class="">
-                                        <div class="fw-semibold" data-bs-toggle="modal" data-target="#chatmodel">
-                                            Mozelle Belt</div>
-                                        <p class="mb-0 tx-12 text-muted">mozellebelt@gmail.com</p>
-                                    </div>
-                                </div>
-                                <div class="list-group-item d-flex  align-items-center">
-                                    <div class="me-2">
-                                        <span class="avatar avatar-md brround cover-image"
-                                            data-bs-image-src="{{ url('/assets') }}/images/faces/4.jpg"></span>
-                                    </div>
-                                    <div class="">
-                                        <div class="fw-semibold" data-bs-toggle="modal" data-target="#chatmodel">
-                                            Florinda Carasco</div>
-                                        <p class="mb-0 tx-12 text-muted">florindacarasco@gmail.com</p>
-                                    </div>
-                                </div>
-                                <div class="list-group-item d-flex  align-items-center">
-                                    <div class="me-2">
-                                        <span class="avatar avatar-md brround cover-image"
-                                            data-bs-image-src="{{ url('/assets') }}/images/faces/7.jpg"></span>
-                                    </div>
-                                    <div class="">
-                                        <div class="fw-semibold" data-bs-toggle="modal" data-target="#chatmodel">
-                                            Alina Bernier</div>
-                                        <p class="mb-0 tx-12 text-muted">alinabernier@gmail.com</p>
-                                    </div>
-                                </div>
-                                <div class="list-group-item d-flex  align-items-center">
-                                    <div class="me-2">
-                                        <span class="avatar avatar-md brround cover-image"
-                                            data-bs-image-src="{{ url('/assets') }}/images/faces/2.jpg"></span>
-                                    </div>
-                                    <div class="">
-                                        <div class="fw-semibold" data-bs-toggle="modal" data-target="#chatmodel">
-                                            Zula Mclaughin</div>
-                                        <p class="mb-0 tx-12 text-muted">zulamclaughin@gmail.com</p>
-                                    </div>
-                                </div>
-                                <div class="list-group-item d-flex  align-items-center">
-                                    <div class="me-2">
-                                        <span class="avatar avatar-md brround cover-image"
-                                            data-bs-image-src="{{ url('/assets') }}/images/faces/14.jpg"><span
-                                                class="avatar-status bg-success"></span></span>
-                                    </div>
-                                    <div class="">
-                                        <div class="fw-semibold" data-bs-toggle="modal" data-target="#chatmodel">
-                                            Isidro Heide</div>
-                                        <p class="mb-0 tx-12 text-muted">isidroheide@gmail.com</p>
-                                    </div>
-                                </div>
-                                <div class="list-group-item d-flex  align-items-center">
-                                    <div class="me-2">
-                                        <span class="avatar avatar-md brround cover-image"
-                                            data-bs-image-src="{{ url('/assets') }}/images/faces/11.jpg"></span>
-                                    </div>
-                                    <div class="">
-                                        <div class="fw-semibold" data-bs-toggle="modal" data-target="#chatmodel">
-                                            Florinda Carasco</div>
-                                        <p class="mb-0 tx-12 text-muted">florindacarasco@gmail.com</p>
-                                    </div>
-                                </div>
-                                <div class="list-group-item d-flex  align-items-center">
-                                    <div class="me-2">
-                                        <span class="avatar avatar-md brround cover-image"
-                                            data-bs-image-src="{{ url('/assets') }}/images/faces/9.jpg"></span>
-                                    </div>
-                                    <div class="">
-                                        <div class="fw-semibold" data-bs-toggle="modal" data-target="#chatmodel">
-                                            Alina Bernier</div>
-                                        <p class="mb-0 tx-12 text-muted">alinabernier@gmail.com</p>
-                                    </div>
-                                </div>
-                                <div class="list-group-item d-flex  align-items-center">
-                                    <div class="me-2">
-                                        <span class="avatar avatar-md brround cover-image"
-                                            data-bs-image-src="{{ url('/assets') }}/images/faces/15.jpg"><span
-                                                class="avatar-status bg-success"></span></span>
-                                    </div>
-                                    <div class="">
-                                        <div class="fw-semibold" data-bs-toggle="modal" data-target="#chatmodel">
-                                            Zula Mclaughin</div>
-                                        <p class="mb-0 tx-12 text-muted">zulamclaughin@gmail.com</p>
-                                    </div>
-                                </div>
-                                <div class="list-group-item d-flex  align-items-center">
-                                    <div class="me-2">
-                                        <span class="avatar avatar-md brround cover-image"
-                                            data-bs-image-src="{{ url('/assets') }}/images/faces/4.jpg"></span>
-                                    </div>
-                                    <div class="">
-                                        <div class="fw-semibold" data-bs-toggle="modal" data-target="#chatmodel">
-                                            Isidro Heide</div>
-                                        <p class="mb-0 tx-12 text-muted">isidroheide@gmail.com</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane" id="side3">
-                            <a class="dropdown-item bg-gray-100 pd-y-10" href="javascript:void(0);">
-                                Account Settings
-                            </a>
-                            <div class="card-body">
-                                <div class="form-group mg-b-10">
-                                    <label class="custom-switch ps-0">
-                                        <input type="checkbox" name="custom-switch-checkbox"
-                                            class="custom-switch-input" checked>
-                                        <span class="custom-switch-indicator"></span>
-                                        <span class="custom-switch-description mg-l-10">Updates Automatically</span>
-                                    </label>
-                                </div>
-                                <div class="form-group mg-b-10">
-                                    <label class="custom-switch ps-0">
-                                        <input type="checkbox" name="custom-switch-checkbox"
-                                            class="custom-switch-input">
-                                        <span class="custom-switch-indicator"></span>
-                                        <span class="custom-switch-description mg-l-10">Allow Location Map</span>
-                                    </label>
-                                </div>
-                                <div class="form-group mg-b-10">
-                                    <label class="custom-switch ps-0">
-                                        <input type="checkbox" name="custom-switch-checkbox"
-                                            class="custom-switch-input" checked>
-                                        <span class="custom-switch-indicator"></span>
-                                        <span class="custom-switch-description mg-l-10">Show Contacts</span>
-                                    </label>
-                                </div>
-                                <div class="form-group mg-b-10">
-                                    <label class="custom-switch ps-0">
-                                        <input type="checkbox" name="custom-switch-checkbox"
-                                            class="custom-switch-input" checked>
-                                        <span class="custom-switch-indicator"></span>
-                                        <span class="custom-switch-description mg-l-10">Show Notication</span>
-                                    </label>
-                                </div>
-                                <div class="form-group mg-b-10">
-                                    <label class="custom-switch ps-0">
-                                        <input type="checkbox" name="custom-switch-checkbox"
-                                            class="custom-switch-input">
-                                        <span class="custom-switch-indicator"></span>
-                                        <span class="custom-switch-description mg-l-10">Show Tasks Statistics</span>
-                                    </label>
-                                </div>
-                                <div class="form-group mg-b-10">
-                                    <label class="custom-switch ps-0">
-                                        <input type="checkbox" name="custom-switch-checkbox"
-                                            class="custom-switch-input" checked>
-                                        <span class="custom-switch-indicator"></span>
-                                        <span class="custom-switch-description mg-l-10">Show Email Notification</span>
-                                    </label>
-                                </div>
-                            </div>
-                            <a class="dropdown-item bg-gray-100 pd-y-10" href="javascript:void(0);">
-                                General Settings
-                            </a>
-                            <div class="card-body">
-                                <div class="form-group mg-b-10">
-                                    <label class="custom-switch ps-0">
-                                        <input type="checkbox" name="custom-switch-checkbox"
-                                            class="custom-switch-input" checked>
-                                        <span class="custom-switch-indicator"></span>
-                                        <span class="custom-switch-description mg-l-10">Show User Online</span>
-                                    </label>
-                                </div>
-                                <div class="form-group mg-b-10">
-                                    <label class="custom-switch ps-0">
-                                        <input type="checkbox" name="custom-switch-checkbox"
-                                            class="custom-switch-input">
-                                        <span class="custom-switch-indicator"></span>
-                                        <span class="custom-switch-description mg-l-10">Website Notication</span>
-                                    </label>
-                                </div>
-                                <div class="form-group mg-b-10">
-                                    <label class="custom-switch ps-0">
-                                        <input type="checkbox" name="custom-switch-checkbox"
-                                            class="custom-switch-input">
-                                        <span class="custom-switch-indicator"></span>
-                                        <span class="custom-switch-description mg-l-10">Show Recent activity</span>
-                                    </label>
-                                </div>
-                                <div class="form-group mg-b-10">
-                                    <label class="custom-switch ps-0">
-                                        <input type="checkbox" name="custom-switch-checkbox"
-                                            class="custom-switch-input">
-                                        <span class="custom-switch-indicator"></span>
-                                        <span class="custom-switch-description mg-l-10">Logout Automatically</span>
-                                    </label>
-                                </div>
-                                <div class="form-group mg-b-10">
-                                    <label class="custom-switch ps-0">
-                                        <input type="checkbox" name="custom-switch-checkbox"
-                                            class="custom-switch-input" checked>
-                                        <span class="custom-switch-indicator"></span>
-                                        <span class="custom-switch-description mg-l-10">Allow All Notifications</span>
-                                    </label>
-                                </div>
-                            </div>
+                        <div class="max-w-full z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600"
+                            id="dropdown-user">
+                            <ul class="py-1" role="none">
+                                <li>
+                                    <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white cursor-pointer"
+                                        role="menuitem" href="/admin/dashboard/profil">Account</a>
+                                </li>
+                                {{-- <li>
+                                <a href=""
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
+                                    role="menuitem">Registration Distributor</a>
+                            </li> --}}
+                                <li>
+                                    <a href="/logout" method='POST'
+                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
+                                        role="menuitem">Log out</a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!--/Sidebar-right-->
+    </nav>
 
-        <!-- FOOTER -->
-        @include('template.footer')
-        <!-- FOOTER END -->
-    </div>
-    @include('template.component.style_js')
-    @yield('script')
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    @include('sweetalert::alert')
+    <aside id="logo-sidebar"
+        class="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700"
+        aria-label="Sidebar">
+        <div class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
+            <ul class="space-y-2 font-medium">
+                <li>
+                    <a style="cursor:pointer;"
+                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+                        href="/admin/dashboard">
+                        <span class="ms-3"><i class="bi bi-house-door"></i> Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a style="cursor:pointer;"
+                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+                        href="/admin/dashboard/users">
+                        <span class="flex-1 ms-3 whitespace-nowrap"><i class="bi bi-people"></i> Users</span>
+                    </a>
+                </li>
+                <li>
+                    <a style="cursor:pointer;"
+                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+                        href="/admin/dashboard/post">
+                        <span class="flex-1 ms-3 whitespace-nowrap"><i class="bi bi-images"></i> Post</span>
+                    </a>
+                </li>
+                <li>
+                    <a style="cursor:pointer;"
+                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+                        href="/admin/dashboard/chat">
 
-
+                        <span class="flex-1 ms-3 whitespace-nowrap"><i class="bi bi-chat-dots"></i> Messages</span>
+                        <span
+                            class="inline-flex items-center justify-center w-3 h-3 p-3 ms-3 text-sm font-medium text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300">3</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </aside>
+    @yield('content')
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
 </body>
 
 </html>

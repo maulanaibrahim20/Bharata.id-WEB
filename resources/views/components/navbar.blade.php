@@ -1,7 +1,7 @@
     {{-- NAVBAR --}}
     <nav class="bg-white border-gray-200 dark:bg-gray-900 fixed-top shadow">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-            <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <a href="/home" class="flex items-center space-x-3 rtl:space-x-reverse">
                 {{-- <img src="" class="h-8" alt="Bharata.id Logo" /> --}}
                 <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Bharata.id</span>
             </a>
@@ -18,13 +18,13 @@
                     <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600"
                         id="user-dropdown">
                         <div class="px-4 py-3">
-                            <span class="block text-sm text-gray-900 dark:text-white">Bonnie Green</span>
-                            <span class="block text-sm  text-gray-500 truncate dark:text-gray-400">name@Bharata.id</span>
+                            <span class="block text-sm text-gray-900 dark:text-white">{{ Auth::user()->name }}</span>
+                            <span class="block text-sm  text-gray-500 truncate dark:text-gray-400">{{ Auth::user()->email }}</span>
                         </div>
                         <ul class="py-2" aria-labelledby="user-menu-button">
                             <li>
-                                <a href="#"
-                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Dashboard</a>
+                                <a href="/home/profil"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Profil</a>
                             </li>
                             <li>
                                 <a href="#"
@@ -32,7 +32,7 @@
                             </li>
                             <li>
                                 <a href="#"
-                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Earnings</a>
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Registration Mitra</a>
                             </li>
                             <li>
                                 <a href="/logout"

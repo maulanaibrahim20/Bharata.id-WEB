@@ -46,7 +46,7 @@ class LoginController extends Controller
             if ($user->role_id == Role::ADMIN) {
                 return redirect('/admin/dashboard');
             } elseif ($user->role_id == Role::MITRA) {
-                return redirect('/home');
+                return redirect('/mitra/dashboard');
             } elseif ($user->role_id == Role::MEMBER) {
                 return redirect('/home');
             }
