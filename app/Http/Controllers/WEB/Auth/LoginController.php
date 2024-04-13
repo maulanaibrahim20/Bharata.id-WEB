@@ -27,6 +27,11 @@ class LoginController extends Controller
 
     public function process(LoginRequest $request)
     {
+        $request->validate([
+            'email' => 'required',
+            'password' => 'required',
+        ]);
+
         $user = $this->user->whereEmail($request->email)->first();
         if (!$user) {
             Alert::error('Maaf Akun Anda Tidak Terdaftar');

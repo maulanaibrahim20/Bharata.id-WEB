@@ -28,6 +28,12 @@ class RegisterController extends Controller
 
     public function process(RegisterRequest $request)
     {
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|min:6',
+        ]);
+
         DB::beginTransaction();
 
         $request->merge([
