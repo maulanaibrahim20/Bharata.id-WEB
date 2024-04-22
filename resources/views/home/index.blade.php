@@ -129,7 +129,7 @@
         </div>
         {{-- CARD PRODUK --}}
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
-            <div
+            <a href="{{url('home/produk')}}"
                 class="w-full max-w-m p-4 bg-white border rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700">
                 <img src="https://flowbite.com/docs/images/carousel/carousel-3.svg"
                     class="h-auto max-w-full rounded-lg" />
@@ -139,8 +139,8 @@
                         class="text-sm text-gray-500">/hari</span></p>
                 <p class="text-sm font-normal text-gray-500">Indramayu</p>
                 <p class="text-sm font-normal text-gray-500" style="font-size: 10px">4.7 | 255+ rental</p>
-            </div>
-            <div
+            </a>
+            <a href="{{url('home/produk')}}"
                 class="w-full max-w-m p-4 bg-white border rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700">
                 <img src="https://flowbite.com/docs/images/carousel/carousel-3.svg"
                     class="h-auto max-w-full rounded-lg" />
@@ -150,8 +150,8 @@
                         class="text-sm text-gray-500">/hari</span></p>
                 <p class="text-sm font-normal text-gray-500">Indramayu</p>
                 <p class="text-sm font-normal text-gray-500" style="font-size: 10px">4.7 | 255+ rental</p>
-            </div>
-            <div
+            </a>
+            <a href="{{url('home/produk')}}"
                 class="w-full max-w-m p-4 bg-white border rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700">
                 <img src="https://flowbite.com/docs/images/carousel/carousel-3.svg"
                     class="h-auto max-w-full rounded-lg" />
@@ -161,8 +161,8 @@
                         class="text-sm text-gray-500">/hari</span></p>
                 <p class="text-sm font-normal text-gray-500">Indramayu</p>
                 <p class="text-sm font-normal text-gray-500" style="font-size: 10px">4.7 | 255+ rental</p>
-            </div>
-            <div
+            </a>
+            <a href="{{url('home/produk')}}"
                 class="w-full max-w-m p-4 bg-white border rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700">
                 <img src="https://flowbite.com/docs/images/carousel/carousel-3.svg"
                     class="h-auto max-w-full rounded-lg" />
@@ -172,7 +172,7 @@
                         class="text-sm text-gray-500">/hari</span></p>
                 <p class="text-sm font-normal text-gray-500">Indramayu</p>
                 <p class="text-sm font-normal text-gray-500" style="font-size: 10px">4.7 | 255+ rental</p>
-            </div>
+            </a>
         </div>
         {{-- END CARD PRODUK --}}
         {{-- END PRODUK --}}

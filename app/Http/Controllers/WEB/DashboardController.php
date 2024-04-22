@@ -21,4 +21,9 @@ class DashboardController extends Controller
     {
         return view('home.index');
     }
+
+    public function produk()
+    {
+        return view('home.produk.index');
+    }
 }
