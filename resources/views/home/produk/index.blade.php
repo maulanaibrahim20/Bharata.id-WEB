@@ -20,6 +20,7 @@
             <span class="font-normal text-2xl">Toyota Raize</span>
         </div> --}}
         <div class="hidden md:block">
+            {{-- INI 3 GRID --}}
             <div class="grid grid-cols-3 gap-5">
                 {{-- FOTO PRODUK --}}
                 <div>
@@ -106,7 +107,7 @@
                         <div class="container grid grid-cols-2 items-center justify-between">
                             <div class="flex gap-2 items-center">
                                 <img src="https://flowbite.com/docs/images/examples/image-1@2x.jpg"
-                                    class="rounded-full w-10 h-10" alt="profil mitra" />
+                                    class="rounded-full w-10 h-10 border" alt="profil mitra" />
                                 <div class="flex flex-col gap-0">
                                     <span class="font-normal font-semibold">Austyn Murazik</span>
                                     <small class="text-gray-400">Online 2 jam lalu</small>
@@ -120,7 +121,7 @@
                 </div>
                 {{-- END DESKRIPSI --}}
                 {{-- INI CART --}}
-                <div>
+                <div class="flex justify-end">
                     <div
                         class="max-w-xs p-3 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                         <p class="font-normal mb-4">Atur jumlah sewa dan catatan</p>
@@ -140,7 +141,8 @@
                                     <button type="button"
                                         class="w-full bg-blue-500 text-white text-center px-4 py-2 hover:bg-blue-600 focus:outline-none focus:bg-blue-600 rounded-l-lg"
                                         onclick="decrement()">-</button>
-                                    <input type="text" id="quantity" name="quantity" min="1" value="0"
+                                    <input type="text" id="quantity" name="quantity" min="1"
+                                        value="0"
                                         class="w-16 bg-gray-50 text-center border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 text-center rounded-none">
                                     <button type="button"
                                         class="w-full bg-blue-500 text-white text-center px-4 py-2 hover:bg-blue-600 focus:outline-none focus:bg-blue-600 rounded-r-lg"
@@ -176,6 +178,40 @@
                 </div>
                 {{-- END CART --}}
             </div>
+            {{-- END 3 GRID --}}
+            {{-- ULASAN --}}
+            <div>
+                <div>
+                    <h3 class="font-normal font-semibold text-2xl">Ulasan</h3>
+                </div>
+                <div
+                    class="mt-3 max-w-xl p-4 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                    {{-- ULASAN USER --}}
+                    <div class="flex items-center gap-2">
+                        <img src="" alt="FOTO ULASAN USER" class="rounded-full w-10 h-10 border" />
+                        <div class="flex flex-col gap-0">
+                            <span class="font-normal font-semibold">Bima Ryan Alfarizi <span class="font-normal text-gray-400 text-xs">22-04-2024</span></span>
+                            <small class="font-normal text-gray-400">Pelayanan nya bagus</small>
+                        </div>
+                    </div>
+                    {{-- END ULASAN USER --}}
+                    <hr class="my-2">
+                    </hr>
+                    {{-- ULASAN ADMIN(MITRA) --}}
+                    <div class="flex items-center gap-2 ml-3">
+                        <img src="" alt="FOTO ULASAN USER" class="rounded-full w-10 h-10 border" />
+                        <div class="flex flex-col gap-0">
+                            <span class="font-normal font-semibold">Austyn Murazik <span
+                                    class="font-normal font-semibold text-xs text-blue-500">Admin(Mitra
+                                    Sewa)</span></span>
+                            <small class="font-normal text-gray-400">Makasih sudah pakai jasa sewa rental kami
+                                :)</small>
+                        </div>
+                    </div>
+                    {{-- END ULASAN ADMIN(MITRA) --}}
+                </div>
+            </div>
+            {{-- END ULASAN --}}
         </div>
         <div name='hp' class="block md:hidden">
             COMING SOON
