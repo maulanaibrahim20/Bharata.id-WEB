@@ -190,7 +190,8 @@
                     <div class="flex items-center gap-2">
                         <img src="" alt="FOTO ULASAN USER" class="rounded-full w-10 h-10 border" />
                         <div class="flex flex-col gap-0">
-                            <span class="font-normal font-semibold">Bima Ryan Alfarizi <span class="font-normal text-gray-400 text-xs">22-04-2024</span></span>
+                            <span class="font-normal font-semibold">Bima Ryan Alfarizi <span
+                                    class="font-normal text-gray-400 text-xs">22-04-2024</span></span>
                             <small class="font-normal text-gray-400">Pelayanan nya bagus</small>
                         </div>
                     </div>
@@ -212,6 +213,58 @@
                 </div>
             </div>
             {{-- END ULASAN --}}
+            <hr class="my-4" />
+            {{-- PRODUK SERUPA --}}
+            <div>
+                <h3 class="font-normal font-semibold text-2xl">Produk Serupa</h3>
+                <div class="mt-3 grid grid-cols-4 gap-4">
+                    <a href="{{ url('home/produk') }}"
+                        class="w-full max-w-m p-4 bg-white border rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700">
+                        <img src="https://flowbite.com/docs/images/carousel/carousel-3.svg"
+                            class="h-auto max-w-full rounded-lg" />
+                        <p class="font-normal font-semibold">Toyota Raize</p>
+                        <p class="text-sm font-normal">Kedai Kita</p>
+                        <p class="text-lg font-normal  font-semibold">Rp 550.000 <span
+                                class="text-sm text-gray-500">/hari</span></p>
+                        <p class="text-sm font-normal text-gray-500">Indramayu</p>
+                        <p class="text-sm font-normal text-gray-500" style="font-size: 10px">4.7 | 255+ rental</p>
+                    </a>
+                    <a href="{{ url('home/produk') }}"
+                        class="w-full max-w-m p-4 bg-white border rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700">
+                        <img src="https://flowbite.com/docs/images/carousel/carousel-3.svg"
+                            class="h-auto max-w-full rounded-lg" />
+                        <p class="font-normal font-semibold">Toyota Raize</p>
+                        <p class="text-sm font-normal">Kedai Kita</p>
+                        <p class="text-lg font-normal  font-semibold">Rp 550.000 <span
+                                class="text-sm text-gray-500">/hari</span></p>
+                        <p class="text-sm font-normal text-gray-500">Indramayu</p>
+                        <p class="text-sm font-normal text-gray-500" style="font-size: 10px">4.7 | 255+ rental</p>
+                    </a>
+                    <a href="{{ url('home/produk') }}"
+                        class="w-full max-w-m p-4 bg-white border rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700">
+                        <img src="https://flowbite.com/docs/images/carousel/carousel-3.svg"
+                            class="h-auto max-w-full rounded-lg" />
+                        <p class="font-normal font-semibold">Toyota Raize</p>
+                        <p class="text-sm font-normal">Kedai Kita</p>
+                        <p class="text-lg font-normal  font-semibold">Rp 550.000 <span
+                                class="text-sm text-gray-500">/hari</span></p>
+                        <p class="text-sm font-normal text-gray-500">Indramayu</p>
+                        <p class="text-sm font-normal text-gray-500" style="font-size: 10px">4.7 | 255+ rental</p>
+                    </a>
+                    <a href="{{ url('home/produk') }}"
+                        class="w-full max-w-m p-4 bg-white border rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700">
+                        <img src="https://flowbite.com/docs/images/carousel/carousel-3.svg"
+                            class="h-auto max-w-full rounded-lg" />
+                        <p class="font-normal font-semibold">Toyota Raize</p>
+                        <p class="text-sm font-normal">Kedai Kita</p>
+                        <p class="text-lg font-normal  font-semibold">Rp 550.000 <span
+                                class="text-sm text-gray-500">/hari</span></p>
+                        <p class="text-sm font-normal text-gray-500">Indramayu</p>
+                        <p class="text-sm font-normal text-gray-500" style="font-size: 10px">4.7 | 255+ rental</p>
+                    </a>
+                </div>
+            </div>
+            {{-- END PRODUK SERUPA --}}
         </div>
         <div name='hp' class="block md:hidden">
             COMING SOON
