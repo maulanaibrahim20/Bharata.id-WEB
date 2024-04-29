@@ -188,7 +188,7 @@
                     class="mt-3 max-w-xl p-4 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                     {{-- ULASAN USER --}}
                     <div class="flex items-center gap-2">
-                        <img src="" alt="FOTO ULASAN USER" class="rounded-full w-10 h-10 border" />
+                        <img src="https://flowbite.com/docs/images/carousel/carousel-3.svg" alt="FOTO ULASAN USER" class="rounded-full w-10 h-10 border" />
                         <div class="flex flex-col gap-0">
                             <span class="font-normal font-semibold">Bima Ryan Alfarizi <span
                                     class="font-normal text-gray-400 text-xs">22-04-2024</span></span>
@@ -200,7 +200,7 @@
                     </hr>
                     {{-- ULASAN ADMIN(MITRA) --}}
                     <div class="flex items-center gap-2 ml-3">
-                        <img src="" alt="FOTO ULASAN USER" class="rounded-full w-10 h-10 border" />
+                        <img src="https://flowbite.com/docs/images/carousel/carousel-3.svg" alt="FOTO ULASAN USER" class="rounded-full w-10 h-10 border" />
                         <div class="flex flex-col gap-0">
                             <span class="font-normal font-semibold">Austyn Murazik <span
                                     class="font-normal font-semibold text-xs text-blue-500">Admin(Mitra
@@ -271,6 +271,8 @@
         </div>
     </div>
     {{-- END CONTENT --}}
+    <br/>
+    <br/>
 
     {{-- FOOTER --}}
     @include('components.footer')
