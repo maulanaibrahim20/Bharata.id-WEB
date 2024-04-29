@@ -5,8 +5,14 @@
                 {{-- <img src="" class="h-8" alt="Bharata.id Logo" /> --}}
                 <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Bharata.id</span>
             </a>
-            <div class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+            <div class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse gap-2">
                 @auth
+                    <button type="button"
+                        class="text-2xl"
+                        id="cart-menu-button" aria-expanded="false" data-dropdown-toggle="cart-dropdown"
+                        data-dropdown-placement="bottom">
+                        <i class="bi bi-cart text-blue-400"></i>
+                    </button>
                     <button type="button"
                         class="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
                         id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown"
@@ -19,7 +25,8 @@
                         id="user-dropdown">
                         <div class="px-4 py-3">
                             <span class="block text-sm text-gray-900 dark:text-white">{{ Auth::user()->name }}</span>
-                            <span class="block text-sm  text-gray-500 truncate dark:text-gray-400">{{ Auth::user()->email }}</span>
+                            <span
+                                class="block text-sm  text-gray-500 truncate dark:text-gray-400">{{ Auth::user()->email }}</span>
                         </div>
                         <ul class="py-2" aria-labelledby="user-menu-button">
                             <li>
@@ -31,8 +38,14 @@
                                     class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Settings</a>
                             </li>
                             <li>
+<<<<<<< HEAD
                                 <a href="{{url('registration-mitra')}}"
                                     class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Registration Mitra</a>
+=======
+                                <a href="#"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Registration
+                                    Mitra</a>
+>>>>>>> 919fa61325d047151b30b4a83566e5bdd2c21651
                             </li>
                             <li>
                                 <a href="/logout"
@@ -40,6 +53,15 @@
                                     out</a>
                             </li>
                         </ul>
+                    </div>
+                    <!-- Dropdown cart -->
+                    <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600"
+                        id="cart-dropdown">
+                        <!-- Dropdown cart content -->
+                        <div class="px-4 py-3">
+                            <p>INI KERANJANG PRODUK</p>
+                        </div>
+
                     </div>
                 @endauth
                 @guest <!-- Menampilkan tombol login jika pengguna belum login -->
@@ -62,7 +84,8 @@
                     class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                     <li class="md:flex w-full">
                         <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar"
-                            class="flex items-center justify-between w-full py-2 px-3 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"><i class="bi bi-geo-alt text-red-500"></i>Indramayu
+                            class="flex items-center justify-between w-full py-2 px-3 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"><i
+                                class="bi bi-geo-alt text-red-500"></i>Indramayu
                             <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                 fill="none" viewBox="0 0 10 6">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
