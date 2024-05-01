@@ -97,6 +97,7 @@ Route::middleware(['autentikasi'])->group(function () {
     Route::group(['middleware' => ['can:member']], function () {
         Route::prefix('home')->group(function () {
             Route::get('/produk', [DashboardController::class, 'produk']);
+            Route::get('/cart', [DashboardController::class, 'cart']);
         });
         Route::get('/home', [DashboardController::class, 'member']);
     });

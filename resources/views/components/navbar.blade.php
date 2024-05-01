@@ -7,11 +7,9 @@
             </a>
             <div class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse gap-2">
                 @auth
-                    <button type="button"
-                        class="text-2xl"
-                        id="cart-menu-button" aria-expanded="false" data-dropdown-toggle="cart-dropdown"
-                        data-dropdown-placement="bottom">
-                        <i class="bi bi-cart text-blue-400"></i>
+                    <button type="button" class="text-2xl" id="cart-menu-button" aria-expanded="false"
+                        data-dropdown-toggle="cart-dropdown" data-dropdown-placement="bottom">
+                        <i class="bi bi-cart text-blue-500"></i>
                     </button>
                     <button type="button"
                         class="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
@@ -38,14 +36,9 @@
                                     class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Settings</a>
                             </li>
                             <li>
-<<<<<<< HEAD
-                                <a href="{{url('registration-mitra')}}"
-                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Registration Mitra</a>
-=======
-                                <a href="#"
+                                <a href="{{ url('registration-mitra') }}"
                                     class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Registration
                                     Mitra</a>
->>>>>>> 919fa61325d047151b30b4a83566e5bdd2c21651
                             </li>
                             <li>
                                 <a href="/logout"
