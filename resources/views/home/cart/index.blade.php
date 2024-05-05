@@ -15,16 +15,28 @@
 
     <div class="container p-3 mx-auto">
         <p class="font-normal font-semibold text-2xl">Keranjang</p>
-        <div class="grid grid-cols-2 gap-2">
-            <div
-                class="mt-3 w-full max-w-m p-4 bg-white border rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700">
-                <!-- Checkbox "Pilih Semua" -->
-                <div class="flex items-center justify-between mb-4">
-                    <label class="flex items-center">
-                        <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600" />
-                        <span class="ml-2 text-sm">Pilih Semua</span>
-                    </label>
-                    <button type="button" class="text-red-600 hover:text-red-800">Hapus</button>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+            <div>
+                <div
+                    class="mt-3 w-full max-w-m p-4 bg-white border rounded-t-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700">
+                    <!-- Checkbox "Pilih Semua" -->
+                    <div class="flex items-center justify-between">
+                        <label class="flex items-center">
+                            <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600" />
+                            <span class="ml-2 text-sm">Pilih Semua</span>
+                        </label>
+                        <button type="button" class="text-red-600 hover:text-red-800">Hapus</button>
+                    </div>
+                </div>
+                <div
+                    class="mt-1 w-full max-w-m p-4 bg-white border rounded-b-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700">
+                    <!-- Checkbox "Pilih Semua" -->
+                    <div class="flex items-center justify-between">
+                        <label class="flex items-center">
+                            <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600" />
+                            <img src="https://flowbite.com/docs/images/examples/image-1@2x.jpg" class="w-20 h-20 ml-2 rounded" alt="produk"/>
+                        </label>
+                    </div>
                 </div>
             </div>
             <div

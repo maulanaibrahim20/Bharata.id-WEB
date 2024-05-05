@@ -52,7 +52,24 @@
                         id="cart-dropdown">
                         <!-- Dropdown cart content -->
                         <div class="px-4 py-3">
-                            <p>INI KERANJANG PRODUK</p>
+                            <div class="grid grid-cols-2 justify-between gap-1 ">
+                                <div class="flex gap-1">
+                                    <img src="" class="w-8 h-9 rounded border" alt="" />
+                                    <p>Toyota Raize</p>
+                                </div>
+                                <div class="flex justify-end">
+                                    <p class="text-blue-400 font-semibold">Rp 550.000</p>
+                                </div>
+                            </div>
+                            <hr class="my-3"/>
+                            <div class="grid grid-cols-2">
+                                <div>
+
+                                </div>
+                                <div>
+                                    <a class="w-full bg-blue-500 px-2 py-1 rounded hover:bg-blue-00 dark:bg-blue-300 text-white" href="">Tampilkan Keranjang Sewa</a>
+                                </div>
+                            </div>
                         </div>
 
                     </div>
