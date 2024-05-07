@@ -64,10 +64,10 @@
                             <hr class="my-3"/>
                             <div class="grid grid-cols-2">
                                 <div>
-
+                                    <small class="text-gray-500">123 Produk Lainnya</small>
                                 </div>
                                 <div>
-                                    <a class="w-full bg-blue-500 px-2 py-1 rounded hover:bg-blue-00 dark:bg-blue-300 text-white" href="">Tampilkan Keranjang Sewa</a>
+                                    <a href="{{url('/home/cart')}}" class="w-full bg-blue-500 px-2 py-1 rounded hover:bg-blue-00 dark:bg-blue-300 text-white" href="">Tampilkan Keranjang Sewa</a>
                                 </div>
                             </div>
                         </div>
