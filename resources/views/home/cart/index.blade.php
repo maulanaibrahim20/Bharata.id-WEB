@@ -31,11 +31,25 @@
                 <div
                     class="mt-1 w-full max-w-m p-4 bg-white border rounded-b-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700">
                     <!-- Checkbox "Pilih Semua" -->
-                    <div class="flex items-center justify-between">
-                        <label class="flex items-center">
+                    <div class="flex justify-between mb-3">
+                        <label class="flex gap-3">
                             <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600" />
                             <img src="https://flowbite.com/docs/images/examples/image-1@2x.jpg" class="w-20 h-20 ml-2 rounded" alt="produk"/>
+                            <p>Toyota Raize</p>
                         </label>
+                        <div>
+                            <p>Rp 550.000</p>
+                        </div>
+                    </div>
+                    <div class="flex justify-between mb-3">
+                        <label class="flex gap-3">
+                            <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600" />
+                            <img src="https://flowbite.com/docs/images/examples/image-1@2x.jpg" class="w-20 h-20 ml-2 rounded" alt="produk"/>
+                            <p>Toyota Raize</p>
+                        </label>
+                        <div>
+                            <p>Rp 550.000</p>
+                        </div>
                     </div>
                 </div>
             </div>

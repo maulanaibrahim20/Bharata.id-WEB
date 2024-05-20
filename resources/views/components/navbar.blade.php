@@ -67,11 +67,10 @@
                                     <small class="text-gray-500">123 Produk Lainnya</small>
                                 </div>
                                 <div>
-                                    <a href="{{url('/home/cart')}}" class="w-full bg-blue-500 px-2 py-1 rounded hover:bg-blue-00 dark:bg-blue-300 text-white" href="">Tampilkan Keranjang Sewa</a>
+                                    <a href="{{url('/home/cart')}}" class="w-full bg-blue-500 px-2 py-1 rounded hover:bg-blue-00 dark:bg-blue-300 text-white" href="">Tampilkan Keranjang</a>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 @endauth
                 @guest <!-- Menampilkan tombol login jika pengguna belum login -->
