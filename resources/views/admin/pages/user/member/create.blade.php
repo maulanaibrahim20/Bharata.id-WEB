@@ -1,152 +1,202 @@
 @extends('index')
 @section('content')
-    <div class="page-header">
-        <div>
-            <h1 class="page-title">{{ $title }}</h1>
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="javascript:void(0);">{{ $breadcrumb }}</a></li>
-                <li class="breadcrumb-item active" aria-current="page">{{ $breadcrumb_active }}</li>
-            </ol>
-        </div>
-        <div class="ms-auto pageheader-btn">
-            <a href="{{ url('/admin/pengguna/member/create') }}" class="btn btn-success btn-icon text-white">
-                <span>
-                    <i class="fe fe-plus"></i>
-                </span> {{ $button_create }}
-            </a>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-12 col-md-12">
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="card-title">{{ $card_title }}</h3>
+    <div class="p-4 sm:ml-64">
+        <div class="rounded-lg mt-14">
+            <div class="bg-white rounded-lg shadow p-6">
+                <h2 class="text-xl font-bold text-gray-900 dark:text-white">{{ $title }}</h2>
+                <div>
+                    <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
+                        <li class="inline-flex items-center">
+                            <a href="#"
+                                class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
+                                <svg class="w-3 h-3 me-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    fill="currentColor" viewBox="0 0 20 20">
+                                    <path
+                                        d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z" />
+                                </svg>
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <div class="flex items-center">
+                                <svg class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m1 9 4-4-4-4" />
+                                </svg>
+                                <a href="javascript:void(0);"
+                                    class="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">{{ $breadcrumb }}</a>
+                            </div>
+                        </li>
+                        <li aria-current="page">
+                            <div class="flex items-center">
+                                <svg class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m1 9 4-4-4-4" />
+                                </svg>
+                                <span
+                                    class="ms-1 text-sm font-medium text-gray-500 md:ms-2 dark:text-gray-400">{{ $breadcrumb_active }}</span>
+                            </div>
+                        </li>
+                    </ol>
                 </div>
-                <div class="card-body">
-                    @if (session('success'))
-                        <div class="alert alert-success">
-                            {{ session('success') }}
+                <hr class="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700">
+                @if (session('success'))
+                    <div class="p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-blue-400">
+                        <span class="font-medium">{{ session('success') }}</span>
+                    </div>
+                    @endif @if ($errors->any())
+                        <div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400">
+                            <ul class="font-medium">
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
                         </div>
-                        @endif @if ($errors->any())
-                            <div class="alert alert-danger">
-                                <ul>
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
+                    @endif
+                    <form class="space-y-4 md:space-y-6 needs-validation" id="formMember"
+                        action="{{ url('/admin/pengguna/member') }}" enctype="multipart/form-data" method="POST"
+                        novalidate>
+                        @csrf
+                        <div class="">
+                            <label for="imageInput" class="upload-label"
+                                class="block mb-3 text-sm font-medium text-gray-900 dark:text-white">Tambahkan Foto
+                                Anda</label>
+                            <input
+                                class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full px-1 py-0.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                type="file" id="imageInput" accept="image/*" class="upload-input" name="image">
+                            @error('imageInput')
+                                <small class="text-red-500">{{ $message }}</small>
+                            @enderror
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                            <div>
+                                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                    for="validationCustom011">Nama Depan</label>
+                                <input type="text"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    id="validationCustom011" name="nama_depan" value="{{ old('nama_depan') }}" required>
+                                @error('nama_depan')
+                                    <small class="text-red-500">{{ $message }}</small>
+                                @enderror
+                            </div>
+                            <div>
+                                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                    for="validationCustom12">Nama Belakang</label>
+                                <input type="text" name="nama_belakang"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    id="validationCustom12" value="{{ old('nama_belakang') }}" required>
+                                @error('nama_belakang')
+                                    <small class="text-red-500">{{ $message }}</small>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                            <div>
+                                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                    for="validationCustom011">Email</label>
+                                <input type="email"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    id="validationCustom011" name="email" value="{{ old('email') }}" required>
+                                @error('email')
+                                    <small class="text-red-500">{{ $message }}</small>
+                                @enderror
+                            </div>
+                            <div>
+                                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                    for="validationCustom12">
+                                    Tanggal Lahir
+                                </label>
+                                <div class="relative">
+                                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                        <i class="bi bi-calendar-date text-gray-500 dark:text-gray-400"></i>
+                                    </div>
+                                    <input
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 fc-datepicker"
+                                        id="datepicker-date" placeholder="MM/DD/YY" name="tanggal_lahir" type="text">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-1 gap-3">
+                            <div>
+                                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                    for="validationCustom011">No Telepon</label>
+                                <input type="number"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    id="validationCustom011" name="no_telp" value="{{ old('no_telp') }}" required>
+                                @error('no_telp')
+                                    <small class="text-red-500">{{ $message }}</small>
+                                @enderror
+                            </div>
+                            <div>
+                                <div class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Jenis Kelamin
+                                </div>
+                                <label
+                                    class="custom-control custom-radio block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                                    <input type="radio" class="custom-control-input" name="jenis_kelamin"
+                                        value="pria" checked>
+                                    <span class="custom-control-label">Pria</span>
+                                </label>
+                                <label class="custom-control custom-radio">
+                                    <input type="radio" class="custom-control-input" name="jenis_kelamin"
+                                        value="wanita">
+                                    <span class="custom-control-label">Wanita</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
+                            <div>
+                                <label
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Provinsi</label>
+                                <select name="provinsi" id="provinsi"
+                                    class="form-control form-select select2 bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                    <option value="">--pilih--</option>
+                                    @foreach ($provinsi as $item)
+                                        <option data-tokens="{{ $item['name'] }}" value="{{ $item['id'] }}">
+                                            {{ $item['name'] }}</option>
                                     @endforeach
-                                </ul>
+                                </select>
                             </div>
-                        @endif
-                        <form id="formMember" action="{{ url('/admin/pengguna/member') }}" enctype="multipart/form-data"
-                            method="POST" class="needs-validation" novalidate>
-                            @csrf
-                            <div class="col-lg-12 col-md-12 col-xl-6 mb-6">
-                                <div class="wideget-user-desc d-sm-flex">
-                                    <div class="wideget-user-img">
-                                        <input type="file" id="imageInput" accept="image/*" class="upload-input"
-                                            name="image">
-                                        <label for="imageInput" class="upload-label"
-                                            style="cursor: pointer; position: relative; display: inline-block;">
-                                            <img id="preview-image" class="rounded-circle"
-                                                src="{{ url('/assets') }}/images/users/8.jpg" alt="img"
-                                                style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%;">
-                                        </label>
-                                    </div>
-                                </div>
+                            <div>
+                                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Kota</label>
+                                <select name="kota" id="kota_kab"
+                                    class="form-control form-select select2 bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                    <option value="">-- pilih --</option>
+                                </select>
                             </div>
-                            <div class="form-row">
-                                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-3">
-                                    <label for="validationCustom011">Nama Depan</label>
-                                    <input type="text" class="form-control" id="validationCustom011" name="nama_depan"
-                                        value="{{ old('nama_depan') }}" required>
-                                    <div class="valid-feedback">Looks good!</div>
-                                </div>
-                                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-3">
-                                    <label for="validationCustom12">Nama Belakang</label>
-                                    <input type="text" name="nama_belakang" class="form-control" id="validationCustom12"
-                                        value="{{ old('nama_belakang') }}" required>
-                                    <div class="valid-feedback">Looks good!</div>
-                                </div>
+                            <div>
+                                <label
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Kecamatan</label>
+                                <select name="kecamatan" id="kecamatan"
+                                    class="form-control form-select select2 bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                    <option value="">-- pilih --</option>
+                                </select>
                             </div>
-                            <div class="form-row">
-                                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-3">
-                                    <label for="validationCustom011">Email</label>
-                                    <input type="email" class="form-control" id="validationCustom011" name="email"
-                                        value="{{ old('email') }}" required>
-                                    <div class="valid-feedback">Looks good!</div>
-                                </div>
-                                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-3">
-                                    <label for="validationCustom12">Tanggal Lahir</label>
-                                    <div class="wd-200 mg-b-30">
-                                        <div class="input-group">
-                                            <div class="input-group-text">
-                                                <i class="fa fa-clock-o tx-16 lh-0 op-6"></i>
-                                            </div>
-                                            <input class="form-control fc-datepicker" id="datepicker-date"
-                                                placeholder="MM/DD/YY" name="tanggal_lahir" type="text">
-                                        </div>
-                                    </div>
-                                </div>
+                        </div>
+                        <div class="grid grid-cols-1 gap-2">
+                            <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Detail
+                                Alamat</label>
+                            <textarea style="resize: none"
+                                class="content bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                name="alamat_utama"></textarea>
+                        </div>
+                        <div class="grid grid-cols-1 gap-2">
+                            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-3">
+                                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                    for="validationCustom011">Kode Pos</label>
+                                <input type="number"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    id="validationCustom011" name="kode_pos" value="{{ old('kode_pos') }}" required>
+                                @error('kode_pos')
+                                    <small class="text-red-500">{{ $message }}</small>
+                                @enderror
                             </div>
-                            <div class="form-row">
-                                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-3">
-                                    <label for="validationCustom011">No Telepon</label>
-                                    <input type="number" class="form-control" id="validationCustom011" name="no_telp"
-                                        value="{{ old('no_telp') }}" required>
-                                    <div class="valid-feedback">Looks good!</div>
-                                </div>
-                                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-3">
-                                    <div class="form-label">Jenis Kelamin</div>
-                                    <label class="custom-control custom-radio">
-                                        <input type="radio" class="custom-control-input" name="jenis_kelamin"
-                                            value="pria" checked>
-                                        <span class="custom-control-label">Pria</span>
-                                    </label>
-                                    <label class="custom-control custom-radio">
-                                        <input type="radio" class="custom-control-input" name="jenis_kelamin"
-                                            value="wanita">
-                                        <span class="custom-control-label">Wanita</span>
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 mb-3">
-                                    <label class="form-label">Provinsi</label>
-                                    <select name="provinsi" id="provinsi" class="form-control form-select select2">
-                                        <option value="">--pilih--</option>
-                                        @foreach ($provinsi as $item)
-                                            <option data-tokens="{{ $item['name'] }}" value="{{ $item['id'] }}">
-                                                {{ $item['name'] }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 mb-3">
-                                    <label class="form-label">Kota</label>
-                                    <select name="kota" id="kota_kab" class="form-control form-select select2">
-                                        <option value="">-- pilih --</option>
-                                    </select>
-                                </div>
-                                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 mb-3">
-                                    <label class="form-label">Kecamatan</label>
-                                    <select name="kecamatan" id="kecamatan" class="form-control form-select select2">
-                                        <option value="">-- pilih --</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <label class="form-label">Detail Alamat</label>
-                                <textarea class="content" name="alamat_utama"></textarea>
-                            </div>
-                            <div class="form-row">
-                                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-3">
-                                    <label for="validationCustom011">Kode Pos</label>
-                                    <input type="number" class="form-control" id="validationCustom011" name="kode_pos"
-                                        value="{{ old('kode_pos') }}" required>
-                                    <div class="valid-feedback">Looks good!</div>
-                                </div>
-                            </div>
-                            <button class="btn btn-primary" type="submit">Submit</button>
-                        </form>
-                </div>
+                        </div>
+                        <button
+                            class="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                            type="submit">Submit</button>
+                    </form>
             </div>
         </div>
     </div>
@@ -234,6 +284,19 @@
             //         }
             //     });
             // });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            flatpickr("#datepicker-date", {
+                dateFormat: "m/d/Y",
+                altInput: true,
+                altFormat: "F j, Y",
+                allowInput: true,
+                locale: {
+                    firstDayOfWeek: 1
+                }
+            });
         });
     </script>
 @endsection
