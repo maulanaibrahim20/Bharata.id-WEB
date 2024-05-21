@@ -86,6 +86,9 @@
                                     Email
                                 </th>
                                 <th scope="col" class="px-6 py-3">
+                                    Role
+                                </th>
+                                <th scope="col" class="px-6 py-3">
                                     Action
                                 </th>
                             </tr>
@@ -113,17 +116,17 @@
                                     <td class="px-6 py-4">
                                         {{ $data->user->email }}
                                     </td>
-                                    <td class="text-success fs-15 fw-semibold">{{ $data->user->getAkses->name }}
+                                    <td class="text-green-500 dark:text-green-600 px-6 py-4 fs-15 font-semibold">{{ $data->user->getAkses->name }}
                                     <th class="px-6 py-4 flex gap-2">
                                         <a href="" class="btn btn-icon btn-warning"><i class="fe fe-edit"></i></a>
                                         <a class="btn btn-icon btn-primary" data-bs-toggle="modal"
                                             data-bs-target="#SubCategoryModal{{ $data->id }}"><i
                                                 class="fe fe-eye"></i></a>
                                         <a href="{{ url('admin/pengguna/member/' . $data->id . '/edit') }}"
-                                            class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                            class="font-medium text-yellow-300 dark:text-yellow-500 hover:underline">Edit</a>
+                                        <a class="font-medium text-purple-300 dark:text-purple-500 hover:underline">Lihat</a>
                                         <a data-modal-target="popup-modal" data-modal-toggle="popup-modal"
                                             class="font-medium text-red-600 dark:text-red-500 hover:underline delete-user">Delete</a>
-                                        <a class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Lihat</a>
                                     </th>
                                 </tr>
                                 <div id="popup-modal" tabindex="-1"

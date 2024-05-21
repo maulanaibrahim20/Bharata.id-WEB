@@ -61,36 +61,36 @@
     <div class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
         <ul class="space-y-2 font-medium">
             <li>
+                <span class="text-gray-400 dark:text-gray-600 text-sm">Main</span>
                 <a style="cursor:pointer;"
-                    class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+                    class="flex items-center p-2 text-gray-900 rounded-lg hover:text-white dark:text-white hover:bg-blue-500 dark:hover:bg-blue-700 group"
                     href="/admin/dashboard">
                     <span class="ms-3"><i class="bi bi-house-door"></i> Dashboard</span>
                 </a>
             </li>
             <li>
+                <span class="text-gray-400 dark:text-gray-600 text-sm">Pengguna</span>
+                <button type="button"
+                    class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-blue-500 dark:text-white dark:hover:bg-blue-700 hover:text-white"
+                    aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
+                    <span class="flex-1 ms-3 text-left rtl:text-right"><i class="bi bi-people"></i> Users</span>
+                    <i class="bi bi-caret-down"></i>
+                </button>
+                <ul id="dropdown-example" class="hidden py-2 space-y-2">
+                    <li>
+                        <a href="{{ url('/admin/pengguna/member') }}"
+                            class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><span><i
+                                    class="bi bi-arrow-return-right"></i> Member</span></a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <span class="text-gray-400 dark:text-gray-600 text-sm">Master Data</span>
                 <a style="cursor:pointer;"
-                    class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
-                    href="{{ url('/admin/pengguna/member') }}">
-                    <span class="flex-1 ms-3 whitespace-nowrap"><i class="bi bi-people"></i> Users</span>
+                    class="flex items-center p-2 text-gray-900 rounded-lg hover:text-white dark:text-white hover:bg-blue-500 dark:hover:bg-blue-700 group"
+                    href="/admin/dashboard">
+                    <span class="ms-3"><i class="bi bi-database"></i> Master Data</span>
                 </a>
             </li>
-            {{-- <li>
-                <a style="cursor:pointer;"
-                    class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
-                    href="/admin/dashboard/post">
-                    <span class="flex-1 ms-3 whitespace-nowrap"><i class="bi bi-images"></i> Post</span>
-                </a>
-            </li> --}}
-            {{-- <li>
-                <a style="cursor:pointer;"
-                    class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
-                    href="/admin/dashboard/chat">
-
-                    <span class="flex-1 ms-3 whitespace-nowrap"><i class="bi bi-chat-dots"></i> Messages</span>
-                    <span
-                        class="inline-flex items-center justify-center w-3 h-3 p-3 ms-3 text-sm font-medium text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300">3</span>
-                </a>
-            </li>
-        </ul> --}}
-    </div>
+        </ul>
 </aside>
