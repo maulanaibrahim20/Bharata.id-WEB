@@ -90,15 +90,15 @@ class UserMemberController extends Controller
 
             DB::commit();
 
-            Alert::success('success', 'Success Data Berhasil Ditambahkan!');
-            session()->flash('success', 'Data Berhasil Ditambahkan!');
-            return redirect('/admin/pengguna/member')->with('success', 'Data Berhasil Ditambahkan!');
+            Alert::success('success', 'Success Data Anda Berhasil Ditambahkan!');
+            session()->flash('success', 'Data Anda Berhasil Ditambahkan!');
+            return redirect('/admin/pengguna/member')->with('success', 'Data Anda Berhasil Ditambahkan!');
         } catch (\Exception $e) {
             DB::rollback();
             // Tampilkan pesan error
             Alert::error('Error', 'Error Data Gagal Ditambahkan!' . $e->getMessage());
-            session()->flash('error', 'Data Gagal Ditambahkan!');
-            return back()->with('error', 'Data Gagal Ditambahkan!');
+            session()->flash('error', 'Data Anda Gagal Ditambahkan!');
+            return back()->with('error', 'Data Anda Gagal Ditambahkan!');
         }
     }
 
