@@ -12,6 +12,11 @@ class DashboardController extends Controller
         return view('admin.pages.dashboard.index');
     }
 
+    public function profil()
+    {
+        return view('admin.pages.profil.index');
+    }
+
     public function member()
     {
         return view('home.index');
