@@ -73,24 +73,35 @@
                 <button type="button"
                     class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-blue-500 dark:text-white dark:hover:bg-blue-700 hover:text-white"
                     aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
-                    <span class="flex-1 ms-3 text-left rtl:text-right"><i class="bi bi-people"></i> Users</span>
+                    <span class="flex-1 ms-3 text-left rtl:text-right"><i class="bi bi-people"></i> Pengguna</span>
                     <i class="bi bi-caret-down"></i>
                 </button>
                 <ul id="dropdown-example" class="hidden py-2 space-y-2">
                     <li>
                         <a href="{{ url('/admin/pengguna/member') }}"
                             class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><span><i
-                                    class="bi bi-arrow-return-right"></i> Member</span></a>
+                                    class="bi bi-person-add"></i> Member</span></a>
                     </li>
                 </ul>
             </li>
             <li>
                 <span class="text-gray-400 dark:text-gray-600 text-sm">Master Data</span>
-                <a style="cursor:pointer;"
-                    class="flex items-center p-2 text-gray-900 rounded-lg hover:text-white dark:text-white hover:bg-blue-500 dark:hover:bg-blue-700 group"
-                    href="/admin/dashboard">
-                    <span class="ms-3"><i class="bi bi-database"></i> Master Data</span>
-                </a>
+                <button type="button"
+                    class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-blue-500 dark:text-white dark:hover:bg-blue-700 hover:text-white"
+                    aria-controls="dropdown" data-collapse-toggle="dropdown">
+                    <span class="flex-1 ms-3 text-left rtl:text-right"><i class="bi bi-database"></i> Master Data</span>
+                    <i class="bi bi-caret-down"></i>
+                </button>
+                <ul id="dropdown" class="hidden py-2 space-y-2">
+                    <li>
+                        <a href="{{ url('/admin/kelola/produk') }}"
+                            class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><span><i
+                                    class="bi bi-box-seam"></i> Kelola Produk</span></a>
+                        <a href="{{ url('/admin/kelola/kategori') }}"
+                            class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><span><i
+                                    class="bi bi-boxes"></i> Kelola Kategori</span></a>
+                    </li>
+                </ul>
             </li>
         </ul>
 </aside>
