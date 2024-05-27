@@ -11,7 +11,7 @@
                 <div class="flex justify-between items-center">
                     <h2 class="text-xl font-bold text-gray-900 dark:text-white">{{ $title }}</h2>
                     <a class="px-2 py-1 bg-blue-500 dark:bg-blue-600 rounded hover:bg-blue-600 dark:hover:bg-blue-700 text-white dark:text-black"
-                        href="{{ url('/admin/pengguna/member/create') }}"><i class="bi bi-person-add"></i> {{ $button_create }}</a>
+                        href="{{ url('/admin/pengguna/member/create') }}"><i class="bi bi-person-add"></i></a>
                 </div>
                 <div>
                     <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
