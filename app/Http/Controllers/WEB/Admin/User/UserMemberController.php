@@ -30,6 +30,7 @@ class UserMemberController extends Controller
         $this->role = $role;
         $this->member = $member;
     }
+
     public function index()
     {
 
