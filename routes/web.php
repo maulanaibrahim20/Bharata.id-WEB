@@ -93,5 +93,7 @@ Route::middleware(['autentikasi'])->group(function () {
         Route::get('/mitra', [DashboardController::class, 'mitra']);
         Route::get('/member/pages/transaksi', [DashboardController::class, 'transaksi']);
 
+        Route::get('/home', [DashboardController::class, 'index']);
+        Route::get('/home/dashboard', [DashboardController::class, 'dashboard']);
     });
 });

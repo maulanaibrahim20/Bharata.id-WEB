@@ -17,11 +17,10 @@ class DashboardController extends Controller
         return view('admin.pages.profil.index');
     }
 
-    public function member()
+    public function index()
     {
         return view('home.index');
     }
-
     public function mitra()
     {
         return view('member.pages.dashboard.index');
@@ -31,5 +30,13 @@ class DashboardController extends Controller
         return view('member.pages.transaksi.index');
     }
 
+    public function dashboard()
+    {
+        return view('home.dashboard.index');
+    }
 
+    public function produk()
+    {
+        return view('home.produk.index');
+    }
 }
