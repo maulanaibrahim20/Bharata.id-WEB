@@ -79,6 +79,7 @@ Route::middleware(['autentikasi'])->group(function () {
             });
             Route::prefix('pengguna')->group(function () {
                 Route::resource('member', UserMemberController::class);
+
             });
             Route::prefix('kelola')->group(function () {
                 Route::resource('produk', ProductController::class);
@@ -88,8 +89,11 @@ Route::middleware(['autentikasi'])->group(function () {
         });
     });
     Route::group(['middleware' => ['can:member']], function () {
+        Route::get('/home', [DashboardController::class, 'member']);
+        Route::get('/mitra', [DashboardController::class, 'mitra']);
+        Route::get('/member/pages/transaksi', [DashboardController::class, 'transaksi']);
+
         Route::get('/home', [DashboardController::class, 'index']);
         Route::get('/home/dashboard', [DashboardController::class, 'dashboard']);
-        Route::get('/home/produk', [DashboardController::class, 'produk']);
     });
 });

@@ -21,6 +21,14 @@ class DashboardController extends Controller
     {
         return view('home.index');
     }
+    public function mitra()
+    {
+        return view('member.pages.dashboard.index');
+    }
+    public function transaksi()
+    {
+        return view('member.pages.transaksi.index');
+    }
 
     public function dashboard()
     {
