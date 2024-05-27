@@ -17,8 +17,18 @@ class DashboardController extends Controller
         return view('admin.pages.profil.index');
     }
 
-    public function member()
+    public function index()
     {
         return view('home.index');
+    }
+
+    public function dashboard()
+    {
+        return view('home.dashboard.index');
+    }
+
+    public function produk()
+    {
+        return view('home.produk.index');
     }
 }
