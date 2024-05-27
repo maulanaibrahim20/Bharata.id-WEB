@@ -5,8 +5,12 @@
                 {{-- <img src="" class="h-8" alt="Bharata.id Logo" /> --}}
                 <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Bharata.id</span>
             </a>
-            <div class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+            <div class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse gap-2">
                 @auth
+                    <button type="button" class="text-2xl" id="cart-menu-button" aria-expanded="false"
+                        data-dropdown-toggle="cart-dropdown" data-dropdown-placement="bottom">
+                        <i class="bi bi-cart text-blue-500"></i>
+                    </button>
                     <button type="button"
                         class="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
                         id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown"
@@ -24,23 +28,51 @@
                         </div>
                         <ul class="py-2" aria-labelledby="user-menu-button">
                             <li>
-                                <a href="#"
-                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Dashboard</a>
+                                <a href="/home/profil"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Profil</a>
                             </li>
                             <li>
                                 <a href="#"
                                     class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Settings</a>
                             </li>
                             <li>
-                                <a href="#"
-                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Earnings</a>
+                                <a href="{{ url('registration-mitra') }}"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Registration
+                                    Mitra</a>
                             </li>
                             <li>
-                                <a href="{{ url('/logout') }}"
+                                <a href="/logout"
                                     class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign
                                     out</a>
                             </li>
                         </ul>
+                    </div>
+                    <!-- Dropdown cart -->
+                    <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600"
+                        id="cart-dropdown">
+                        <!-- Dropdown cart content -->
+                        <div class="px-4 py-3">
+                            <div class="grid grid-cols-2 justify-between gap-1 ">
+                                <div class="flex gap-1">
+                                    <img src="" class="w-8 h-9 rounded border" alt="" />
+                                    <p>Toyota Raize</p>
+                                </div>
+                                <div class="flex justify-end">
+                                    <p class="text-blue-400 font-semibold">Rp 550.000</p>
+                                </div>
+                            </div>
+                            <hr class="my-3" />
+                            <div class="grid grid-cols-2">
+                                <div>
+                                    <small class="text-gray-500">123 Produk Lainnya</small>
+                                </div>
+                                <div>
+                                    <a href="{{ url('/home/cart') }}"
+                                        class="w-full bg-blue-500 px-2 py-1 rounded hover:bg-blue-00 dark:bg-blue-300 text-white"
+                                        href="">Tampilkan Keranjang</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 @endauth
                 @guest <!-- Menampilkan tombol login jika pengguna belum login -->
