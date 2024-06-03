@@ -49,4 +49,9 @@ class DashboardController extends Controller
     {
         return view('member.pages.dashboard.info.index');
     }
+
+    public function statistik()
+    {
+        return view('member.pages.dashboard.statistik.index');
+    }
 }
