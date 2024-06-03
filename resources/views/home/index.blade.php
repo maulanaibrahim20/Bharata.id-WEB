@@ -16,7 +16,7 @@
     <br />
 
     {{-- CONTENT --}}
-    @include('home.dashboard.index')
+    @yield('content')
     {{-- END CONTENT --}}
 
     </br>

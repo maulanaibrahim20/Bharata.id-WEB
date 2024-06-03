@@ -1,18 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <title>Bharata.id</title>
-</head>
-
-<body>
-    @include('components.navbar')
-
+@extends('home.index')
+@section('content')
     {{-- CONTENT --}}
     <div class="container p-3 mx-auto">
         {{-- <div class="md:hidden mb-3 gap-2">
@@ -24,11 +11,11 @@
             <div class="grid grid-cols-3 gap-5">
                 {{-- FOTO PRODUK --}}
                 <div>
-                    <img class="h-auto max-w-s mx-auto rounded"
-                        src="https://flowbite.com/docs/images/examples/image-1@2x.jpg" alt="image description">
+                    <img class="h-auto max-w-s mx-auto rounded" src="https://flowbite.com/docs/images/examples/image-1@2x.jpg"
+                        alt="image description">
                     <div class="flex mt-2">
-                        <img class="h-10 w-20 mx-auto rounded"
-                            src="https://flowbite.com/docs/images/examples/image-1@2x.jpg" alt="image description">
+                        <img class="h-10 w-20 mx-auto rounded" src="https://flowbite.com/docs/images/examples/image-1@2x.jpg"
+                            alt="image description">
                         <img class="h-10 w-20 mx-auto rounded"
                             src="https://flowbite.com/docs/images/examples/image-1@2x.jpg" alt="image description">
                         <img class="h-10 w-20 mx-auto rounded"
@@ -98,7 +85,7 @@
                     <div class="mt-2">
                         <?php
                         $deskripsi = "Deskripsi Barang\nHarga Khusus Lebaran\n\nSyarat dan Ketentuan:\n- Harga sewa untuk pemakaian harian, maximum pengembalian jam 23:59\n- Harga sewa untuk pemakaian Jakarta\n\nBatasan Kilometer:\nMaksimal Km: 100km/hari\nKelebihan pemakaian dikenakan Rp1,500/km\n\nSebelum memesan, WAJIB membaca syarat dan ketentuan di bawah ini:\nUntuk semua penyewaan Lepas Kunci, mohon menghubungi kami untuk verifikasi data diri.\n\nSyarat Menyewa:\n- ID Card (KTP / KITAS)\n- Valid Driver’s License (SIM A)\n- Family Card (Kartu Keluarga)\n- Tax ID Card (NPWP)\n- Proof of Address (PBB Rumah)";
-
+                        
                         echo '<small class:"font-normal">' . nl2br($deskripsi) . '</small>';
                         ?>
                     </div>
@@ -141,8 +128,7 @@
                                     <button type="button"
                                         class="w-full bg-blue-500 text-white text-center px-4 py-2 hover:bg-blue-600 focus:outline-none focus:bg-blue-600 rounded-l-lg"
                                         onclick="decrement()">-</button>
-                                    <input type="text" id="quantity" name="quantity" min="1"
-                                        value="0"
+                                    <input type="text" id="quantity" name="quantity" min="1" value="0"
                                         class="w-16 bg-gray-50 text-center border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 text-center rounded-none">
                                     <button type="button"
                                         class="w-full bg-blue-500 text-white text-center px-4 py-2 hover:bg-blue-600 focus:outline-none focus:bg-blue-600 rounded-r-lg"
@@ -188,7 +174,8 @@
                     class="mt-3 max-w-xl p-4 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                     {{-- ULASAN USER --}}
                     <div class="flex items-center gap-2">
-                        <img src="https://flowbite.com/docs/images/carousel/carousel-3.svg" alt="FOTO ULASAN USER" class="rounded-full w-10 h-10 border" />
+                        <img src="https://flowbite.com/docs/images/carousel/carousel-3.svg" alt="FOTO ULASAN USER"
+                            class="rounded-full w-10 h-10 border" />
                         <div class="flex flex-col gap-0">
                             <span class="font-normal font-semibold">Bima Ryan Alfarizi <span
                                     class="font-normal text-gray-400 text-xs">22-04-2024</span></span>
@@ -200,7 +187,8 @@
                     </hr>
                     {{-- ULASAN ADMIN(MITRA) --}}
                     <div class="flex items-center gap-2 ml-3">
-                        <img src="https://flowbite.com/docs/images/carousel/carousel-3.svg" alt="FOTO ULASAN USER" class="rounded-full w-10 h-10 border" />
+                        <img src="https://flowbite.com/docs/images/carousel/carousel-3.svg" alt="FOTO ULASAN USER"
+                            class="rounded-full w-10 h-10 border" />
                         <div class="flex flex-col gap-0">
                             <span class="font-normal font-semibold">Austyn Murazik <span
                                     class="font-normal font-semibold text-xs text-blue-500">Admin(Mitra
@@ -271,12 +259,8 @@
         </div>
     </div>
     {{-- END CONTENT --}}
-    <br/>
-    <br/>
-
-    {{-- FOOTER --}}
-    @include('components.footer')
-    {{-- END FOOTER --}}
+    <br />
+    <br />
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
     <script>
@@ -293,6 +277,4 @@
             }
         }
     </script>
-</body>
-
-</html>
+@endsection

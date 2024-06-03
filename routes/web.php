@@ -89,15 +89,14 @@ Route::middleware(['autentikasi'])->group(function () {
         });
     });
     Route::group(['middleware' => ['can:member']], function () {
-        Route::get('/home', [DashboardController::class, 'index'])-> name('home');
         Route::get('/mitra', [DashboardController::class, 'mitra']);
         Route::get('/member/dashboard/transaksi', [DashboardController::class, 'transaksi'])->name('transaksi');
         Route::get('/member/dashboard', [DashboardController::class, 'member'])->name('member');
         Route::get('/member/dashboard/info', [DashboardController::class, 'info'])->name('info');
         Route::get('/member/dashboard/statistik', [DashboardController::class, 'statistik'])->name('statistik');
 
-        Route::get('/home', [DashboardController::class, 'index']);
-        Route::get('/home/dashboard', [DashboardController::class, 'dashboard']);
+        Route::get('/home', [DashboardController::class, 'dashboard']);
         Route::get('/home/produk', [DashboardController::class, 'produk']);
+        Route::get('/home/cart', [DashboardController::class, 'cart'])->name('cart');
     });
 });
