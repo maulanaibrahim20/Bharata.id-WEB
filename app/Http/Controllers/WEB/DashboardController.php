@@ -27,7 +27,7 @@ class DashboardController extends Controller
     }
     public function transaksi()
     {
-        return view('member.pages.transaksi.index');
+        return view('member.pages.dashboard.transaksi.index');
     }
 
     public function dashboard()
@@ -35,8 +35,18 @@ class DashboardController extends Controller
         return view('home.dashboard.index');
     }
 
+    public function member()
+    {
+        return view('member.pages.index');
+    }
+
     public function produk()
     {
         return view('home.produk.index');
+    }
+
+    public function info()
+    {
+        return view('member.pages.dashboard.info.index');
     }
 }
