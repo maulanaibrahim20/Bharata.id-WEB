@@ -14,7 +14,7 @@ class CreateReviewstable extends Migration
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('kost_id');
-            $table->uuid('user_id');
+            $table->string('user_id', 50);
             $table->text('review');
             $table->timestamps();
 

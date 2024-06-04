@@ -2,6 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\Kost;
+use App\Models\User;
+use App\Models\User\Member;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
@@ -14,10 +17,12 @@ class MemberSeeder extends Seeder
      */
     public function run(): void
     {
-        // Data dummy untuk tabel members
+        $user = User::where('role_id', 2)->first();
+        
         DB::table('members')->insert([
             [
-                'user_id' => '9b9d0175-1677-4b56-8b34-7240abc3f71b', // Ganti dengan UUID dari user yang sesuai
+                'user_id' => $user->id,
+                'kost_id' => 1,
                 'nama_depan' => 'Shanna',
                 'nama_belakang' => 'Steuber',
                 'jenis_kelamin' => 'Laki-laki',

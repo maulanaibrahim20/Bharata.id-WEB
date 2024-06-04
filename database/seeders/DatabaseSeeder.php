@@ -26,6 +26,7 @@ class DatabaseSeeder extends Seeder
             SubCategorySeeder::class,
             GroupCategorySeeder::class,
             MemberSeeder::class,
+            KostSeeder::class,
         ]);
     }
 }

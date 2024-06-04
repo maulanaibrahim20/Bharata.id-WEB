@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\User\Member;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -23,11 +24,16 @@ class Kost extends Model
 
     public function rules()
     {
-        return $this->hasMany(Rule::class);
+        return $this->hasMany(Rules::class);
     }
 
     public function reviews()
     {
         return $this->hasMany(Review::class);
+    }
+
+    public function member()
+    {
+        return $this->belongsTo(Member::class,'member_id');
     }
 }

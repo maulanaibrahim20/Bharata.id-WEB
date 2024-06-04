@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('members', function (Blueprint $table) {
             $table->id();
-            $table->uuid('user_id')->index();
+            $table->string('user_id', 50);
+            $table->integer('kost_id');
             $table->string('nama_depan');
             $table->string('nama_belakang');
             $table->string('jenis_kelamin');

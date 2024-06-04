@@ -18,14 +18,15 @@ class CreateKostsTable extends Migration
             $table->string('judul');
             $table->text('deskripsi');
             $table->enum('tag', ['kost putra', 'kost putri', 'kost campur']);
-            $table->uuid('member_id'); // Sesuaikan tipe data dengan UUID
+            $table->unsignedBigInteger('member_id'); // Sesuaikan tipe data dengan UUID
             $table->text('cerita_pemilik');
             $table->text('ketentuan_pengajuan_sewa');
             $table->date('tanggal_mulai_kos');
-            $table->decimal('perbulan', 10, 2);
+            $table->double('perbulan');
+            $table->string('alamat_kost');
             $table->timestamps();
 
-            $table->foreign('member_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('member_id')->references('id')->on('members')->onDelete('cascade');
         });
     }
 

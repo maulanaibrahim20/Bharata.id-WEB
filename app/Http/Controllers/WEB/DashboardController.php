@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\WEB;
 
 use App\Http\Controllers\Controller;
+use App\Models\Kost;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -19,7 +20,7 @@ class DashboardController extends Controller
 
     public function index()
     {
-        return view('home.index');
+        return view('home.dashboard.index');
     }
 
     public function mitra()
@@ -33,7 +34,9 @@ class DashboardController extends Controller
 
     public function dashboard()
     {
-        return view('home.dashboard.index');
+        $data['kost'] = Kost::all();
+        // dd($data);
+        return view('home.dashboard.index', $data);
     }
 
     public function member()
@@ -41,9 +44,10 @@ class DashboardController extends Controller
         return view('member.pages.index');
     }
 
-    public function produk()
+    public function produk($id)
     {
-        return view('home.produk.index');
+        $data['produk'] = Kost::where('id', $id)->first();
+        return view('home.produk.index', $data);
     }
 
     public function info()

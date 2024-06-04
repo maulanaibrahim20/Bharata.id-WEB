@@ -27,10 +27,9 @@ use Illuminate\Support\Facades\Route;
 
 
 
+Route::get('/',  [DashboardController::class,'index'])->name('home');
+Route::get('/home/produk', [DashboardController::class, 'produk']);
 Route::middleware(['guest'])->group(function () {
-    Route::get('/', function () {
-        return view('/home/index');
-    });
     Route::prefix('login')->name('login.')->group(function () {
         Route::get('/', [LoginController::class, 'index'])
             ->name('index');
@@ -98,7 +97,7 @@ Route::middleware(['autentikasi'])->group(function () {
         Route::get('/member/kelola/produk', [KostController::class, 'index'])->name('member.produk');
 
         Route::get('/home', [DashboardController::class, 'dashboard']);
-        Route::get('/home/produk', [DashboardController::class, 'produk']);
+        Route::get('/home/produk/{id}', [DashboardController::class, 'produk']);
         Route::get('/home/cart', [DashboardController::class, 'cart'])->name('cart');
     });
 });
