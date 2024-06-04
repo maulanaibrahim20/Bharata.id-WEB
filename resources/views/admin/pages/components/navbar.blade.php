@@ -127,7 +127,7 @@
                 </button>
                 <ul id="dropdown" class="hidden py-2 space-y-2">
                     <li>
-                        <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><span><i class="bi bi-box-seam"></i> Kelola Produk</span></a>
+                        <a href="{{route('member.produk')}}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><span><i class="bi bi-box-seam"></i> Kelola Produk</span></a>
                         <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><span><i class="bi bi-boxes"></i> Kelola Kategori</span></a>
                     </li>
                 </ul>

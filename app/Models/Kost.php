@@ -1,30 +1,35 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Storage;
 
 class Kost extends Model
 {
+    use HasFactory;
+
     protected $fillable = [
-        'nama', 'alamat', 'harga', 'deskripsi', 'gambar', 'status', 'mitra', 'fasilitas_kamar', 'fasilitas_kamar_mandi', 'peraturan_khusus', 'fasilitas_umum', 'fasilitas_parkir', 'peraturan_kos', 'lokasi', 'ketentuan_pengajuan', 'review', 'mulai_kost', 'perbulan', 'tipe_kost'
+        'judul', 'deskripsi', 'tag', 'member_id', 'cerita_pemilik', 'ketentuan_pengajuan_sewa', 'tanggal_mulai_kos', 'perbulan'
     ];
 
-    public function saveImage($image)
+    public function owner()
     {
-        $filename = uniqid('kost_') . '.' . $image->getClientOriginalExtension();
-        $path = $image->storeAs('public/kost_images', $filename);
-        $this->gambar = $filename;
-        $this->save();
-        return $path;
+        return $this->belongsTo(User::class, 'member_id');
     }
 
-    public function getImageUrl()
+    public function facilities()
     {
-        if ($this->gambar) {
-            return Storage::url('public/kost_images/' . $this->gambar);
-        }
-        return null;
+        return $this->hasMany(Facility::class);
+    }
+
+    public function rules()
+    {
+        return $this->hasMany(Rule::class);
+    }
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
     }
 }

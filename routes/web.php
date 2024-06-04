@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\KostController;
 use App\Http\Controllers\WEB\Admin\CategoryController;
 use App\Http\Controllers\WEB\Auth\LoginController;
 use App\Http\Controllers\WEB\Auth\LogoutController;
@@ -95,6 +96,7 @@ Route::middleware(['autentikasi'])->group(function () {
         Route::get('/member/dashboard', [DashboardController::class, 'member'])->name('member');
         Route::get('/member/dashboard/info', [DashboardController::class, 'info'])->name('info');
         Route::get('/member/dashboard/statistik', [DashboardController::class, 'statistik'])->name('statistik');
+        Route::get('/member/kelola/produk', [KostController::class, 'index'])->name('member.produk');
 
         Route::get('/home', [DashboardController::class, 'index']);
         Route::get('/home/dashboard', [DashboardController::class, 'dashboard']);
