@@ -21,6 +21,7 @@ class DashboardController extends Controller
     {
         return view('home.index');
     }
+
     public function mitra()
     {
         return view('member.pages.dashboard.index');
@@ -53,5 +54,10 @@ class DashboardController extends Controller
     public function statistik()
     {
         return view('member.pages.dashboard.statistik.index');
+    }
+
+    public function cart()
+    {
+        return view('home.cart.index');
     }
 }
