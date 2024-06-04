@@ -9,9 +9,7 @@ class Kost extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'judul', 'deskripsi', 'tag', 'member_id', 'cerita_pemilik', 'ketentuan_pengajuan_sewa', 'tanggal_mulai_kos', 'perbulan'
-    ];
+    protected $guarded = [''];
 
     public function owner()
     {
