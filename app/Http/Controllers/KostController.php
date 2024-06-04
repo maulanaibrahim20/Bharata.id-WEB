@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kost;
 use Illuminate\Http\Request;
 
 class KostController extends Controller
 {
     public function index()
     {
-        return view("member.pages.kelola.produk.index");
+        $kosts = Kost::all();
+        return view("member.pages.kelola.produk.index", compact('kosts'));
     }
 }
