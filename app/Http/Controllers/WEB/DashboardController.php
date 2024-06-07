@@ -18,11 +18,6 @@ class DashboardController extends Controller
         return view('admin.pages.profil.index');
     }
 
-    public function index()
-    {
-        return view('home.dashboard.index');
-    }
-
     public function mitra()
     {
         return view('member.pages.dashboard.index');
@@ -46,8 +41,18 @@ class DashboardController extends Controller
 
     public function produk($id)
     {
-        $data['produk'] = Kost::where('id', $id)->first();
-        return view('home.produk.index', $data);
+        $produk = Kost::find($id);
+
+        if (!$produk) {
+            return redirect()->route('kost.index')->with('error', 'Produk tidak ditemukan.');
+        }
+
+        $kost = Kost::where('id', '!=', $id)->take(4)->get();
+
+        return view('home.produk.index', [
+            'produk' => $produk,
+            'kost' => $kost,
+        ]);
     }
 
     public function info()
