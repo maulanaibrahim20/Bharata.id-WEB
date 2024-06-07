@@ -15,10 +15,11 @@ class CreateKostsTable extends Migration
     {
         Schema::create('kosts', function (Blueprint $table) {
             $table->id();
+            $table->string('foto');
             $table->string('judul');
             $table->text('deskripsi');
             $table->enum('tag', ['kost putra', 'kost putri', 'kost campur']);
-            $table->unsignedBigInteger('member_id'); // Sesuaikan tipe data dengan UUID
+            $table->unsignedBigInteger('member_id');
             $table->text('cerita_pemilik');
             $table->text('ketentuan_pengajuan_sewa');
             $table->date('tanggal_mulai_kos');

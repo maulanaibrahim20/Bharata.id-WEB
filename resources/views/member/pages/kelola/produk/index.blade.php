@@ -30,16 +30,15 @@
                 <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400" id="basic-datatable">
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
-                            <th class="px-6 py-3">ID</th>
-                            <th class="px-6 py-3">Judul</th>
-                            <th class="px-6 py-3">Deskripsi</th>
-                            <th class="px-6 py-3">Tag</th>
-                            <th class="px-6 py-3">Member ID</th>
-                            <th class="px-6 py-3">Cerita Pemilik</th>
-                            <th class="px-6 py-3">ketentuan Pengajuan Sewa</th>
-                            <th class="px-6 py-3">Tanggal Mulai Kos</th>
-                            <th class="px-6 py-3">Perbulan</th>
-                            <th class="px-6 py-3">Action</th>
+                            <th scope="col" class="px-6 py-3">ID</th>
+                            <th scope="col" class="px-6 py-3">Judul</th>
+                            <th scope="col" class="px-6 py-3">Tag</th>
+                            <th scope="col" class="px-6 py-3">Cerita Pemilik</th>
+                            <th scope="col" class="px-6 py-3">Alamat</th>
+                            <th scope="col" class="px-6 py-3">ketentuan Pengajuan Sewa</th>
+                            <th scope="col" class="px-6 py-3">Tanggal Mulai Kos</th>
+                            <th scope="col" class="px-6 py-3">Perbulan</th>
+                            <th scope="col" class="px-6 py-3">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -48,15 +47,14 @@
                                 <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                     {{ $kost->id }}
                                 </td>
-                                <td class="px-6 py-4">{{ $kost->judul }}</td>
-                                <td class="px-6 py-4">{{ $kost->deskripsi }}</td>
-                                <td class="px-6 py-4">{{ $kost->tag }}</td>
-                                <td class="px-6 py-4">{{ $kost->member_id }}</td>
-                                <td class="px-6 py-4">{{ $kost->cerita_pemilik }}</td>
-                                <td class="px-6 py-4">{{ $kost->ketentuan_pengajuan_sewa }}</td>
-                                <td class="px-6 py-4">{{ $kost->tanggal_mulai_kos }}</td>
-                                <td class="px-6 py-4">{{ $kost->perbulan }}</td>
-                                <td class="px-6 py-4">
+                                <td scope="col" class="px-6 py-4">{{ $kost->judul }}</td>
+                                <td scope="col" class="px-6 py-4">{{ $kost->tag }}</td>
+                                <td scope="col" class="px-1 py-4">{{ $kost->cerita_pemilik }}</td>
+                                <td scope="col" class="px-6 py-4">{{ $kost->alamat_kost }}</td>
+                                <td scope="col" class="px-6 py-4">{{ $kost->ketentuan_pengajuan_sewa }}</td>
+                                <td scope="col" class="px-6 py-4">{{ $kost->tanggal_mulai_kos }}</td>
+                                <td scope="col" class="px-6 py-4">{{ $kost->perbulan }}</td>
+                                <td scope="col" class="px-6 py-4">
                                     <div class="flex items-center gap-3">
                                         <button class="cursor-pointer font-medium px-2 py-1 rounded text-white dark:text-gray-200 bg-yellow-400 dark:bg-yellow-600"><i class="bi bi-pencil-square"></i></button>
                                         <button class="cursor-pointer font-medium px-2 py-1 rounded text-white dark:text-gray-200 bg-purple-500 dark:bg-purple-600"><i class="bi bi-eye"></i></button>

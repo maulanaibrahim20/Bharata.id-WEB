@@ -26,8 +26,7 @@ return new class extends Migration
             $table->bigInteger('kode_pos');
             $table->bigInteger('no_telp');
             $table->string('image');
-            $table->boolean('memiliki_toko')->default(false);
-            $table->boolean('verifikasi_ktp')->default(false);
+            $table->enum('status', ['1','0'])->comment('catatan : 1 = terverifikasi 2 = belum verifikasi')->default(0);
             $table->timestamps();
         });
     }

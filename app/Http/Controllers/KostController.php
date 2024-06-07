@@ -12,4 +12,11 @@ class KostController extends Controller
         $kosts = Kost::all();
         return view("member.pages.kelola.produk.index", compact('kosts'));
     }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            
+        ]);
+    }
 }

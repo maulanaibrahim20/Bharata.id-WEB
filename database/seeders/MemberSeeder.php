@@ -18,7 +18,7 @@ class MemberSeeder extends Seeder
     public function run(): void
     {
         $user = User::where('role_id', 2)->first();
-        
+
         DB::table('members')->insert([
             [
                 'user_id' => $user->id,
@@ -34,8 +34,7 @@ class MemberSeeder extends Seeder
                 'kode_pos' => 12345,
                 'no_telp' => '081234567890',
                 'image' => 'default.jpg',
-                'memiliki_toko' => true,
-                'verifikasi_ktp' => true,
+                'status' => '1',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],

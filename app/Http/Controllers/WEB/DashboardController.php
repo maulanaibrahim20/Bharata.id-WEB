@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\WEB;
 
 use App\Http\Controllers\Controller;
+use App\Models\Facility;
 use App\Models\Kost;
+use App\Models\Rules;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -41,18 +43,12 @@ class DashboardController extends Controller
 
     public function produk($id)
     {
-        $produk = Kost::find($id);
+        $data['produk'] = Kost::find($id);
+        $data['facility'] = Facility::find($id);
+        $data['rules'] = Rules::find($id);
+        $data['kost'] = Kost::all();
 
-        if (!$produk) {
-            return redirect()->route('kost.index')->with('error', 'Produk tidak ditemukan.');
-        }
-
-        $kost = Kost::where('id', '!=', $id)->take(4)->get();
-
-        return view('home.produk.index', [
-            'produk' => $produk,
-            'kost' => $kost,
-        ]);
+        return view('home.produk.index', $data);
     }
 
     public function info()
@@ -68,5 +64,10 @@ class DashboardController extends Controller
     public function cart()
     {
         return view('home.cart.index');
+    }
+
+    public function register_member()
+    {
+        return view('home.registrasi.index');
     }
 }

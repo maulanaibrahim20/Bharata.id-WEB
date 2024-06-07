@@ -15,7 +15,7 @@ class CreateFacilitiesTable extends Migration
             $table->id();
             $table->unsignedBigInteger('kost_id');
             $table->string('type'); // 'kamar', 'kamar_mandi', 'umum', 'parkir'
-            $table->string('facility');
+            $table->longText('facility');
             $table->timestamps();
 
             $table->foreign('kost_id')->references('id')->on('kosts')->onDelete('cascade');
