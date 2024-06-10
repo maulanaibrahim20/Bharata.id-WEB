@@ -89,12 +89,23 @@ Route::middleware(['autentikasi'])->group(function () {
         });
     });
     Route::group(['middleware' => ['can:member']], function () {
-        Route::get('/mitra', [DashboardController::class, 'mitra']);
-        Route::get('/member/dashboard/transaksi', [DashboardController::class, 'transaksi'])->name('transaksi');
-        Route::get('/member/dashboard', [DashboardController::class, 'member'])->name('member');
-        Route::get('/member/dashboard/info', [DashboardController::class, 'info'])->name('info');
-        Route::get('/member/dashboard/statistik', [DashboardController::class, 'statistik'])->name('statistik');
-        Route::get('/member/kelola/produk', [KostController::class, 'index'])->name('member.produk');
+        Route::middleware(['auth', 'check.member.status'])->group(function () {
+            Route::get('/member/dashboard/transaksi', [DashboardController::class, 'transaksi'])->name('transaksi');
+            Route::get('/member/dashboard', [DashboardController::class, 'member'])->name('member');
+            Route::get('/member/dashboard/info', [DashboardController::class, 'info'])->name('info');
+            Route::get('/member/dashboard/statistik', [DashboardController::class, 'statistik'])->name('statistik');
+            Route::get('/member/kelola/produk', [KostController::class, 'index'])->name('member.produk');
+            Route::get('/member/kelola/produk/create', [KostController::class, 'create'])->name('member.produk.create');
+            Route::post('/member/kelola/produk/store', [KostController::class, 'store'])->name('member.produk.store');
+            Route::get('/member/kelola/produk/edit/{id}', [KostController::class, 'edit'])->name('member.produk.edit');
+            Route::put('/member/kelola/produk/update/{id}', [KostController::class, 'update'])->name('member.produk.update');
+            Route::get('/member/kelola/produk/{id}', [KostController::class, 'destroy'])->name('member.produk.destroy');
+        });
+        // Route::get('/member/dashboard/transaksi', [DashboardController::class, 'transaksi'])->name('transaksi');
+        // Route::get('/member/dashboard', [DashboardController::class, 'member'])->name('member');
+        // Route::get('/member/dashboard/info', [DashboardController::class, 'info'])->name('info');
+        // Route::get('/member/dashboard/statistik', [DashboardController::class, 'statistik'])->name('statistik');
+        // Route::get('/member/kelola/produk', [KostController::class, 'index'])->name('member.produk');
 
         Route::get('/home', [DashboardController::class, 'dashboard']);
         Route::get('/home/registrasi', [DashboardController::class, 'register_member'])->name('home.registrasi');

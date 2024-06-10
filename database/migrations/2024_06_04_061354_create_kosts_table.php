@@ -15,7 +15,11 @@ class CreateKostsTable extends Migration
     {
         Schema::create('kosts', function (Blueprint $table) {
             $table->id();
-            $table->string('foto');
+            $table->string('foto1');
+            $table->string('foto2');
+            $table->string('foto3');
+            $table->string('foto4');
+            $table->string('foto5');
             $table->string('judul');
             $table->text('deskripsi');
             $table->enum('tag', ['kost putra', 'kost putri', 'kost campur']);

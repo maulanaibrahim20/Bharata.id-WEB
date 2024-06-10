@@ -14,7 +14,7 @@ class CreateFacilitiesTable extends Migration
         Schema::create('facilities', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('kost_id');
-            $table->string('type'); // 'kamar', 'kamar_mandi', 'umum', 'parkir'
+            $table->enum('type', ['Fasilitas Umum', 'Fasilitas Parkir', 'Fasilitas Kamar Mandi']); // 'kamar', 'kamar_mandi', 'umum', 'parkir'
             $table->longText('facility');
             $table->timestamps();
 

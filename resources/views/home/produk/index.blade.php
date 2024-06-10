@@ -7,17 +7,163 @@
             <div class="grid grid-cols-3 gap-5">
                 {{-- FOTO PRODUK --}}
                 <div>
-                    <img class="h-auto max-w-s mx-auto rounded" src="{{ $produk->foto }}"
-                        alt="{{ $produk->judul }}">
-                    <div class="flex mt-2">
-                        <img class="h-10 w-20 mx-auto rounded" src="https://flowbite.com/docs/images/examples/image-1@2x.jpg"
-                            alt="image description">
-                        <img class="h-10 w-20 mx-auto rounded"
-                            src="https://flowbite.com/docs/images/examples/image-1@2x.jpg" alt="image description">
-                        <img class="h-10 w-20 mx-auto rounded"
-                            src="https://flowbite.com/docs/images/examples/image-1@2x.jpg" alt="image description">
-                        <img class="h-10 w-20 mx-auto rounded"
-                            src="https://flowbite.com/docs/images/examples/image-1@2x.jpg" alt="image description">
+                    <img class="h-auto max-w-s mx-auto rounded" src="{{ url('foto_kost', $produk->foto1) }}"
+                        alt="{{ $produk->judul }}" />
+                    <div class="grid grid-cols-4 mt-2">
+                        @if ($produk->foto2)
+                            <img class="h-10 w-20 mx-auto rounded" src="{{ url('foto_kost', $produk->foto2) }}"
+                                alt="{{ $produk->judul }}" data-modal-target="modal2" data-modal-toggle="modal2" />
+                        @endif
+
+                        <div id="modal2" tabindex="-1" aria-hidden="true"
+                            class="hidden fixed inset-0 z-50 overflow-auto bg-black bg-opacity-50" x-show="open">
+                            <div class="relative p-4 w-full max-w-2xl max-h-full">
+                                <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                                    <div class="relative">
+                                        <!-- Modal header -->
+                                        <div
+                                            class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                                            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                                                Foto Kost
+                                            </h3>
+                                            <button type="button"
+                                                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                                                data-modal-hide="modal2">
+                                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                                    fill="none" viewBox="0 0 14 14">
+                                                    <path stroke="currentColor" stroke-linecap="round"
+                                                        stroke-linejoin="round" stroke-width="2"
+                                                        d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                                </svg>
+                                                <span class="sr-only">Close modal</span>
+                                            </button>
+                                        </div>
+                                        <!-- Image -->
+                                        <div class="p-4 md:p-5 space-y-4">
+                                            <img class="max-w-full rounded-lg" src="{{ url('foto_kost', $produk->foto2) }}"
+                                                alt="{{ $produk->judul }}" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        @if ($produk->foto3)
+                            <img class="h-10 w-20 mx-auto rounded" src="{{ url('foto_kost', $produk->foto3) }}"
+                                alt="{{ $produk->judul }}" data-modal-target="modal3" data-modal-toggle="modal3">
+                        @endif
+
+                        <div id="modal3" tabindex="-1" aria-hidden="true"
+                            class="hidden fixed inset-0 z-50 overflow-auto bg-black bg-opacity-50" x-show="open">
+                            <div class="relative p-4 w-full max-w-2xl max-h-full">
+                                <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                                    <div class="relative">
+                                        <!-- Modal header -->
+                                        <div
+                                            class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                                            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                                                Foto Kost
+                                            </h3>
+                                            <button type="button"
+                                                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                                                data-modal-hide="modal3">
+                                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                                    fill="none" viewBox="0 0 14 14">
+                                                    <path stroke="currentColor" stroke-linecap="round"
+                                                        stroke-linejoin="round" stroke-width="2"
+                                                        d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                                </svg>
+                                                <span class="sr-only">Close modal</span>
+                                            </button>
+                                        </div>
+                                        <!-- Image -->
+                                        <div class="p-4 md:p-5 space-y-4">
+                                            <img class="max-w-full rounded-lg" src="{{ url('foto_kost', $produk->foto3) }}"
+                                                alt="{{ $produk->judul }}" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        @if ($produk->foto4)
+                            <img class="h-10 w-20 mx-auto rounded" src="{{ url('foto_kost', $produk->foto4) }}"
+                                alt="{{ $produk->judul }}" data-modal-target="modal4" data-modal-toggle="modal4" />
+
+                            <div id="modal4" tabindex="-1" aria-hidden="true"
+                                class="hidden fixed inset-0 z-50 overflow-auto bg-black bg-opacity-50" x-show="open">
+                                <div class="relative p-4 w-full max-w-2xl max-h-full">
+                                    <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                                        <div class="relative">
+                                            <!-- Modal header -->
+                                            <div
+                                                class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                                                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                                                    Foto Kost
+                                                </h3>
+                                                <button type="button"
+                                                    class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                                                    data-modal-hide="modal4">
+                                                    <svg class="w-3 h-3" aria-hidden="true"
+                                                        xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 14 14">
+                                                        <path stroke="currentColor" stroke-linecap="round"
+                                                            stroke-linejoin="round" stroke-width="2"
+                                                            d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                                    </svg>
+                                                    <span class="sr-only">Close modal</span>
+                                                </button>
+                                            </div>
+                                            <!-- Image -->
+                                            <div class="p-4 md:p-5 space-y-4">
+                                                <img class="max-w-full rounded-lg"
+                                                    src="{{ url('foto_kost', $produk->foto5) }}"
+                                                    alt="{{ $produk->judul }}" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
+
+                        @if ($produk->foto5)
+                            <img class="h-10 w-20 mx-auto rounded" src="{{ url('foto_kost', $produk->foto5) }}"
+                                alt="{{ $produk->judul }}" data-modal-target="modal4" data-modal-toggle="modal4" />
+                            <div id="modal5" tabindex="-1" aria-hidden="true"
+                                class="hidden fixed inset-0 z-50 overflow-auto bg-black bg-opacity-50" x-show="open">
+                                <div class="relative p-4 w-full max-w-2xl max-h-full">
+                                    <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                                        <div class="relative">
+                                            <!-- Modal header -->
+                                            <div
+                                                class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                                                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                                                    Foto Kost
+                                                </h3>
+                                                <button type="button"
+                                                    class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                                                    data-modal-hide="modal5">
+                                                    <svg class="w-3 h-3" aria-hidden="true"
+                                                        xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 14 14">
+                                                        <path stroke="currentColor" stroke-linecap="round"
+                                                            stroke-linejoin="round" stroke-width="2"
+                                                            d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                                    </svg>
+                                                    <span class="sr-only">Close modal</span>
+                                                </button>
+                                            </div>
+                                            <!-- Image -->
+                                            <div class="p-4 md:p-5 space-y-4">
+                                                <img class="max-w-full rounded-lg"
+                                                    src="{{ url('foto_kost', $produk->foto5) }}"
+                                                    alt="{{ $produk->judul }}" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
                     </div>
                     <hr class="mt-4 mb-2" />
                     {{-- INI RATING --}}
@@ -60,15 +206,19 @@
                 {{-- INI DESKRIPSI --}}
                 <div class="overflow-y-auto max-h-[30rem] h-80" name='infopenting'>
                     <p class="font-normal text-2xl">{{ $produk->judul }}</p>
-                    <!-- <div class="grid grid-cols-3 hidden md:block gap-1">
-                                        <small>Sisa Mobil <span class="text-gray-400">(30)</span></small>
-                                        <small>5 <span class="text-gray-400">(287 rating)</span></small>
-                                        <small>Diskusi <span class="text-gray-400">(37)</span></small>
-                                    </div> -->
+
+                    <div class="mt-1">
+                        <span
+                            class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">
+                            {{ $produk->tag }}
+                        </span>
+                    </div>
+
                     <div class="flex items-center gap-0 mt-4 mb-4">
-                        <span class="font-normal font-semibold text-3xl">Rp{{ $produk->perbulan }}</span>
+                        <span class="font-normal font-semibold text-2xl">Rp{{ $produk->perbulan }}</span>
                         <span class="text-small">/bulan</span>
                     </div>
+
                     {{-- <div class="grid grid-cols-3 mt-3 gap-1">
                         <button
                             class="border border-gray-300 hover:border-gray-500 text-gray-700 hover:text-gray-900 font-medium p-2 rounded-md">Detail</button>
@@ -79,19 +229,27 @@
                             class="border border-gray-300 hover:border-gray-500 text-gray-700 hover:text-gray-900 font-medium p-2 rounded-md">Fasilitas
                             Parkir</button>
                     </div> --}}
+
                     <div class="mt-2">
                         <p class="font-semibold">Deskripsi</p>
                         <small class="font-normal">{!! nl2br(htmlentities($produk->cerita_pemilik)) !!}</small>
                     </div>
 
-                    <div class="mt-2">
-                        <p class="font-semibold">{!! nl2br(htmlentities($facility->type)) !!}</p>
-                        <small class="font-normal">{!! nl2br(htmlentities($facility->facility)) !!}</small>
-                    </div>
+                    @foreach ($facilities as $facility)
+                        <div class="mt-2">
+                            <p class="font-semibold">{!! nl2br(htmlentities($facility->type)) !!}</p>
+                            <small class="font-normal">{!! nl2br(htmlentities($facility->facility)) !!}</small>
+                        </div>
+                    @endforeach
 
                     <div class="mt-2">
                         <p class="font-semibold">{!! nl2br(htmlentities($rules->type)) !!}</p>
                         <small class="font-normal">{!! nl2br(htmlentities($rules->rule)) !!}</small>
+                    </div>
+
+                    <div class="mt-2">
+                        <p class="font-semibold">Ketentuan Pengajuan Sewa</p>
+                        <small class="font-normal">{!! nl2br(htmlentities($produk->ketentuan_pengajuan_sewa)) !!}</small>
                     </div>
 
                     <div
@@ -178,20 +336,21 @@
                 <div
                     class="mt-3 max-w-xl p-4 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                     {{-- ULASAN USER --}}
+                    {{-- Loop through reviews --}}
                     <div class="flex items-center gap-2">
                         <img src="https://flowbite.com/docs/images/carousel/carousel-3.svg" alt="FOTO ULASAN USER"
                             class="rounded-full w-10 h-10 border" />
                         <div class="flex flex-col gap-0">
-                            <span class="font-normal font-semibold">Bima Ryan Alfarizi <span
+                            <span class="font-normal font-semibold">Anwar Musyadad <span
                                     class="font-normal text-gray-400 text-xs">22-04-2024</span></span>
-                            <small class="font-normal text-gray-400">Pelayanan nya bagus</small>
+                            <small class="font-normal text-gray-400">{{$review->review}}</small>
                         </div>
                     </div>
                     {{-- END ULASAN USER --}}
-                    <hr class="my-2">
+                    {{-- <hr class="my-2"> --}}
                     </hr>
                     {{-- ULASAN ADMIN(MITRA) --}}
-                    <div class="flex items-center gap-2 ml-3">
+                    {{-- <div class="flex items-center gap-2 ml-3">
                         <img src="https://flowbite.com/docs/images/carousel/carousel-3.svg" alt="FOTO ULASAN USER"
                             class="rounded-full w-10 h-10 border" />
                         <div class="flex flex-col gap-0">
@@ -201,7 +360,7 @@
                             <small class="font-normal text-gray-400">Makasih sudah pakai jasa sewa rental kami
                                 :)</small>
                         </div>
-                    </div>
+                    </div> --}}
                     {{-- END ULASAN ADMIN(MITRA) --}}
                 </div>
             </div>
@@ -214,8 +373,7 @@
                     @foreach ($kost as $items)
                         <a href="{{ url('home/produk/' . $items->id) }}" class="w-full max-w-m p-3">
                             <div>
-                                <img src="https://static.mamikos.com/uploads/cache/data/style/2023-11-16/6Hsc0Lkk-360x480.jpg"
-                                    class="h-auto max-w-full rounded-lg" />
+                                <img src="{{ url('foto_kost', $items->foto1) }}" class="h-auto max-w-full rounded-lg" />
                             </div>
                             <div class="mt-1">
                                 <span

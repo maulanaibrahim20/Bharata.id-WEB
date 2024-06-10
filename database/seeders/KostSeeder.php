@@ -23,7 +23,11 @@ class KostSeeder extends Seeder
         $user = User::where("role_id", 2)->first();
         $member = Member::where("user_id", $user->id)->first();
         $Kost = Kost::create([
-            "foto" => ("foto_kost/1.jpg"),
+            "foto1" => ("1.jpg"),
+            "foto2" => ("masih 1.jpg"),
+            "foto3" => (""),
+            "foto4" => (""),
+            "foto5" => (""),
             "judul" => "Kost Singgahsini Abc Sukakarya Tipe B Sukajadi Bandung M6BY19C7",
             "deskripsi" => "",
             "tag" => "kost campur",
@@ -50,8 +54,54 @@ class KostSeeder extends Seeder
             "alamat_kost" => "Kecamatan Ngaglik, Kabupaten Sleman, Jogja"
         ]);
 
+        Facility::create([
+            "kost_id" => $Kost->id,
+            "type" => "Fasilitas Umum",
+            "facility" => "- wifi
+            - CCTV
+            - Dapur"
+
+        ]);
+
+        Facility::create([
+            "kost_id" => $Kost->id,
+            "type" => "Fasilitas Parkir",
+            "facility" => "- Parkir Motor
+            - Parkir Mobil"
+
+        ]);
+
+        Facility::create([
+            "kost_id" => $Kost->id,
+            "type" => "Fasilitas Kamar Mandi",
+            "facility" => "- R. Cuci
+            - R. Jemur
+            - K. Mandi Luar"
+
+        ]);
+
+        Rules::create([
+            "kost_id" => $Kost->id,
+            "type" => "Peraturan di kos ini",
+            "rule" => "- Tamu menginap dikenakan biaya
+            - Dilarang bawa hewan
+            - Denda kerusakan barang kos
+            - Maks. 2 orang/ kamar
+            - Ada jam malam untuk tamu",
+        ]);
+
+        Review::create([
+            "kost_id" => $Kost->id,
+            "user_id" => $user->id,
+            "review" => "enak kost nya, lingkungannya pun enak, strategis pulaaaa",
+        ]);
+
         $Kost = Kost::create([
-            "foto" => ("foto_kost/2.jpg"),
+            "foto1" => ("2.jpg"),
+            "foto2" => (""),
+            "foto3" => (""),
+            "foto4" => (""),
+            "foto5" => (""),
             "judul" => "Kost Apik BINUS Anggrek Tipe B Palmerah Jakarta Barat B1L7WR04",
             "deskripsi" => "",
             "tag" => "kost campur",
@@ -81,64 +131,46 @@ class KostSeeder extends Seeder
 
         Facility::create([
             "kost_id" => $Kost->id,
-            "type" => "Fasilitas umum",
-            "facility" => "wifi
-            R. Jemur
-            CCTV
-            R. Cuci
-            Dapur
-            K. Mandi Luar
-            Parkir Motor
-            Parkir Mobil"
+            "type" => "Fasilitas Umum",
+            "facility" => "- Wifi
+            - Kasur
+            - Lemari Baju
+            - Kursi
+            - jendela
+            - Meja
+            - Meja
+            - Ventilasi
+            - Bantal
+            - R. Tamu
+            - R. Jemur"
 
         ]);
 
         Facility::create([
             "kost_id" => $Kost->id,
-            "type" => "Fasilitas umum",
-            "facility" => "Wifi
-            Kasur
-            Lemari Baju
-            Kursi
-            jendela
-            Meja
-            Meja
-            Ventilasi
-            Bantal
-            Kloset Jongkok
-            Ember Mandi
-            K. Mandi luar
-            Bak Mandi
-            Parkir Motor
-            Parkir Sepeda
-            R. Tamu
-            R. Jemur"
+            "type" => "Fasilitas Parkir",
+            "facility" => "- Parkir Motor
+            - Parkir Sepeda"
+
+        ]);
+
+        Facility::create([
+            "kost_id" => $Kost->id,
+            "type" => "Fasilitas Kamar Mandi",
+            "facility" => "- Kloset Jongkok
+            - Ember Mandi
+            - K. Mandi luar
+            - Bak Mandi"
 
         ]);
 
         Rules::create([
             "kost_id" => $Kost->id,
             "type" => "Peraturan di kos ini",
-            "rule" => "Tamu menginap dikenakan biaya
-            Dilarang bawa hewan
-            Denda kerusakan barang kos
-            Maks. 2 orang/ kamar
-            Ada jam malam untuk tamu",
-        ]);
-
-        Rules::create([
-            "kost_id" => $Kost->id,
-            "type" => "Peraturan di kos ini",
-            "rule" => "Tamu menginap dikenakan biaya
-            Tipe ini bisa diisi maks. 2 orang/ kamar
-            Tidak untuk pasutri
-            Tidak boleh bawa anak",
-        ]);
-
-        Review::create([
-            "kost_id" => $Kost->id,
-            "user_id" => $user->id,
-            "review" => "enak kost nya, lingkungannya pun enak, strategis pulaaaa",
+            "rule" => "- Tamu menginap dikenakan biaya
+            - Tipe ini bisa diisi maks. 2 orang/ kamar
+            - Tidak untuk pasutri
+            - Tidak boleh bawa anak",
         ]);
 
         Review::create([

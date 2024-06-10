@@ -5,6 +5,7 @@ namespace App\Http\Controllers\WEB;
 use App\Http\Controllers\Controller;
 use App\Models\Facility;
 use App\Models\Kost;
+use App\Models\Review;
 use App\Models\Rules;
 use Illuminate\Http\Request;
 
@@ -20,10 +21,6 @@ class DashboardController extends Controller
         return view('admin.pages.profil.index');
     }
 
-    public function mitra()
-    {
-        return view('member.pages.dashboard.index');
-    }
     public function transaksi()
     {
         return view('member.pages.dashboard.transaksi.index');
@@ -44,8 +41,9 @@ class DashboardController extends Controller
     public function produk($id)
     {
         $data['produk'] = Kost::find($id);
-        $data['facility'] = Facility::find($id);
+        $data['facilities'] = Facility::where('kost_id', $id)->get();
         $data['rules'] = Rules::find($id);
+        $data['review'] = Review::find($id);
         $data['kost'] = Kost::all();
 
         return view('home.produk.index', $data);

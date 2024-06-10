@@ -92,7 +92,7 @@
         @foreach ($kost as $data)
         <a href="{{ url('home/produk/'.$data->id) }}" class="w-full max-w-m p-3">
             <div>
-                <img src="{{ $data->foto }}" class="h-auto max-w-full rounded-lg" alt="{{ $data->judul }}" />
+                <img src="{{ url('foto_kost', $data->foto1) }}" class="h-auto max-w-full rounded-lg" alt="{{ $data->judul }}" />
             </div>
             <div class="mt-1">
                 <span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">
