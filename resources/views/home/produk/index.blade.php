@@ -212,6 +212,10 @@
                             class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">
                             {{ $produk->tag }}
                         </span>
+                        <span
+                            class="bg-gray-300 text-gray-600 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-900 dark:text-white">
+                            {{ $produk->alamat_kost }}
+                        </span>
                     </div>
 
                     <div class="flex items-center gap-0 mt-4 mb-4">
@@ -279,10 +283,10 @@
                             <p class="block text-sm font-medium text-gray-700">Periode Sewa</p>
                             <div class="mb-4 flex gap-3 items-center">
                                 <input type="date" id="start_date" name="start_date"
-                                    class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+                                    class="mt-1 block w-full border-gray-300 px-1 py-1 rounded-md shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
                                 -
                                 <input type="date" id="end_date" name="end_date"
-                                    class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+                                    class="mt-1 block w-full border-gray-300 px-1 py-1 rounded-md shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
                             </div>
                             <div class="mb-4 flex items-center">
                                 <label for="quantity" class="block text-sm font-medium text-gray-700">Jumlah

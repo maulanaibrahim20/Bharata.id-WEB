@@ -68,4 +68,9 @@ class DashboardController extends Controller
     {
         return view('home.registrasi.index');
     }
+
+    public function register_member_submit(Request $request)
+    {
+        
+    }
 }

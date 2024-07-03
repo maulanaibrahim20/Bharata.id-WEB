@@ -109,6 +109,7 @@ Route::middleware(['autentikasi'])->group(function () {
 
         Route::get('/home', [DashboardController::class, 'dashboard']);
         Route::get('/home/registrasi', [DashboardController::class, 'register_member'])->name('home.registrasi');
+        Route::post('/home/registrasi', [DashboardController::class, 'register_member_submit'])->name('home.registrasi.submit');
         Route::get('/home/produk/{id}', [DashboardController::class, 'produk']);
         Route::get('/home/cart', [DashboardController::class, 'cart'])->name('cart');
     });

@@ -19,6 +19,8 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
+        \App\Models\Kost::factory(10)->create();
+
         $this->call([
             RoleSeeder::class,
             UserSeeder::class,
