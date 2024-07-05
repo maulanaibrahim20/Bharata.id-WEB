@@ -20,11 +20,11 @@ return new class extends Migration
             $table->string('jenis_kelamin');
             $table->string('tanggal_lahir');
             $table->string('alamat_utama');
-            $table->bigInteger('provinsi');
-            $table->bigInteger('kota');
-            $table->bigInteger('kecamatan');
-            $table->bigInteger('kode_pos');
-            $table->bigInteger('no_telp');
+            $table->string('provinsi');
+            $table->string('kota');
+            $table->string('kecamatan');
+            $table->string('kode_pos');
+            $table->string('no_telp');
             $table->string('image');
             $table->enum('status', ['1','0'])->comment('catatan : 1 = terverifikasi 2 = belum verifikasi')->default(0);
             $table->timestamps();
