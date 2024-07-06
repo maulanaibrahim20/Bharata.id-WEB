@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\KostController;
 use App\Http\Controllers\WEB\Admin\CategoryController;
+use App\Http\Controllers\WEB\Admin\User\UserUserController;
 use App\Http\Controllers\WEB\Auth\LoginController;
 use App\Http\Controllers\WEB\Auth\LogoutController;
 use App\Http\Controllers\WEB\Auth\RegisterController;
@@ -9,6 +10,7 @@ use App\Http\Controllers\WEB\Auth\ResetPasswordController;
 use App\Http\Controllers\WEB\Auth\NewPasswordController;
 use App\Http\Controllers\WEB\DashboardController;
 use App\Http\Controllers\WEB\Admin\ProductController;
+use App\Http\Controllers\WEB\Admin\User\AdminKelolaProdukController;
 use App\Http\Controllers\WEB\Admin\User\UserMemberController;
 use App\Http\Controllers\WEB\Admin\Wilayah\WilayahController;
 use App\Http\Controllers\WEB\Auth\VerificationController;
@@ -69,6 +71,19 @@ Route::middleware(['auth'])->name('web.')->group(function () {
 
 Route::middleware(['autentikasi'])->group(function () {
     Route::group(['middleware' => ['can:admin']], function () {
+
+        // Admin kelola pengguna
+        Route::get('admin/pengguna/user', [UserUserController::class, 'index'])->name('user.index');
+        Route::get('admin/pengguna/user/create', [UserUserController::class, 'create'])->name('user.create');
+        Route::get('admin/pengguna/user/edit/{id}', [UserUserController::class, 'edit'])->name('user.edit');
+        Route::post('admin/pengguna/user/store', [UserUserController::class, 'store'])->name('user.store');
+        Route::post('admin/pengguna/user/update/{id}', [UserUserController::class, 'update'])->name('user.update');
+        Route::get('admin/pengguna/user/delete/{id}', [UserUserController::class, 'delete'])->name('user.delete');
+
+        // Admin kelola produk
+        Route::get('admin/kelola/produk/edit/{id}', [AdminKelolaProdukController::class, 'edit'])->name('admin.produk.edit');
+        Route::post('admin/kelola/produk/update/{id}', [AdminKelolaProdukController::class, 'update'])->name('admin.produk.update');
+
         Route::prefix('admin')->group(function () {
             Route::get('/home', function () {
                 return view('home.index');
@@ -79,7 +94,6 @@ Route::middleware(['autentikasi'])->group(function () {
             });
             Route::prefix('pengguna')->group(function () {
                 Route::resource('member', UserMemberController::class);
-
             });
             Route::prefix('kelola')->group(function () {
                 Route::resource('produk', ProductController::class);

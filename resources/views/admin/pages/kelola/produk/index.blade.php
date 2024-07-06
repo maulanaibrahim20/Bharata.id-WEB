@@ -76,8 +76,7 @@
                                         @endif
                                     </td>
                                     <td class="px-6 py-4">
-                                        <a class="cursor-pointer font-medium px-2 py-1 rounded dark:text-gray-200 bg-yellow-400 dark:bg-yellow-600" data-bs-toggle="modal"
-                                            data-bs-target="#EditModal{{ $data->id }}"><i class="bi bi-pencil-square"></i></a>
+                                        <a href="{{ route('admin.produk.edit', $data->id) }}" class="cursor-pointer font-medium px-2 py-1 rounded dark:text-gray-200 bg-yellow-400 dark:bg-yellow-600"><i class="bi bi-pencil-square"></i></a>
                                         <form id="deleteForm{{ $data->id }}"
                                             action="{{ url('/admin/kelola/produk/' . $data->id) }}" style="display: inline;"
                                             method="POST">
