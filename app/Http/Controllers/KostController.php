@@ -13,13 +13,13 @@ class KostController extends Controller
     public function index()
     {
         $kosts = Kost::all();
-        return view("member.pages.kelola.produk.index", compact('kosts'));
+        return view("member.pages.kelola.kost.index", compact('kosts'));
     }
 
     public function create()
     {
 
-        return view("member.pages.kelola.produk.create");
+        return view("member.pages.kelola.kost.create");
     }
 
     public function store(Request $request)
@@ -50,7 +50,7 @@ class KostController extends Controller
 
         $kost->save();
 
-        return redirect()->route('member.produk.create')->with('success', 'Data kost berhasil ditambahkan!');
+        return redirect()->route('member.kost.create')->with('success', 'Data kost berhasil ditambahkan!');
     }
     public function edit($id)
     {
@@ -59,7 +59,7 @@ class KostController extends Controller
             'kost' => Kost::findOrFail($id)
         ];
 
-        return view('member.pages.kelola.produk.edit', $data);
+        return view('member.pages.kelola.kost.edit', $data);
     }
     public function update(Request $request, $id)
     {
@@ -96,7 +96,7 @@ class KostController extends Controller
 
         $kost->save();
 
-        return redirect()->route('member.produk.edit', $kost->id)->with('success', 'Data kost berhasil diperbarui');
+        return redirect()->route('member.kost.edit', $kost->id)->with('success', 'Data kost berhasil diperbarui');
     }
     public function destroy($id)
     {
@@ -108,6 +108,6 @@ class KostController extends Controller
 
         $kost->delete();
 
-        return redirect()->route('member.produk')->with('success', 'Data kost berhasil dihapus');
+        return redirect()->route('member.kost')->with('success', 'Data kost berhasil dihapus');
     }
 }
