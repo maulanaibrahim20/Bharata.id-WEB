@@ -98,8 +98,8 @@ Route::middleware(['autentikasi'])->group(function () {
             Route::get('/member/kelola/produk/create', [KostController::class, 'create'])->name('member.produk.create');
             Route::post('/member/kelola/produk/store', [KostController::class, 'store'])->name('member.produk.store');
             Route::get('/member/kelola/produk/edit/{id}', [KostController::class, 'edit'])->name('member.produk.edit');
-            Route::put('/member/kelola/produk/update/{id}', [KostController::class, 'update'])->name('member.produk.update');
-            Route::get('/member/kelola/produk/{id}', [KostController::class, 'destroy'])->name('member.produk.destroy');
+            Route::post('/member/kelola/produk/update/{id}', [KostController::class, 'update'])->name('member.produk.update');
+            Route::get('/member/kelola/produk/destroy/{id}', [KostController::class, 'destroy'])->name('member.produk.destroy');
         });
         // Route::get('/member/dashboard/transaksi', [DashboardController::class, 'transaksi'])->name('transaksi');
         // Route::get('/member/dashboard', [DashboardController::class, 'member'])->name('member');

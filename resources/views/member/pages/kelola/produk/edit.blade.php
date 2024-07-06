@@ -6,9 +6,6 @@
                 <div class="flex justify-between items-center">
                     <h2 class="text-xl font-bold text-gray-900 dark:text-white">Buat Produk</h2>
                 </div>
-
-
-
                 <div>
                     <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
                         <li class="inline-flex items-center">
@@ -42,12 +39,12 @@
                         {{ session('success') }}
                     </div>
                 @endif
-                <form action="{{ route('member.produk.store') }}" method="POST"
+                <form action="{{ route('member.produk.update', $kost->id) }}" method="POST"
                     class="space-y-4 md:space-y-6 needs-validation" enctype="multipart/form-data">
                     @csrf
                     <div>
                         <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Foto Kost</label>
-                        <input required
+                        <input
                             class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 w-full px-1 py-1 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             name="image" type="file" accept="image/*">
                     </div>
@@ -61,7 +58,7 @@
                                                       dark:bg-gray-700 dark:border-gray-600 
                                                       dark:placeholder-gray-400 dark:text-white 
                                                       dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                name="title" placeholder="Masukkan Judul" required>
+                                name="title" placeholder="Masukkan Judul" required value="{{ $kost->judul }}">
                         </div>
                         <div>
                             <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Type Kamar
@@ -86,7 +83,7 @@
                                                       dark:bg-gray-700 dark:border-gray-600 
                                                       dark:placeholder-gray-400 dark:text-white 
                                                       dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                name="description" placeholder="Masukkan Deskripsi" required>
+                                name="description" placeholder="Masukkan Deskripsi" required value="{{ $kost->deskripsi }}">
                         </div>
                         <div>
                             <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Alamat</label>
@@ -97,7 +94,7 @@
                                                       dark:bg-gray-700 dark:border-gray-600 
                                                       dark:placeholder-gray-400 dark:text-white 
                                                       dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                name="address" placeholder="Masukkan Alamat" required>
+                                name="address" placeholder="Masukkan Alamat" required value="{{ $kost->alamat_kost }}">
                         </div>
                     </div>
                     <div class="grid grid-cols-2 gap-2">
@@ -111,7 +108,7 @@
                                                       dark:bg-gray-700 dark:border-gray-600 
                                                       dark:placeholder-gray-400 dark:text-white 
                                                       dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                name="rent_rule" placeholder="Masukkan Ketentuan Pengajuan Sewa" required>
+                                name="rent_rule" placeholder="Masukkan Ketentuan Pengajuan Sewa" required value="{{ $kost->ketentuan_pengajuan_sewa }}">
                         </div>
                         <div>
                             <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Harga
@@ -123,7 +120,7 @@
                                                       dark:bg-gray-700 dark:border-gray-600 
                                                       dark:placeholder-gray-400 dark:text-white 
                                                       dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                name="monthly_price" placeholder="Masukkan Harga Sewa" required>
+                                name="monthly_price" placeholder="Masukkan Harga Sewa" required value="{{ $kost->perbulan }}">
                         </div>
                         <div>
                             <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Cerita
@@ -135,7 +132,7 @@
                                                       dark:bg-gray-700 dark:border-gray-600 
                                                       dark:placeholder-gray-400 dark:text-white 
                                                       dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                name="owner_story" placeholder="Masukkan Cerita Pemilik" required>
+                                name="owner_story" placeholder="Masukkan Cerita Pemilik" required value="{{ $kost->cerita_pemilik }}">
                         </div>
                         <div>
                             <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tanggal Mulai
@@ -147,12 +144,12 @@
                                                       dark:bg-gray-700 dark:border-gray-600 
                                                       dark:placeholder-gray-400 dark:text-white 
                                                       dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                name="start_date" placeholder="Masukkan Cerita Pemilik" required>
+                                name="start_date" placeholder="Masukkan Cerita Pemilik" required value="{{ $kost->tanggal_mulai_kos }}">
                         </div>
                         <div>
                             <button
                                 class="cursor-pointer bg-green-500 dark:bg-green-600 text-gray-200 dark:text-gray-700 px-3 py-2 rounded mt-6"
-                                type="submit">Submit</button>
+                                type="submit">Update</button>
                         </div>
                     </div>
                 </form>

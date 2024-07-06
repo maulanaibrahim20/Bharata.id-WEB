@@ -27,6 +27,12 @@
             </div>
             <hr class="h-px my-3 bg-gray-200 border-0 dark:bg-gray-700">
             <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+
+                @if (session('success'))
+                    <div class="alert alert-success bg-lime-400">
+                        {{ session('success') }}
+                    </div>
+                @endif
                 <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400" id="basic-datatable">
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
@@ -56,9 +62,9 @@
                                 <td scope="col" class="px-6 py-4">{{ $kost->perbulan }}</td>
                                 <td scope="col" class="px-6 py-4">
                                     <div class="flex items-center gap-3">
-                                        <button class="cursor-pointer font-medium px-2 py-1 rounded text-white dark:text-gray-200 bg-yellow-400 dark:bg-yellow-600"><i class="bi bi-pencil-square"></i></button>
-                                        <button class="cursor-pointer font-medium px-2 py-1 rounded text-white dark:text-gray-200 bg-purple-500 dark:bg-purple-600"><i class="bi bi-eye"></i></button>
-                                        <button class="font-medium cursor-pointer px-2 py-1 rounded text-white bg-red-500 dark:bg-red-600 delete-user deleteBtn"><i class="bi bi-trash"></i></button>
+                                        <a href="{{ route('member.produk.edit', $kost->id) }}"><button class="cursor-pointer font-medium px-2 py-1 rounded text-white dark:text-gray-200 bg-yellow-400 dark:bg-yellow-600"><i class="bi bi-pencil-square"></i></button></a>
+                                        <a href="/#card-produk" target="_blank"><button class="cursor-pointer font-medium px-2 py-1 rounded text-white dark:text-gray-200 bg-purple-500 dark:bg-purple-600"><i class="bi bi-eye"></i></button></a>
+                                        <a href="{{ route('member.produk.destroy', $kost->id) }}"><button class="font-medium cursor-pointer px-2 py-1 rounded text-white bg-red-500 dark:bg-red-600 delete-user deleteBtn"><i class="bi bi-trash"></i></button></a>
                                     </div>
                                 </td>
                             </tr>

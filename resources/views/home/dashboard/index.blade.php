@@ -88,7 +88,7 @@
         </div>
     </div>
     {{-- CARD PRODUK --}}
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4" id="card-produk">
         @foreach ($kost as $data)
         <a href="{{ url('home/produk/'.$data->id) }}" class="w-full max-w-m p-3">
             <div>
