@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\KostController;
+use App\Http\Controllers\MemberCategoryController;
+use App\Http\Controllers\MemberKelolaProdukController;
+use App\Http\Controllers\MemberProductController;
 use App\Http\Controllers\WEB\Admin\CategoryController;
 use App\Http\Controllers\WEB\Admin\User\UserUserController;
 use App\Http\Controllers\WEB\Auth\LoginController;
@@ -102,7 +105,20 @@ Route::middleware(['autentikasi'])->group(function () {
             Route::get('/dashboard', [DashboardController::class, 'admin']);
         });
     });
+
     Route::group(['middleware' => ['can:member']], function () {
+
+        Route::prefix('member')->group(function () {
+            Route::prefix('kelola')->group(function () {
+                Route::resource('produk', MemberProductController::class);
+                Route::resource('kategori', MemberCategoryController::class);
+            });
+        });
+
+        // Member kelola produk
+        Route::get('member/kelola/produk/edit/{id}', [MemberKelolaProdukController::class, 'edit'])->name('member.produk.edit');
+        Route::post('member/kelola/produk/update/{id}', [MemberKelolaProdukController::class, 'update'])->name('member.produk.update');
+
         Route::middleware(['auth', 'check.member.status'])->group(function () {
             Route::get('/member/dashboard/transaksi', [DashboardController::class, 'transaksi'])->name('transaksi');
             Route::get('/member/dashboard', [DashboardController::class, 'member'])->name('member');
