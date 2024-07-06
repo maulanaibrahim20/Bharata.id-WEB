@@ -38,7 +38,7 @@
                         <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                             <i class="bi bi-search"></i>
                         </div>
-                        <input type="search" id="search"
+                        <input type="search" id="searchCat"
                             class="block w-full p-3 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             placeholder="Search Kategori" name='search' value="" />
                         <button type="submit"
@@ -134,8 +134,7 @@
                             <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
                                 <div
                                     class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
-                                    <h5 class="text-xl font-semibold text-gray-900 dark:text-white"
-                                        id="exampleModalLabel">
+                                    <h5 class="text-xl font-semibold text-gray-900 dark:text-white" id="exampleModalLabel">
                                         Detail Subkategori</h5>
                                     <button type="button"
                                         class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
@@ -206,6 +205,16 @@
                     deleteForm.submit();
                 }
             });
+        });
+
+        let input = $('#searchCat')
+
+        $(input).keyup(function(e) {
+            let value = $(this).val().toLowerCase()
+            $('#basic-datatable tbody tr').filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            })
+            console.log(value)
         });
     </script>
 @endsection

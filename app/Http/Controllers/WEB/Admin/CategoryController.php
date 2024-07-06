@@ -31,7 +31,7 @@ class CategoryController extends Controller
         $categoryId  = $this->kategori::pluck('id')->toArray();
         $data = [
             'title' => 'Kelola Kategori',
-            'kategori' => $this->kategori::all(),
+            'kategori' => $this->kategori::all()->sortBy('name'),
             'breadcrumb' => 'Master Data',
             'breadcrumb_item' => 'Kelola Kategori',
             'button_create' => 'Tambah Data Kategori',
