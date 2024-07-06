@@ -4,6 +4,7 @@ use App\Http\Controllers\KostController;
 use App\Http\Controllers\MemberCategoryController;
 use App\Http\Controllers\MemberKelolaProdukController;
 use App\Http\Controllers\MemberProductController;
+use App\Http\Controllers\MitraController;
 use App\Http\Controllers\WEB\Admin\CategoryController;
 use App\Http\Controllers\WEB\Admin\User\UserUserController;
 use App\Http\Controllers\WEB\Auth\LoginController;
@@ -118,6 +119,14 @@ Route::middleware(['autentikasi'])->group(function () {
         // Member kelola produk
         Route::get('member/kelola/produk/edit/{id}', [MemberKelolaProdukController::class, 'edit'])->name('member.produk.edit');
         Route::post('member/kelola/produk/update/{id}', [MemberKelolaProdukController::class, 'update'])->name('member.produk.update');
+
+        // Member kelola mitra
+        Route::get('member/kelola/mitra', [MitraController::class, 'index'])->name('mitra.index');
+        Route::get('member/kelola/mitra/create', [MitraController::class, 'create'])->name('mitra.create');
+        Route::post('member/kelola/mitra/store', [MitraController::class, 'store'])->name('mitra.store');
+        Route::get('member/kelola/mitra/edit/{id}', [MitraController::class, 'edit'])->name('mitra.edit');
+        Route::post('member/kelola/mitra/update/{id}', [MitraController::class, 'update'])->name('mitra.update');
+        Route::delete('member/kelola/mitra/delete/{id}', [MitraController::class, 'destroy'])->name('mitra.delete');
 
         Route::middleware(['auth', 'check.member.status'])->group(function () {
             Route::get('/member/dashboard/transaksi', [DashboardController::class, 'transaksi'])->name('transaksi');

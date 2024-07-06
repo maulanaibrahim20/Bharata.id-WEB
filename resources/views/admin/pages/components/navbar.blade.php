@@ -112,7 +112,7 @@
                 </button>
                 <ul id="dropdown-example" class="hidden py-2 space-y-2">
                     <li>
-                        <a href="{{ route('info') }}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {{ Request::is('member/pages/dashboard/info') ? 'bg-gray-100 dark:bg-gray-700' : '' }}"><span><i class="bi bi-info-circle"></i> Informasi Toko</span></a>
+                        <a href="{{route('mitra.index')}}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {{ Request::is('member/pages/dashboard/info') ? 'bg-gray-100 dark:bg-gray-700' : '' }}"><span><i class="bi bi-info-circle"></i> Informasi Toko</span></a>
                     </li>
                     <li>
                         <a href="{{route('transaksi')}}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><span><i class="bi bi-wallet2"></i> Transaksi</span></a>
