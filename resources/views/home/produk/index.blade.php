@@ -7,8 +7,10 @@
             <div class="grid grid-cols-3 gap-5">
                 {{-- FOTO PRODUK --}}
                 <div>
-                    <img class="h-auto max-w-s mx-auto rounded" src="{{ url('foto_kost', $produk->foto1) }}"
-                        alt="{{ $produk->judul }}" />
+                    <div class="max-w-lg mx-auto">
+                        <img class="square-image w-full max-w-lg mx-auto rounded" src="{{ url('foto_kost', $produk->foto1) }}"
+                            alt="{{ $produk->judul }}" />
+                    </div>
                     <div class="grid grid-cols-4 mt-2">
                         @if ($produk->foto2)
                             <img class="h-10 w-20 mx-auto rounded" src="{{ url('foto_kost', $produk->foto2) }}"
@@ -246,10 +248,12 @@
                         </div>
                     @endforeach
 
-                    <div class="mt-2">
-                        <p class="font-semibold">{!! nl2br(htmlentities($rules->type)) !!}</p>
-                        <small class="font-normal">{!! nl2br(htmlentities($rules->rule)) !!}</small>
-                    </div>
+                    @foreach ($rules as $rule)
+                        <div class="mt-2">
+                            <p class="font-semibold">{!! nl2br(htmlentities($rule->type)) !!}</p>
+                            <small class="font-normal">{!! nl2br(htmlentities($rule->rule)) !!}</small>
+                        </div>
+                    @endforeach
 
                     <div class="mt-2">
                         <p class="font-semibold">Ketentuan Pengajuan Sewa</p>
@@ -347,7 +351,7 @@
                         <div class="flex flex-col gap-0">
                             <span class="font-normal font-semibold">Anwar Musyadad <span
                                     class="font-normal text-gray-400 text-xs">22-04-2024</span></span>
-                            <small class="font-normal text-gray-400">{{$review->review}}</small>
+                            {{-- <small class="font-normal text-gray-400">{{ $review->review }}</small> --}}
                         </div>
                     </div>
                     {{-- END ULASAN USER --}}
@@ -421,6 +425,18 @@
             input.value = parseInt(input.value) - 1;
             if (input.value < 1) {
                 input.value = 1;
+            }
+        }
+    </script>
+    <script>
+        function adjustAspectRatio(image) {
+            // Cek aspek rasio
+            const width = image.naturalWidth;
+            const height = image.naturalHeight;
+
+            if (width / height < 9 / 16) {
+                image.style.objectFit = 'contain';
+                image.style.height = '100%';
             }
         }
     </script>

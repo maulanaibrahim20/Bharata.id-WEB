@@ -31,7 +31,6 @@ class DashboardController extends Controller
     public function dashboard()
     {
         $data['kost'] = Kost::all();
-        // dd($data);
         return view('home.dashboard.index', $data);
     }
 
@@ -44,7 +43,7 @@ class DashboardController extends Controller
     {
         $data['produk'] = Kost::find($id);
         $data['facilities'] = Facility::where('kost_id', $id)->get();
-        $data['rules'] = Rules::find($id);
+        $data['rules'] = Rules::where('kost_id', $id)->get();
         $data['review'] = Review::find($id);
         $data['kost'] = Kost::all();
 
@@ -66,6 +65,11 @@ class DashboardController extends Controller
         return view('home.cart.index');
     }
 
+    public function profilMember()
+    {
+        return view('home.profil.index');
+    }
+
     public function register_member()
     {
         return view('home.registrasi.index');
@@ -73,9 +77,8 @@ class DashboardController extends Controller
 
     public function register_member_submit(Request $request)
     {
-        dd($request->all());
+        // dd($request->all());
         $request->validate([
-            'kost_id' => 'required|exists:kosts,id',
             'nama_depan' => 'required|string|max:255',
             'nama_belakang' => 'required|string|max:255',
             'jenis_kelamin' => 'required|string|in:Laki-laki,Perempuan',
@@ -86,36 +89,23 @@ class DashboardController extends Controller
             'kecamatan' => 'required|string|max:255',
             'kode_pos' => 'required|string|max:255',
             'no_telp' => 'required|string|max:15',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
-        try {
-            if ($request->hasFile('image')) {
-                $imagePath = $request->file('image')->store('member', 'public');
+        Member::create([
+            'user_id' => auth()->id(),
+            'nama_depan' => $request->nama_depan,
+            'nama_belakang' => $request->nama_belakang,
+            'jenis_kelamin' => $request->jenis_kelamin,
+            'tanggal_lahir' => $request->tanggal_lahir,
+            'alamat_utama' => $request->alamat_utama,
+            'provinsi' => $request->provinsi,
+            'kota' => $request->kota,
+            'kecamatan' => $request->kecamatan,
+            'kode_pos' => $request->kode_pos,
+            'no_telp' => $request->no_telp,
+            'status' => '0',
+        ]);
 
-                Member::create([
-                    'user_id' => auth()->id(),
-                    'kost_id' => $request->kost_id,
-                    'nama_depan' => $request->nama_depan,
-                    'nama_belakang' => $request->nama_belakang,
-                    'jenis_kelamin' => $request->jenis_kelamin,
-                    'tanggal_lahir' => $request->tanggal_lahir,
-                    'alamat_utama' => $request->alamat_utama,
-                    'provinsi' => $request->provinsi,
-                    'kota' => $request->kota,
-                    'kecamatan' => $request->kecamatan,
-                    'kode_pos' => $request->kode_pos,
-                    'no_telp' => $request->no_telp,
-                    'image' => $imagePath,
-                    'status' => '0',
-                ]);
-
-                return redirect()->route('member')->with('success', 'Registrasi anggota berhasil.');
-            } else {
-                return back()->with('error', 'Gagal mengunggah gambar.');
-            }
-        } catch (\Exception $e) {
-            return back()->with('error', 'Error: ' . $e->getMessage());
-        }
+        return redirect()->route('home.registrasi')->with('success', 'Registrasi anggota berhasil.');
     }
 }

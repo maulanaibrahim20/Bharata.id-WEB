@@ -22,7 +22,6 @@ class MemberSeeder extends Seeder
         DB::table('members')->insert([
             [
                 'user_id' => $user->id,
-                'kost_id' => 1,
                 'nama_depan' => 'Shanna',
                 'nama_belakang' => 'Steuber',
                 'jenis_kelamin' => 'Laki-laki',

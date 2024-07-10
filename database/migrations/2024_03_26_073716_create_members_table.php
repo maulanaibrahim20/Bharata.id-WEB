@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('members', function (Blueprint $table) {
             $table->id();
             $table->string('user_id', 50);
-            $table->integer('kost_id');
             $table->string('nama_depan');
             $table->string('nama_belakang');
             $table->string('jenis_kelamin');
@@ -25,7 +24,7 @@ return new class extends Migration
             $table->string('kecamatan');
             $table->string('kode_pos');
             $table->string('no_telp');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->enum('status', ['1','0'])->comment('catatan : 1 = terverifikasi 2 = belum verifikasi')->default(0);
             $table->timestamps();
         });

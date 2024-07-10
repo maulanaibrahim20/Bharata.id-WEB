@@ -14,13 +14,13 @@ class CreateMitrasTable extends Migration {
         Schema::create('mitras', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->string('name');
+            $table->string('nama');
             $table->text('description')->nullable();
             $table->boolean('active')->default(true);
             $table->string('location')->nullable();
             $table->timestamps();
 
-            
+
         });
     }
 

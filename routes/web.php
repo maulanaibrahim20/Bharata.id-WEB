@@ -147,6 +147,7 @@ Route::middleware(['autentikasi'])->group(function () {
         // Route::get('/member/kelola/produk', [KostController::class, 'index'])->name('member.produk');
 
         Route::get('/home', [DashboardController::class, 'dashboard']);
+        Route::get('/home/profil', [DashboardController::class, 'profilMember']);
         Route::get('/home/registrasi', [DashboardController::class, 'register_member'])->name('home.registrasi');
         Route::post('/home/registrasi', [DashboardController::class, 'register_member_submit'])->name('home.registrasi.submit');
         Route::get('/home/produk/{id}', [DashboardController::class, 'produk']);
